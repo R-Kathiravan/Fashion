@@ -1,0 +1,291 @@
+
+.header-cls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* position: fixed;
+  z-index: 1; */
+  width: 100%;
+  background-color: white;
+}
+
+.header-cls img {
+  width: 10%;
+  padding: 16px;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+}
+.btn-close{
+  display: none;
+}
+.hamburger {
+  display: none;
+ }
+
+.menu-items a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.menu-items a:hover::after {
+  width: 100%;
+}
+
+.menu-items a:hover {
+  color: #ff4081;
+}
+
+.menu-icons {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  justify-content: space-between;
+  gap: 30px;
+  cursor: pointer;
+}
+
+
+  .content {
+       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #f8f8f8;
+      padding: 40px;
+    }
+
+    .content h1 {
+      font-size: 100px;
+      color: #ff4c4c;
+      margin-bottom: 20px;
+     }
+
+    .content p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .content a {
+      text-decoration: none;
+      background: #ff4c4c;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .content a:hover {
+      background: #cc0000;
+    }
+
+
+.footer {
+  margin-top: 5%;
+}
+
+.footer-head {
+  display: grid;
+  grid-template-rows: 6fr 1fr;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #000000;
+  color: white;
+  align-items: center;
+  justify-items: center;
+}
+
+.footer-grid h3 {
+  color: #0385ff;
+}
+
+.footer-content-company img {
+  width: 100%;
+  height: 100%;
+
+}
+.footer-nav-grid{
+    display: grid;
+}
+.footer-content-nav a {
+  text-decoration: none;
+  list-style: none;
+  line-height: 50px;
+  text-indent: 20px;
+  color: white;
+  transition: transform 0.5s ease;
+}
+.footer-content-nav a:hover{
+  color: #0385ff;
+  transform: translatey(-10px);
+}
+
+.footer-content-nav li {
+  cursor: pointer;
+}
+
+.footer-content-contact a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  text-indent: 20px;
+    transition: color 0.5s ease;
+
+}
+.footer-content-contact a:hover{
+  color: #0385ff;
+}
+
+.footer-content-legal-link li {
+  list-style: none;
+  line-height: 70px;
+  text-indent: 20px;
+  cursor: pointer;
+    transition: transform 0.5s ease;
+
+}
+.footer-content-legal-link li:hover{
+  color: #0385ff;
+  transform: translatey(-10px);
+}
+
+.footer-copy {
+  text-align: center;
+  background-color: #1C1C1C;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-cls img {
+    width: 40%;
+  }
+
+  .menu-icons {
+    display: none;
+  }
+
+  .sponsor-grid {
+    gap: 30px;
+  }
+
+  .sponsor-grid img {
+    height: 60px;
+  }
+
+  .testimonial {
+    flex: 0 0 100%;
+  }
+
+  .testimonial-container {
+    gap: 10px;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .contact-grid-l form {
+    grid-template-columns: repeat(2, 50%);
+
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width:468px) {
+  .menu-items {
+    flex-direction: column;
+    background: #787878ae;
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 250px;
+    height: auto;
+    padding: 60px 20px;
+    transition: right 0.5s ease;
+    z-index: 999;
+    color: #0385ff;
+  }
+
+  .btn-close {
+    display: block;
+    color: rgb(0, 0, 0);
+    background-color: #0385ff00;
+    cursor: pointer;
+    border-color: #00000000;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: 30px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+
+  }
+
+  .menu-items.show {
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+
+  .hamburger:hover {
+    color: #b82e5e;
+  }
+
+  .overlay {
+    top: 75%;
+    left: 50%
+  }
+
+  .menu-icons {
+    display: none;
+  }
+
+  .menu-items {
+    display: none;
+  }
+  
+  .footer-content-company {
+    margin-left: 10%;
+  }
+
+  .footer-content-contact {
+    margin-left: 10%;
+  }
+
+  .footer-content-legal-link {
+    margin-left: 10%;
+  }
+
+  .footer-content-nav {
+    margin-left: 10%;
+  }
+
+  .footer-grid {
+    justify-items: start;
+  }
+}

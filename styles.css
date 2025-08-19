@@ -17,6 +17,11 @@
      z-index: 1000;
      margin-right: 20px;
  }
+ header img{
+   width: 10%;
+  padding: 16px;
+}
+ 
 
  header h1 {
      color: #fff;
@@ -574,6 +579,12 @@
     height: 50px;
 }
 
+@media (max-width:478px) {
+    header img{
+            width: 30%;
+
+    }
+}
  @media(max-width: 900px) {
      .contact-container {
          flex-direction: column;
