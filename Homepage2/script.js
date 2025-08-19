@@ -1,18 +1,12 @@
-const heroTexts = [
-    { title: "Men's Collection", desc: "Style that defines you." },
-    { title: "Women's Collection", desc: "Elegance for every occasion." },
-    { title: "Kids' Collection", desc: "Fashion for the little ones." }
-  ];
+const slides = document.querySelectorAll(".hero-slide");
+let currentIndex = 0;
 
-  let index = 0;
-  const overlay = document.getElementById("heroText");
+setInterval(() => {
+  slides[currentIndex].classList.remove("active");
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].classList.add("active");
+}, 5000);
 
-  setInterval(() => {
-    index = (index + 1) % heroTexts.length;
-    overlay.querySelector("h1").textContent = heroTexts[index].title;
-    overlay.querySelector("p").textContent = heroTexts[index].desc;
-  }, 5000);
- 
 const track = document.querySelector(".testimonial-track");
 const cards = document.querySelectorAll(".testimonial-card");
 const totalCards = cards.length;

@@ -570,8 +570,7 @@
      color: #777;
  }
  .social-icons {
-    /* filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); */
-    width: 50px;
+     width: 50px;
     height: 50px;
 }
 

@@ -52,7 +52,6 @@ body {
 }
 
 
-
 .hero {
   position: relative;
   height: 100vh;
@@ -69,44 +68,11 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  animation: slideShow 15s infinite;
+  transition: opacity 1s ease-in-out;
 }
 
-.hero-slide:nth-child(1) {
-  background-image: url('./asstes/old-youth-GUlEGi2vyvM-unsplash.jpg');
-  animation-delay: 0s;
-}
-
-.hero-slide:nth-child(2) {
-  background-image: url('./asstes/pawel-szvmanski-DsplkQv2WEM-unsplash.jpg');
-  animation-delay: 5s;
-}
-
-.hero-slide:nth-child(3) {
-  background-image: url('./asstes/nathan-dumlao-3-tkQbEAsd8-unsplash.jpg');
-  animation-delay: 10s;
-}
-
-@keyframes slideShow {
-  0% {
-    opacity: 0;
-  }
-
-  5% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  35% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
+.hero-slide.active {
+  opacity: 1;
 }
 
 .overlay {
@@ -145,6 +111,7 @@ body {
 .overlay button:hover {
   background-color: #e60000;
 }
+
 
 .categories {
   padding: 50px 20px;
