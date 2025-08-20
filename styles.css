@@ -14,7 +14,7 @@
      background-color: rgba(255, 255, 255, 0.758);
      position: fixed;
      width: 100%;
-     z-index: 1000;
+     z-index: 1;
      margin-right: 20px;
  }
  header img{
@@ -478,7 +478,8 @@
      box-shadow: 0 0 5px rgba(255, 79, 129, 0.4);
  }
 
- .contact-form button {
+ .contact-form a {
+    text-decoration: none;
      background: #ff4f81;
      color: white;
      border: none;
@@ -487,9 +488,11 @@
      border-radius: 8px;
      cursor: pointer;
      transition: 0.3s ease;
+     width: 15%;
+     text-align: center;
  }
 
- .contact-form button:hover {
+ .contact-form a:hover {
      background: #e94474;
  }
 
