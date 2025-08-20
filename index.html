@@ -32,77 +32,7 @@
             &#9776
         </div>
     </header>
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="container" id="container">
-            <button class="close-btn" id="close-popup-btn">&times;</button>
-            <div class="tabs">
-                <button class="tab-btn active" id="login-tab-btn">Login</button>
-                <button class="tab-btn" id="signup-tab-btn">Signup</button>
-                <div class="tab-indicator" id="tab-indicator"></div>
-            </div>
-
-            <div class="form-wrapper">
-                <div class="form-slider">
-                    <!-- Login Form -->
-                    <section class="form-section">
-                        <form id="login-form" novalidate>
-                            <h3>Login</h3>
-                            <div class="input-group">
-                                <i class="fa fa-envelope"></i>
-                                <input type="email" placeholder="Enter Email Address" required>
-                                <span class="error-message"></span>
-                            </div>
-                            <div class="input-group">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Enter Your Password" required minlength="8">
-                                <span class="error-message"></span>
-                            </div>
-                            <a href="#" class="forgot-password">Forgot Password?</a>
-                            <button type="submit">Login</button>
-                        </form>
-                        <div class="social-login">
-                            <p>Or login with</p>
-                            <div class="social-icons">
-                                <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
-                                <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
-                                <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="form-section">
-                        <form id="signup-form" novalidate>
-                            <h3>Create Account</h3>
-                            <div class="input-group">
-                                <i class="fa fa-user"></i>
-                                <input type="text" placeholder="Full Name" required>
-                                <span class="error-message"></span>
-                            </div>
-                            <div class="input-group">
-                                <i class="fa fa-envelope"></i>
-                                <input type="email" placeholder="Email Address" required>
-                                <span class="error-message"></span>
-                            </div>
-                            <div class="input-group">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Create Password" required minlength="8">
-                                <span class="error-message"></span>
-                            </div>
-                            <button type="submit" (onClick)="win">Signup</button>
-                            <div class="social-login">
-                                <p>Or Signup with</p>
-                                <div class="social-icons">
-                                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
-                                    <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
-                                    <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
-                                </div>
-                            </div>
-                        </form>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <section class="hero" id="hero">
         <div class="hero-content" data-aos="fade-left">
             <h2>Welcome to Fashionista</h2>
@@ -305,6 +235,77 @@
             <p>© 2025 Fashionista. All Rights Reserved.</p>
         </div>
     </footer>
+    </div>
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="container" id="container">
+            <button class="close-btn" id="close-popup-btn">&times;</button>
+            <div class="tabs">
+                <button class="tab-btn active" id="login-tab-btn">Login</button>
+                <button class="tab-btn" id="signup-tab-btn">Signup</button>
+                <div class="tab-indicator" id="tab-indicator"></div>
+            </div>
+
+            <div class="form-wrapper">
+                <div class="form-slider">
+                    <!-- Login Form -->
+                    <section class="form-section">
+                        <form id="login-form" novalidate>
+                            <h3>Login</h3>
+                            <div class="input-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Enter Your Password" required minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            <button type="submit">Login</button>
+                        </form>
+                        <div class="social-login">
+                            <p>Or login with</p>
+                            <div class="social-icons">
+                                <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
+                                <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
+                                <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <form id="signup-form" novalidate>
+                            <h3>Create Account</h3>
+                            <div class="input-group">
+                                <i class="fa fa-user"></i>
+                                <input type="text" placeholder="Full Name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" placeholder="Email Address" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Create Password" required minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <button type="submit" (onClick)="win">Signup</button>
+                            <div class="social-login">
+                                <p>Or Signup with</p>
+                                <div class="social-icons">
+                                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
+                                    <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
+                                    <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="./script.js"></script>
