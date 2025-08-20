@@ -34,3 +34,6 @@ dots.forEach((dot, i) => {
 
  showTestimonial(index);
  
+
+
+ 
