@@ -676,9 +676,27 @@
             background: none;
              transition: all 0.3s ease;
         }
+        .popup-trigger-btn ::after{
+            content: '';
+     position: absolute;
+     left: 0;
+     bottom: 5px;
+     width: 0%;
+     height: 2px;
+     background: #fff;
+     transition: width 0.3s ease;
+ }
+
+ .popup-trigger-btn:hover::after {
+     width: 100%;
+ }
+
+             
 
         .popup-trigger-btn:hover {
             transform: translateY(-3px);
+                 color: #ff4081;
+
          }
 
          .modal-overlay {
@@ -688,14 +706,15 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
+            /* display: flex; */
             align-items: center;
             justify-content: center;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.4s ease;
             z-index: 100;
-        }
+            display: flex;
+         }
 
         .modal-overlay.active {
             opacity: 1;
@@ -712,6 +731,7 @@
             transform: translateY(20px) scale(0.95);
             transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
+            /* display: none; */
         }
 
         .modal-overlay.active .container {
@@ -811,7 +831,7 @@
         }
 
         .input-group input {
-            width: 100%;
+            width: 85%;
             padding: 14px 14px 14px 50px;
             border: 1px solid var(--border-color);
             border-radius: 10px;

@@ -23,7 +23,7 @@
             <a href="404page.html">Collections</a>
             <a href="404page.html">About</a>
             <a href="404page.html">Contact</a>
-            <!-- <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button> -->
+            <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button>
 
             <a class="btn-close">Close</a>
         </nav>
@@ -236,10 +236,10 @@
         </div>
     </footer>
     </div>
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="container" id="container">
+    <div class="modal-overlay" id="modal-overlay"  >
+        <div class="container" id="container" data-aos="fade-up-left" >
             <button class="close-btn" id="close-popup-btn">&times;</button>
-            <div class="tabs">
+            <div class="tabs" >
                 <button class="tab-btn active" id="login-tab-btn">Login</button>
                 <button class="tab-btn" id="signup-tab-btn">Signup</button>
                 <div class="tab-indicator" id="tab-indicator"></div>
@@ -249,7 +249,7 @@
                 <div class="form-slider">
                     <!-- Login Form -->
                     <section class="form-section">
-                        <form id="login-form" novalidate>
+                        <form id="login-form" novalidate  >
                             <h3>Login</h3>
                             <div class="input-group">
                                 <i class="fa fa-envelope"></i>
@@ -261,15 +261,15 @@
                                 <input type="password" placeholder="Enter Your Password" required minlength="8">
                                 <span class="error-message"></span>
                             </div>
-                            <a href="#" class="forgot-password">Forgot Password?</a>
-                            <button type="submit">Login</button>
+                            <a href="404page.html" class="forgot-password">Forgot Password?</a>
+                            <button type="submit"  >Login</button>
                         </form>
                         <div class="social-login">
                             <p>Or login with</p>
                             <div class="social-icons">
-                                <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
-                                <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
-                                <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
+                                 <a href="404page.html"> <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" /></a>
+                                    <a href="404page.html"><img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" /></a>
+                                    <a href="404page.html"><img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" /></a>
                             </div>
                         </div>
                     </section>
@@ -292,13 +292,13 @@
                                 <input type="password" placeholder="Create Password" required minlength="8">
                                 <span class="error-message"></span>
                             </div>
-                            <button type="submit" (onClick)="win">Signup</button>
+                            <button type="submit" id="btn-form" >Signup</button>
                             <div class="social-login">
                                 <p>Or Signup with</p>
                                 <div class="social-icons">
-                                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
-                                    <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
-                                    <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
+                                   <a href="404page.html"> <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" /></a>
+                                    <a href="404page.html"><img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" /></a>
+                                    <a href="404page.html"><img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" /></a>
                                 </div>
                             </div>
                         </form>
@@ -314,8 +314,8 @@
     <script>
         AOS.init({
             duration: 800,
-            easing: 'ease-in-out',
-            once: true
+            // easing: 'ease-in-out',
+            // once: true
         });
         const container = document.getElementById('container');
         const loginTabBtn = document.getElementById('login-tab-btn');
@@ -325,13 +325,19 @@
         const modalOverlay = document.getElementById('modal-overlay');
         const showPopupBtn = document.getElementById('show-popup-btn');
         const closePopupBtn = document.getElementById('close-popup-btn');
+        const btnform =document.getElementById('btn-form');
+        // btnform.style.display='none';
 
         showPopupBtn.addEventListener('click', () => {
             modalOverlay.classList.add('active');
+            // container.style.display='block';
+            // AOS.refresh({duration:100});
         });
 
         const closeModal = () => {
             modalOverlay.classList.remove('active');
+                        container.style.display='none';
+
         };
 
         closePopupBtn.addEventListener('click', closeModal);
@@ -342,12 +348,12 @@
             }
         });
 
-        // --- Tab Switching Logic ---
-        signupTabBtn.addEventListener('click', () => {
+         signupTabBtn.addEventListener('click', () => {
             container.classList.add('signup-active');
             loginTabBtn.classList.remove('active');
             signupTabBtn.classList.add('active');
             tabIndicator.style.transform = 'translateX(100%)';
+
         });
 
         loginTabBtn.addEventListener('click', () => {
@@ -422,6 +428,10 @@
             //         form.reset();
             //         inputs.forEach(clearError);
             //     }
+            if(isFormValid){
+                // btnform.style.display='block'
+                window.location.href='404page.html';
+            }
         };
 
         document.getElementById('login-form').addEventListener('submit', handleFormSubmit);
