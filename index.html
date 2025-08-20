@@ -6,226 +6,305 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
-    <div class="container">
-        <header>
-        <img src="./assets/stackly-logo.png" alt="logo" >    
-            <nav class="menu-items">
-                <a href="./Homepage2/index.html">Home</a>
-                <a href="404page.html">Collections</a>
-                <a href="404page.html">About</a>
-                <a href="404page.html">Contact</a> 
-                
-                <a class="btn-close">Close</a>
-             </nav>
-     
-             <div class="hamburger">
-                &#9776
-            </div>
-        </header>
+    <!-- <div class="container"> -->
+    <header class="header-cls">
+        <img src="./assets/stackly-logo.png" alt="logo">
+        <nav class="menu-items">
+            <a href="./Homepage2/index.html">Home</a>
+            <a href="404page.html">Collections</a>
+            <a href="404page.html">About</a>
+            <a href="404page.html">Contact</a>
+            <!-- <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button> -->
 
-        <section class="hero" id="hero">
-            <div class="hero-content" data-aos="fade-left">
-                <h2>Welcome to Fashionista</h2>
-                <h3>Redefining Your Style</h3>
-                <p>Discover the latest trends with our exclusive collections.</p>
-                <a href="#collections">Shop Now</a>
-            </div>
-        </section>
-        <section class="collections" id="collections" data-aos="fade-up">
-            <h2>Our Collections</h2>
-            <div class="collection-grid">
+            <a class="btn-close">Close</a>
+        </nav>
 
-                <div class="collection-card">
-                    <img src="./assets/photo-15.jpeg" alt="Men's Collection">
-                    <h3>Men's Collection</h3>
-                    <p>Explore our premium range of men's wear from casual to formal.</p>
-                    <a href="404page.html" class="btn">Shop Now</a>
-                </div>
-
-                <div class="collection-card">
-                    <img src="./assets/pexels-taina-bernard-1861666-3571535.jpg" alt="Women's Collection">
-                    <h3>Women's Collection</h3>
-                    <p>Elegant dresses, stylish outfits, and accessories for every occasion.</p>
-                    <a href="404page.html" class="btn">Shop Now</a>
-                </div>
-
-                <div class="collection-card">
-                    <img src="./assets/girl-sunglasses-posing-with-shopping-bags.jpg" alt="Kids' Collection">
-                    <h3>Kids' Collection</h3>
-                    <p>Fun, colorful, and comfortable clothing for the little ones.</p>
-                    <a href="404page.html" class="btn">Shop Now</a>
-                </div>
-            </div>
-        </section>
-        <section class="about-section" id="about" data-aos="fade-up">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="./assets/ayo-ogunseinde-UqT55tGBqzI-unsplash.jpg" alt="Fashion Model">
-                </div>
-                <div class="about-text">
-                    <h2>About <span>Us</span></h2>
-                    <p>
-                        At <strong>Fashionista</strong>, we believe fashion is more than clothing – it's an
-                        expression of individuality.
-                        Our collections are crafted with precision, merging timeless elegance with modern trends.
-                        Every stitch, every fabric, and every detail reflects our dedication to sophistication.
-                    </p>
-                    <p>
-                        From luxurious evening gowns to street-style essentials, we curate styles that speak to the
-                        bold, the confident, and the refined.
-                        Whether you're making a statement or embracing everyday glamour, <strong>Fashionista</strong>
-                        ensures you shine effortlessly.
-                    </p>
-                    <a href="404page.html" class="about-btn">Explore Our Story</a>
-                </div>
-            </div>
-        </section>
-        <section class="testimonials" id="testimonials" data-aos="fade-up">
-            <h2>What Our Customers Say</h2>
-            <p>Customers love our products and we always strive to please them all.
-                <br>Here are some of the testimonials from our customers.<br>
-            </p>
-            <div class="testimonial-container">
-                <div class="testimonial active">
-                    <img src="./assets/pexels-alex-green-5699868.jpg" class="testimonial-image" alt="image">
-                    <p>"Absolutely love the quality and fit! Will definitely shop again."</p>
-                    <h4>- Sarah M.</h4>
-                </div>
-                <div class="testimonial">
-                    <img src="./assets/pexels-kampus-8636600.jpg" class="testimonial-image" alt="image">
-
-                    <p>"The designs are so trendy, and delivery was super fast!"</p>
-                    <h4>- Johnes R.</h4>
-                </div>
-                <div class="testimonial">
-                    <img src="./assets/pexels-keira-burton-6084178.jpg" class="testimonial-image" alt="image">
-
-                    <p>"Feels like wearing luxury without the luxury price tag."</p>
-                    <h4>- Priya S.</h4>
-                </div>
+        <div class="hamburger">
+            &#9776
+        </div>
+    </header>
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="container" id="container">
+            <button class="close-btn" id="close-popup-btn">&times;</button>
+            <div class="tabs">
+                <button class="tab-btn active" id="login-tab-btn">Login</button>
+                <button class="tab-btn" id="signup-tab-btn">Signup</button>
+                <div class="tab-indicator" id="tab-indicator"></div>
             </div>
 
-            <div class="dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
+            <div class="form-wrapper">
+                <div class="form-slider">
+                    <!-- Login Form -->
+                    <section class="form-section">
+                        <form id="login-form" novalidate>
+                            <h3>Login</h3>
+                            <div class="input-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Enter Your Password" required minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            <button type="submit">Login</button>
+                        </form>
+                        <div class="social-login">
+                            <p>Or login with</p>
+                            <div class="social-icons">
+                                <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
+                                <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
+                                <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
+                            </div>
+                        </div>
+                    </section>
 
-        </section>
-        <section class="blog-section" id="blog" data-aos="fade-up">
-            <h2 class="blog-title">Latest from Our Blog</h2>
-            <div class="blog-container">
-
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="./assets/neutral-dusty-beige-color-women-fashion-.jpg" alt="Minimalist Fashion">
-                    </div>
-                    <div class="blog-content">
-                        <h3>The Art of Effortless Style</h3>
-                        <p>Discover how to create timeless looks with fewer pieces, mastering the art of minimalism
-                            while keeping your wardrobe versatile and sophisticated.</p>
-                        <a href="404page.html" class="read-more">Read More</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="./assets/photo-1503342217505-b0a15ec3261c.jpeg" alt="Trendy Outfit">
-                    </div>
-                    <div class="blog-content">
-                        <h3>5 Trends to Watch This Season</h3>
-                        <p>From bold prints to muted tones, here's what's making waves in the fashion world this
-                            season—and how to style them with confidence.</p>
-                        <a href="404page.html" class="read-more">Read More</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="./assets/photo-1542744173-8e7e53415bb0.jpeg" alt="Sustainable Fashion">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Behind the Seams: Sustainable Fashion</h3>
-                        <p>A closer look at how premium fabrics, ethical sourcing, and timeless design come together to
-                            create pieces that last a lifetime.</p>
-                        <a href="404page.html" class="read-more">Read More</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <section class="contact-section" id="contact" data-aos="fade-up">
-            <div class="contact-container">
-                <div class="contact-image"></div>
-
-                <div class="contact-form">
-                    <h2>Contact Us</h2>
-                    <p>
-                        We'd love to hear from you! Whether it's about our latest collections or a custom styling
-                        request, our team is here to help.
-                    </p>
-
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <a href="404page.html">Send </a>
-                    </form>
-
-                    <div class="contact-info">
-                        <p><strong> Address:</strong> 45, Fashionista Avenue, Fashion Street, New Delhi, India</p>
-                        <p><strong> Phone:</strong> +91 98765 43210</p>
-                        <p><strong> Email:</strong> hello@Fashionista.com</p>
-                    </div>
+                    <section class="form-section">
+                        <form id="signup-form" novalidate>
+                            <h3>Create Account</h3>
+                            <div class="input-group">
+                                <i class="fa fa-user"></i>
+                                <input type="text" placeholder="Full Name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" placeholder="Email Address" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Create Password" required minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <button type="submit" (onClick)="win">Signup</button>
+                            <div class="social-login">
+                                <p>Or Signup with</p>
+                                <div class="social-icons">
+                                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
+                                    <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" />
+                                    <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
+                                </div>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </div>
-        </section>
-        <footer class="footer" id="footer" data-aos="fade-up">
-            <div class="footer-container">
-                <div class="footer-brand">
-                    <h2>Fashionista</h2>
-                    <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
-                </div>
+        </div>
+    </div>
+    <section class="hero" id="hero">
+        <div class="hero-content" data-aos="fade-left">
+            <h2>Welcome to Fashionista</h2>
+            <h3>Redefining Your Style</h3>
+            <p>Discover the latest trends with our exclusive collections.</p>
+            <a href="#collections">Shop Now</a>
+        </div>
+    </section>
+    <section class="collections" id="collections" data-aos="fade-up">
+        <h2>Our Collections</h2>
+        <div class="collection-grid">
 
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="404page.html">Collections</a></li>
-                        <li><a href="404page.html">About Us</a></li>
-                        <li><a href="404page.html">Blog</a></li>
-                        <li><a href="404page.html">Contact</a></li>
-                    </ul>
-                </div>
+            <div class="collection-card">
+                <img src="./assets/photo-15.jpeg" alt="Men's Collection">
+                <h3>Men's Collection</h3>
+                <p>Explore our premium range of men's wear from casual to formal.</p>
+                <a href="404page.html" class="btn">Shop Now</a>
+            </div>
 
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p>Email: support@Fashionista.com</p>
-                    <p>Phone: +91 98765 43210</p>
-                    <p>Location: 45 Fashion Street, Mumbai, India</p>
-                </div>
+            <div class="collection-card">
+                <img src="./assets/pexels-taina-bernard-1861666-3571535.jpg" alt="Women's Collection">
+                <h3>Women's Collection</h3>
+                <p>Elegant dresses, stylish outfits, and accessories for every occasion.</p>
+                <a href="404page.html" class="btn">Shop Now</a>
+            </div>
 
-                <div class="footer-social">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook" ></a>
-                        <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
-                                alt="Instagram"></a>
-                        <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
-                        <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios/50/pinterest.png" alt="pinterest"/></a>
-                    </div>
+            <div class="collection-card">
+                <img src="./assets/girl-sunglasses-posing-with-shopping-bags.jpg" alt="Kids' Collection">
+                <h3>Kids' Collection</h3>
+                <p>Fun, colorful, and comfortable clothing for the little ones.</p>
+                <a href="404page.html" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="about" data-aos="fade-up">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="./assets/ayo-ogunseinde-UqT55tGBqzI-unsplash.jpg" alt="Fashion Model">
+            </div>
+            <div class="about-text">
+                <h2>About <span>Us</span></h2>
+                <p>
+                    At <strong>Fashionista</strong>, we believe fashion is more than clothing – it's an
+                    expression of individuality.
+                    Our collections are crafted with precision, merging timeless elegance with modern trends.
+                    Every stitch, every fabric, and every detail reflects our dedication to sophistication.
+                </p>
+                <p>
+                    From luxurious evening gowns to street-style essentials, we curate styles that speak to the
+                    bold, the confident, and the refined.
+                    Whether you're making a statement or embracing everyday glamour, <strong>Fashionista</strong>
+                    ensures you shine effortlessly.
+                </p>
+                <a href="404page.html" class="about-btn">Explore Our Story</a>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials" id="testimonials" data-aos="fade-up">
+        <h2>What Our Customers Say</h2>
+        <p>Customers love our products and we always strive to please them all.
+            <br>Here are some of the testimonials from our customers.<br>
+        </p>
+        <div class="testimonial-container">
+            <div class="testimonial active">
+                <img src="./assets/pexels-alex-green-5699868.jpg" class="testimonial-image" alt="image">
+                <p>"Absolutely love the quality and fit! Will definitely shop again."</p>
+                <h4>- Sarah M.</h4>
+            </div>
+            <div class="testimonial">
+                <img src="./assets/pexels-kampus-8636600.jpg" class="testimonial-image" alt="image">
+
+                <p>"The designs are so trendy, and delivery was super fast!"</p>
+                <h4>- Johnes R.</h4>
+            </div>
+            <div class="testimonial">
+                <img src="./assets/pexels-keira-burton-6084178.jpg" class="testimonial-image" alt="image">
+
+                <p>"Feels like wearing luxury without the luxury price tag."</p>
+                <h4>- Priya S.</h4>
+            </div>
+        </div>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </section>
+    <section class="blog-section" id="blog" data-aos="fade-up">
+        <h2 class="blog-title">Latest from Our Blog</h2>
+        <div class="blog-container">
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="./assets/neutral-dusty-beige-color-women-fashion-.jpg" alt="Minimalist Fashion">
+                </div>
+                <div class="blog-content">
+                    <h3>The Art of Effortless Style</h3>
+                    <p>Discover how to create timeless looks with fewer pieces, mastering the art of minimalism
+                        while keeping your wardrobe versatile and sophisticated.</p>
+                    <a href="404page.html" class="read-more">Read More</a>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>© 2025 Fashionista. All Rights Reserved.</p>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="./assets/photo-1503342217505-b0a15ec3261c.jpeg" alt="Trendy Outfit">
+                </div>
+                <div class="blog-content">
+                    <h3>5 Trends to Watch This Season</h3>
+                    <p>From bold prints to muted tones, here's what's making waves in the fashion world this
+                        season—and how to style them with confidence.</p>
+                    <a href="404page.html" class="read-more">Read More</a>
+                </div>
             </div>
-        </footer>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="./assets/photo-1542744173-8e7e53415bb0.jpeg" alt="Sustainable Fashion">
+                </div>
+                <div class="blog-content">
+                    <h3>Behind the Seams: Sustainable Fashion</h3>
+                    <p>A closer look at how premium fabrics, ethical sourcing, and timeless design come together to
+                        create pieces that last a lifetime.</p>
+                    <a href="404page.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="contact-section" id="contact" data-aos="fade-up">
+        <div class="contact-container">
+            <div class="contact-image"></div>
+
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <p>
+                    We'd love to hear from you! Whether it's about our latest collections or a custom styling
+                    request, our team is here to help.
+                </p>
+
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <a href="404page.html">Send </a>
+                </form>
+
+                <div class="contact-info">
+                    <p><strong> Address:</strong> 45, Fashionista Avenue, Fashion Street, New Delhi, India</p>
+                    <p><strong> Phone:</strong> +91 98765 43210</p>
+                    <p><strong> Email:</strong> hello@Fashionista.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Fashionista</h2>
+                <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="404page.html">Collections</a></li>
+                    <li><a href="404page.html">About Us</a></li>
+                    <li><a href="404page.html">Blog</a></li>
+                    <li><a href="404page.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@Fashionista.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Location: 45 Fashion Street, Mumbai, India</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="404page.html"><img width="50" height="50"
+                            src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                            alt="Instagram"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            alt="Twitter"></a>
+                    <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios/50/pinterest.png"
+                            alt="pinterest" /></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Fashionista. All Rights Reserved.</p>
+        </div>
+    </footer>
     </div>
 
     <script src="./script.js"></script>
@@ -237,6 +316,116 @@
             easing: 'ease-in-out',
             once: true
         });
+        const container = document.getElementById('container');
+        const loginTabBtn = document.getElementById('login-tab-btn');
+        const signupTabBtn = document.getElementById('signup-tab-btn');
+        const tabIndicator = document.getElementById('tab-indicator');
+        const allInputs = document.querySelectorAll('.input-group input');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const showPopupBtn = document.getElementById('show-popup-btn');
+        const closePopupBtn = document.getElementById('close-popup-btn');
+
+        showPopupBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+        });
+
+        const closeModal = () => {
+            modalOverlay.classList.remove('active');
+        };
+
+        closePopupBtn.addEventListener('click', closeModal);
+
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // --- Tab Switching Logic ---
+        signupTabBtn.addEventListener('click', () => {
+            container.classList.add('signup-active');
+            loginTabBtn.classList.remove('active');
+            signupTabBtn.classList.add('active');
+            tabIndicator.style.transform = 'translateX(100%)';
+        });
+
+        loginTabBtn.addEventListener('click', () => {
+            container.classList.remove('signup-active');
+            signupTabBtn.classList.remove('active');
+            loginTabBtn.classList.add('active');
+            tabIndicator.style.transform = 'translateX(0%)';
+        });
+
+        const showError = (input, message) => {
+            const inputGroup = input.parentElement;
+            inputGroup.classList.add('error');
+            const errorSpan = inputGroup.querySelector('.error-message');
+            errorSpan.textContent = message;
+        };
+
+        const clearError = (input) => {
+            const inputGroup = input.parentElement;
+            inputGroup.classList.remove('error');
+            const errorSpan = inputGroup.querySelector('.error-message');
+            errorSpan.textContent = '';
+        };
+
+        const validateInput = (input) => {
+            if (input.value.trim() === '' && input.hasAttribute('required')) {
+                showError(input, 'This field is required.');
+                return;
+            }
+            if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                showError(input, 'Please enter a valid email address.');
+                return;
+            }
+            if (input.hasAttribute('minlength') && input.value.length < input.minLength) {
+                showError(input, `Must be at least ${input.minLength} characters.`);
+                return;
+            }
+            clearError(input);
+        };
+
+        allInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateInput(input);
+            });
+        });
+
+        const handleFormSubmit = (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const inputs = form.querySelectorAll('input');
+            let isFormValid = true;
+
+            inputs.forEach(input => {
+                validateInput(input);
+                if (input.parentElement.classList.contains('error')) {
+                    isFormValid = false;
+                }
+            });
+
+            //     if (isFormValid) {
+            //         const successMessage = document.createElement('div');
+            //         successMessage.textContent = 'Form submitted successfully!';
+            //         successMessage.style.cssText = `
+            //             position: fixed; top: 20px; left: 50%; transform: translateX(-50%); 
+            //             background-color: #42b72a; color: white; padding: 15px 25px; 
+            //             border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1001;
+            //         `;
+            //         document.body.appendChild(successMessage);
+            //         setTimeout(() => {
+            //             successMessage.remove();
+            //         }, 3000);
+
+            //         form.reset();
+            //         inputs.forEach(clearError);
+            //     }
+        };
+
+        document.getElementById('login-form').addEventListener('submit', handleFormSubmit);
+        document.getElementById('signup-form').addEventListener('submit', handleFormSubmit);
+
     </script>
 </body>
 

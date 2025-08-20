@@ -1,247 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- <script src="https://kit.fontawesome.com/a81368914c.js"></script> -->
-
-</head>
-
-<body>
+    <title>Login & Signup Form</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .login-man {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
+        /* --- Base & Resets --- */
+        :root {
+            --primary-color: #6a5af9;
+            --secondary-color: #f72585;
+            --text-color: #333;
+            --container-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --error-color: #d90429;
         }
 
-
-        .login-details {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .login-details input {
-            padding: 12px;
-            /* border-radius: 8%; */
-              border: 2px solid #474e55;
-      border-radius: 25px; 
-      
-        }
-       .login-details input:focus {
-      border-color: #2ecc71;  
-      box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
-    }
-
-        .login-details button {
-            padding: 16px 24px;
-            width: 30%;
-            border-radius: 10%;
-            border-color: rgba(240, 248, 255, 0);
-            background-color: cadetblue;
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-        }
-
-        .login-username {
-            width: 250px;
-            position: relative;
-        }
-
-        .login-username i {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: gray;
-        }
-
-        .login-username input {
-            width: 100%;
-            padding: 12px 12px 12px 35px;
+        * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .login-password {
-            width: 250px;
-            position: relative;
-        }
-
-        .login-password i {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: gray;
-        }
-
-        .login-password input {
-            width: 100%;
-            padding: 10px 10px 10px 35px;
-            box-sizing: border-box;
-        }
-
-        .login-social {
+        /* body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-color);
             display: flex;
-            flex-direction: column;
-            gap: 20px;
             align-items: center;
-
-        }
-
-        .social-icon {
-            display: flex;
-            gap: 30px;
-            cursor: pointer;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            width: 350px;
-            color: #fff;
-            text-align: center;
-            animation: fadeIn 1.2s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            /* border: none; */
-            border-radius: 8px;
-            outline: none;
-            font-size: 14px;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #4cafef;
-            border: none;
-            color: #fff;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #3a8bd7;
-        }
-
-        .tabs {
-            display: flex;
             justify-content: center;
-            margin-bottom: 20px;
-        }
+            min-height: 100vh;
+            padding: 1rem;
+        } */
 
-        .tabs button {
-            flex: 1;
-            background: transparent;
+        /* --- Popup Trigger Button --- */
+        .popup-trigger-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
             border: none;
-            color: rgb(180, 45, 45);
-            padding: 10px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
-            border-bottom: 2px solid transparent;
-            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(74, 0, 224, 0.4);
+            transition: all 0.3s ease;
         }
 
-        .tabs button.active {
-            border-bottom: 2px solid #fff;
-            font-weight: bold;
+        .popup-trigger-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 0, 224, 0.5);
         }
 
-        .form {
+        /* --- Modal Overlay --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            z-index: 100;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* --- Main Container --- */
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background-color: var(--container-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transform: translateY(20px) scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+        }
+
+        .modal-overlay.active .container {
+            transform: translateY(0) scale(1);
+        }
+
+        /* --- Close Button --- */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            z-index: 10;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+            transform: rotate(90deg);
+        }
+
+        /* --- Tabs --- */
+        .tabs {
+            position: relative;
+            display: flex;
+            background-color: #f9f9f9;
+        }
+
+        .tab-btn {
+            width: 50%;
+            padding: 18px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #aaa;
+            transition: color 0.3s ease;
+            z-index: 2;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+        }
+        
+        .tab-indicator {
+            position: absolute;
+            height: 4px;
+            width: 50%;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        /* --- Form Wrapper & Slider for Animation --- */
+        .form-wrapper {
+            overflow: hidden;
+        }
+
+        .form-slider {
+            display: flex;
+            width: 200%;
+            transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+        
+        .container.signup-active .form-slider {
+            transform: translateX(-50%);
+        }
+
+        /* --- Form Sections --- */
+        .form-section {
+            width: 50%;
+            padding: 2rem 2.5rem;
+        }
+
+        .form-section h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        /* --- Input Fields & Validation --- */
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 18px;
+            top: 16px;
+            color: #ccc;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 14px 14px 50px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdfdfd;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(106, 90, 249, 0.2);
+        }
+        
+        .input-group input:focus + i {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.8rem;
+            padding-left: 5px;
             display: none;
-            animation: fadeIn 0.6s ease;
+            margin-top: 4px;
         }
-
-        .form.active {
+        
+        .input-group.error input {
+            border-color: var(--error-color);
+            animation: shake 0.4s;
+        }
+        
+        .input-group.error .error-message {
             display: block;
         }
-    </style>
-    <div class="container">
-        <div class="tabs">
-            <button class="tab-btn active" onclick="switchTab('login')">Login</button>
-            <button class="tab-btn" onclick="switchTab('signup')">Signup</button>
-        </div>
 
-        <section class="form active" id="login">
-            <div class="form-login" id="login">
-                <h3>Login</h3>
-                <form class="login-details">
-                    <div class="login-username">
-                        <i class="fa fa-user"></i>
-                        <input type="email" placeholder="Enter Email Address" required>
-                    </div>
-                    <div class="login-password">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Enter Your Password" required minlength="8">
-                    </div>
-                    <a href="#">Forget Password?</a>
-
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            <div class="login-social">
-                <p>Or login with </p>
-                <div class="social-icon">
-                    <img width="50" height="50" src="https://img.icons8.com/color/48/google-logo.png"
-                        alt="google-logo" />
-                    <img width="50" height="50" src="https://img.icons8.com/cute-clipart/64/facebook.png"
-                        alt="facebook" />
-                    <img width="50" height="50" src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
-                </div>
-
-            </div>
-        </section>
-        <section class="signup">
-            <div class="form active" id="signup">
-                <h2>Signup</h2>
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Signup</button>
-            </div>
-        </section>
-    </div>
-    <script>
-        function switchTab(tab) {
-            document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-
-            document.getElementById(tab).classList.add('active');
-            event.target.classList.add('active');
+        /* --- Links & Buttons --- */
+        .form-section a.forgot-password {
+            display: block;
+            text-align: right;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: -1rem;
+            margin-bottom: 1.5rem;
         }
-    </script>
-</body>
 
+        .form-section button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #login-form button { background: linear-gradient(90deg, #8e2de2, #4a00e0); }
+        #signup-form button { background: linear-gradient(90deg, #f953c6, #b91d73); }
+
+        .form-section button[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .form-section button[type="submit"]:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* --- Social Login --- */
+        .social-login {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .social-login p {
+            color: #aaa;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .social-login p::before,
+        .social-login p::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background-color: #e0e0e0;
+        }
+        .social-login p::before { left: 0; }
+        .social-login p::after { right: 0; }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.15) rotate(10deg);
+        }
+        
+        /* Shake animation for invalid inputs */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="container" id="container">
+            <button class="close-btn" id="close-popup-btn">&times;</button>
+            <div class="tabs">
+                <button class="tab-btn active" id="login-tab-btn">Login</button>
+                <button class="tab-btn" id="signup-tab-btn">Signup</button>
+                <div class="tab-indicator" id="tab-indicator"></div>
+            </div>
+            
+            <div class="form-wrapper">
+                <div class="form-slider">
+                    <!-- Login Form -->
+                    <section class="form-section">
+                        <form id="login-form" novalidate>
+                            <h3>Login</h3>
+                            <div class="input-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Enter Your Password" required minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            <button type="submit">Login</button>
+                        </form>
+                        <div class="social-login">
+                            <p>Or login with</p>
+                            <div class="social-icons">
+                                <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>
+                                <img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook"/>
+                                <img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter"/>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Signup Form -->
+                    <section class="form-section">
+                        <form id="signup-form" novalidate>
+                            <h3>Create Account</h3>
+                            <div class="input-group">
+                                 <i class="fa fa-user"></i>
+                                <input type="text" placeholder="Full Name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" placeholder="Email Address" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                 <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Create Password" required minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <button type="submit">Signup</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const loginTabBtn = document.getElementById('login-tab-btn');
+        const signupTabBtn = document.getElementById('signup-tab-btn');
+        const tabIndicator = document.getElementById('tab-indicator');
+        const allInputs = document.querySelectorAll('.input-group input');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const showPopupBtn = document.getElementById('show-popup-btn');
+        const closePopupBtn = document.getElementById('close-popup-btn');
+
+        // --- Popup Logic ---
+        showPopupBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+        });
+
+        const closeModal = () => {
+            modalOverlay.classList.remove('active');
+        };
+
+        closePopupBtn.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // --- Tab Switching Logic ---
+        signupTabBtn.addEventListener('click', () => {
+            container.classList.add('signup-active');
+            loginTabBtn.classList.remove('active');
+            signupTabBtn.classList.add('active');
+            tabIndicator.style.transform = 'translateX(100%)';
+        });
+
+        loginTabBtn.addEventListener('click', () => {
+            container.classList.remove('signup-active');
+            signupTabBtn.classList.remove('active');
+            loginTabBtn.classList.add('active');
+            tabIndicator.style.transform = 'translateX(0%)';
+        });
+
+         const showError = (input, message) => {
+            const inputGroup = input.parentElement;
+            inputGroup.classList.add('error');
+            const errorSpan = inputGroup.querySelector('.error-message');
+            errorSpan.textContent = message;
+        };
+
+        const clearError = (input) => {
+            const inputGroup = input.parentElement;
+            inputGroup.classList.remove('error');
+            const errorSpan = inputGroup.querySelector('.error-message');
+            errorSpan.textContent = '';
+        };
+
+        const validateInput = (input) => {
+            if (input.value.trim() === '' && input.hasAttribute('required')) {
+                showError(input, 'This field is required.');
+                return;
+            }
+            if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                 showError(input, 'Please enter a valid email address.');
+                 return;
+            }
+            if (input.hasAttribute('minlength') && input.value.length < input.minLength) {
+                showError(input, `Must be at least ${input.minLength} characters.`);
+                return;
+            }
+            clearError(input);
+        };
+
+        allInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateInput(input);
+            });
+        });
+
+        const handleFormSubmit = (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const inputs = form.querySelectorAll('input');
+            let isFormValid = true;
+
+            inputs.forEach(input => {
+                validateInput(input);
+                if (input.parentElement.classList.contains('error')) {
+                    isFormValid = false;
+                }
+            });
+
+            if (isFormValid) {
+                const successMessage = document.createElement('div');
+                successMessage.textContent = 'Form submitted successfully!';
+                successMessage.style.cssText = `
+                    position: fixed; top: 20px; left: 50%; transform: translateX(-50%); 
+                    background-color: #42b72a; color: white; padding: 15px 25px; 
+                    border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1001;
+                `;
+                document.body.appendChild(successMessage);
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 3000);
+
+                form.reset();
+                inputs.forEach(clearError);
+            }
+        };
+
+        document.getElementById('login-form').addEventListener('submit', handleFormSubmit);
+        document.getElementById('signup-form').addEventListener('submit', handleFormSubmit);
+
+    </script>
+
+</body>
 </html>
