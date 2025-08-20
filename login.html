@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- <script src="https://kit.fontawesome.com/a81368914c.js"></script> -->
+
+</head>
+
+<body>
+    <style>
+        .login-man {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+
+        .login-details {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .login-details input {
+            padding: 12px;
+        }
+
+        .login-details button {
+            padding: 16px 24px;
+            width: 50%;
+            border-radius: 20%;
+            border-color: rgba(240, 248, 255, 0);
+            background-color: cadetblue;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .login-username {
+            width: 250px;
+            position: relative;
+        }
+
+        .login-username i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: gray;
+        }
+
+        .login-username input {
+            width: 100%;
+            padding: 12px 12px 12px 35px;
+            box-sizing: border-box;
+        }
+
+        .login-password {
+            width: 250px;
+            position: relative;
+        }
+
+        .login-password i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: gray;
+        }
+
+        .login-password input {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            box-sizing: border-box;
+        }
+
+        .login-social {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+
+        }
+
+        .social-icon {
+            display: flex;
+            gap: 30px;
+            cursor: pointer;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 350px;
+            color: #fff;
+            text-align: center;
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            /* border: none; */
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4cafef;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3a8bd7;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: rgb(180, 45, 45);
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .tabs button.active {
+            border-bottom: 2px solid #fff;
+            font-weight: bold;
+        }
+
+        .form {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .form.active {
+            display: block;
+        }
+    </style>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+            <button class="tab-btn" onclick="switchTab('signup')">Signup</button>
+        </div>
+
+        <section class="form active" id="login">
+            <div class="form-login" id="login">
+                <h3>Login</h3>
+                <form class="login-details">
+                    <div class="login-username">
+                        <i class="fa fa-user"></i>
+                        <input type="email" placeholder="Enter Email Address" required>
+                    </div>
+                    <div class="login-password">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Enter Your Password" required minlength="8">
+                    </div>
+                    <a href="#">Forget Password?</a>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="login-social">
+                <p>Or login with </p>
+                <div class="social-icon">
+                    <img width="50" height="50" src="https://img.icons8.com/color/48/google-logo.png"
+                        alt="google-logo" />
+                    <img width="50" height="50" src="https://img.icons8.com/cute-clipart/64/facebook.png"
+                        alt="facebook" />
+                    <img width="50" height="50" src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" />
+                </div>
+
+            </div>
+        </section>
+        <section class="signup">
+            <div class="form active" id="signup">
+                <h2>Signup</h2>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Signup</button>
+            </div>
+        </section>
+    </div>
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+            document.getElementById(tab).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

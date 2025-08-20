@@ -11,7 +11,7 @@
      justify-content: space-between;
      align-items: center;
      padding: 6px 0px;
-     background-color: rgba(46, 45, 45, 0.1);
+     background-color: rgba(255, 255, 255, 0.758);
      position: fixed;
      width: 100%;
      z-index: 1000;
@@ -34,7 +34,7 @@
  }
 
  .menu-items a {
-     color: #fff;
+     color: #000000;
      text-decoration: none;
      padding: 10px;
      letter-spacing: 1px;
