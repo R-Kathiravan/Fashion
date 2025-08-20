@@ -55,6 +55,9 @@ body {
   gap: 30px;
   cursor: pointer;
 }
+.menu-icons a{
+  color: #000000;
+}
 
 
 .hero {
@@ -367,46 +370,49 @@ body {
   background: #c2185b;
   transform: translateY(-3px);
 }
-
 .sponsor {
-  margin-top: 10%;
+  /* width: 100%; */
   overflow: hidden;
+  background: #fff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px 0;
-  width: 100%;
+  margin-right: 15%;
+margin-left: 15%;
+margin-top: 7%;
 }
 
 .sponsor-content {
-  display: flex;
-  animation: scroll-left 30s linear infinite;
-}
-
-.sponsor-content:hover {
-  animation-play-state: paused;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(100px, 1fr));
-  gap: 40px;
-  flex-shrink: 0;
+  display: flex;
+  gap: 50px; 
+  animation: scroll-rtl 20s linear infinite;
+  cursor: pointer;
 }
 
 .sponsor-grid img {
   height: 80px;
   object-fit: contain;
-  width: 100%;
-  cursor: pointer;
 }
 
-@keyframes scroll-left {
+ @keyframes scroll-rtl {
   0% {
     transform: translateX(0);
   }
-
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
+.sponsor-grid:hover{
+  animation-play-state: paused;
+}
+
 
 .testimonials {
   text-align: center;
@@ -597,7 +603,7 @@ body {
   grid-template-rows: auto auto;
   gap: 30px;
   width: 100%;
-  justify-items: start;
+  justify-items: center;
   justify-content: center;
 }
 
@@ -609,7 +615,7 @@ body {
 
 .contact-grid-l input,
 .contact-grid-l textarea {
-  width: 100%;
+  width: 80%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -618,7 +624,7 @@ body {
 .contact-grid-l textarea {
   grid-column: span 2;
   min-height: 100px;
-  width: 100%;
+  width: 80%;
 }
 
 .contact-grid-l a {
