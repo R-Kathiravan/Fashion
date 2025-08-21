@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> 7c08cdc (Updated Version)
     <title>Fashion2</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -167,25 +171,28 @@
         <section class="special-offers" id="Offers">
             <h1>🔥 Special Offers 🔥</h1>
             <div class="offers-grid">
-                <div class="offer-card" data-aos="fade-down-right">
-                    <img src="./asstes/pexels-olly-3755706.jpg" alt="Summer Sale">
+                <div data-aos="fade-down-right">
+                <div class="offer-card" >
+                    <img src="./asstes/pexels-olly-3755706.jpg" alt="Summer Sale" >
                     <div class="offer-content">
                         <h2>Summer Sale</h2>
                         <p>Get up to <strong>50% OFF</strong> on all summer collections. Limited time only!</p>
                         <a href="404page.html">Shop Now</a>
                     </div>
                 </div>
-
-                <div class="offer-card" data-aos="fade-down-left">
-                    <img src="./asstes/pexels-olly-3775120.jpg" alt="Buy 1 Get 1">
+                </div>
+                <div data-aos="fade-down-left">
+                <div class="offer-card" >
+                    <img src="./asstes/pexels-olly-3775120.jpg" alt="Buy 1 Get 1" >
                     <div class="offer-content">
                         <h2>Buy 1 Get 1 Free</h2>
                         <p>On selected T-shirts and accessories. Don't miss this deal!</p>
                         <a href="404page.html">Grab Offer</a>
                     </div>
                 </div>
-
-                <div class="offer-card" data-aos="fade-up-right">
+                </div>
+                <div data-aos="fade-up-right">
+                <div class="offer-card" >
                     <img src="./asstes/pexels-sidneimaia-3489131.jpg" alt="Festive Discount">
                     <div class="offer-content">
                         <h2>Festive Discount</h2>
@@ -193,8 +200,9 @@
                         <a href="404page.html">Shop Now</a>
                     </div>
                 </div>
-
-                <div class="offer-card" data-aos="fade-up-left">
+                </div>
+                <div data-aos="fade-up-left">
+                <div class="offer-card" >
                     <img src="./asstes/pexels-solliefoto-298863.jpg" alt="Clearance Sale">
                     <div class="offer-content">
                         <h2>Clearance Sale</h2>
@@ -202,59 +210,78 @@
                         <a href="404page.html">Explore</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="contact-us" id="contact-us">
-            <h1>Get in Touch</h1>
-            <div class="contact-grid">
-                <div class="contact-grid-l" data-aos="zoom-in">
-                    <h2>Send Us a Message</h2>
-                    <form>
-                        <div>
-                            <label>Your Name:</label><br>
-                            <input type="text" placeholder="Enter your name">
-                        </div>
-                        <div>
-                            <label>Email Address</label>
-                            <input type="email" placeholder="Enter your Mail ID">
-                        </div>
-                        <div>
-                            <label>Phone</label><br>
-                            <input type="tel" placeholder="Enter your Mobile Number">
-                        </div>
-                        <div>
-                            <label>Message</label><br>
-                            <textarea placeholder="Type your Message here...."></textarea>
-                        </div>
-                        <div>
-                            <a href="404page.html">Send Now</a>
-                        </div>
-                    </form>
-                </div>
-                <div class="contact-grid-r" data-aos="flip-up">
-                    <h2>Contact Information</h2>
-                    <div class="contact-r-address">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>TN Salem</p>
-                        <i class="fa-solid fa-phone"></i>
-                        <p>9342575839</p>
-                        <i class="fa-solid fa-at"></i>
-                        <p>info@gmail.com</p>
-                    </div>
-                    <div class="contact-r-social-head">
-                        <h2>Follow Us on</h2>
-                        <div class="contact-r-social">
-                            <div><a href="404page.html"><i class="fa-brands fa-instagram"></i></a></div>
-
-                            <div><a href="404page.html"><i class="fa-brands fa-facebook"></i></a></div>
-                            <div><a href="404page.html"><i class="fa-brands fa-pinterest"></i></a></div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
+
+        <section class="contact-us">
+        <div class="contact-head">
+            <div class="contact-message" data-aos="fade-up-left">
+                <h1>Contact US
+                    <hr class="contact-hr">
+                </h1>
+
+                <p>Reach out to us for any enquiry</p>
+                <div class="contact-inputs">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <input type="tel" placeholder="Mobile Number" maxlength="10">
+                    <textarea placeholder="Message"></textarea>
+                    <button onclick="window.location.href = 'index.html'">Submit</button>
+                </div>
+            </div>
+            <div class="contact-maps" data-aos="fade-up-right">
+                <h1> Location</h1>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125042.34611182495!2d78.05589492605883!3d11.653723377408882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1755772254718!5m2!1sen!2sin"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="reachToUS" data-aos="fade-down-right">
+        <div class="reach-container">
+            <div class="reach-top-container">
+                <h4>Reach Out To US</h4>
+                <h3>We'd Love to Hear From You</h3>
+                <p>Or Just reach out manually to <span class="mailID"> info@stackly.com</span></p>
+            </div>
+            <div class="reach-bottom-container">
+                <div class="reach-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>Email Support</h4><br>
+                    <span>our team can respond in real time</span><br>
+                    <a href="404page.html">info@stackly.com</a>
+                </div>
+                <div class="reach-office">
+                    <i class="fa-solid fa-building"></i>
+                    <h4>Vist our office in real time</h4><br>
+                    <span>Vist our office in real time</span><br>
+                    <a href="404page.html">Salem,TN</a>
+                </div>
+                <div class="reach-contact-num">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Call Us Directly</h4><br>
+                    <span>Available During Working Hours</span><br>
+                    <a href="404page.html">!91 1234567890</a>
+                </div>
+                <div class="social-icons">
+                    <h4>Follow Us On</h4><br>
+                    <div class="social-icons-img">
+                    <a href="404page.html"><img width="50" height="50"
+                            src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                            alt="Instagram"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            alt="Twitter"></a>
+                    <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios/50/pinterest.png"
+                            alt="pinterest" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         <footer class="footer">
             <div class="footer-head">
                 <div class="footer-grid">
@@ -281,7 +308,7 @@
                         </a>
                         <a href="404page.html">
                             <i class="fa-solid fa-phone"></i>
-                            <p>9342575839</p>
+                            <p>+91 1234567890</p>
                         </a>
                         <a href="404page.html">
                             <i class="fa-solid fa-at"></i>
