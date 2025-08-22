@@ -20,8 +20,8 @@
         <img src="./assets/stackly-logo.png" alt="logo">
         <nav class="menu-items">
             <a href="./Homepage2/index.html">Home</a>
+            <a href="about.html">About</a>
             <a href="404page.html">Collections</a>
-            <a href="404page.html">About</a>
             <a href="404page.html">Contact</a>
             <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button>
 
@@ -32,7 +32,7 @@
             &#9776
         </div>
     </header>
-    
+
     <section class="hero" id="hero">
         <div class="hero-content" data-aos="fade-left">
             <h2>Welcome to Fashionista</h2>
@@ -236,10 +236,10 @@
         </div>
     </footer>
     </div>
-    <div class="modal-overlay" id="modal-overlay"  >
-        <div class="container" id="container" data-aos="fade-up-left" >
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="container" id="container" data-aos="fade-up-left">
             <button class="close-btn" id="close-popup-btn">&times;</button>
-            <div class="tabs" >
+            <div class="tabs">
                 <button class="tab-btn active" id="login-tab-btn">Login</button>
                 <button class="tab-btn" id="signup-tab-btn">Signup</button>
                 <div class="tab-indicator" id="tab-indicator"></div>
@@ -249,7 +249,7 @@
                 <div class="form-slider">
                     <!-- Login Form -->
                     <section class="form-section">
-                        <form id="login-form" novalidate  >
+                        <form id="login-form" novalidate>
                             <h3>Login</h3>
                             <div class="input-group">
                                 <i class="fa fa-envelope"></i>
@@ -262,14 +262,17 @@
                                 <span class="error-message"></span>
                             </div>
                             <a href="404page.html" class="forgot-password">Forgot Password?</a>
-                            <button type="submit"  >Login</button>
+                            <button type="submit">Login</button>
                         </form>
                         <div class="social-login">
                             <p>Or login with</p>
                             <div class="social-icons">
-                                 <a href="404page.html"> <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" /></a>
-                                    <a href="404page.html"><img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" /></a>
-                                    <a href="404page.html"><img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" /></a>
+                                <a href="404page.html"> <img src="https://img.icons8.com/color/48/google-logo.png"
+                                        alt="google-logo" /></a>
+                                <a href="404page.html"><img src="https://img.icons8.com/cute-clipart/64/facebook.png"
+                                        alt="facebook" /></a>
+                                <a href="404page.html"><img src="https://img.icons8.com/fluency/50/twitter.png"
+                                        alt="twitter" /></a>
                             </div>
                         </div>
                     </section>
@@ -292,13 +295,17 @@
                                 <input type="password" placeholder="Create Password" required minlength="8">
                                 <span class="error-message"></span>
                             </div>
-                            <button type="submit" id="btn-form" >Signup</button>
+                            <button type="submit" id="btn-form">Signup</button>
                             <div class="social-login">
                                 <p>Or Signup with</p>
                                 <div class="social-icons">
-                                   <a href="404page.html"> <img src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" /></a>
-                                    <a href="404page.html"><img src="https://img.icons8.com/cute-clipart/64/facebook.png" alt="facebook" /></a>
-                                    <a href="404page.html"><img src="https://img.icons8.com/fluency/50/twitter.png" alt="twitter" /></a>
+                                    <a href="404page.html"> <img src="https://img.icons8.com/color/48/google-logo.png"
+                                            alt="google-logo" /></a>
+                                    <a href="404page.html"><img
+                                            src="https://img.icons8.com/cute-clipart/64/facebook.png"
+                                            alt="facebook" /></a>
+                                    <a href="404page.html"><img src="https://img.icons8.com/fluency/50/twitter.png"
+                                            alt="twitter" /></a>
                                 </div>
                             </div>
                         </form>
@@ -325,7 +332,7 @@
         const modalOverlay = document.getElementById('modal-overlay');
         const showPopupBtn = document.getElementById('show-popup-btn');
         const closePopupBtn = document.getElementById('close-popup-btn');
-        const btnform =document.getElementById('btn-form');
+        const btnform = document.getElementById('btn-form');
         // btnform.style.display='none';
 
         showPopupBtn.addEventListener('click', () => {
@@ -336,7 +343,7 @@
 
         const closeModal = () => {
             modalOverlay.classList.remove('active');
-                        container.style.display='none';
+            container.style.display = 'none';
 
         };
 
@@ -348,7 +355,7 @@
             }
         });
 
-         signupTabBtn.addEventListener('click', () => {
+        signupTabBtn.addEventListener('click', () => {
             container.classList.add('signup-active');
             loginTabBtn.classList.remove('active');
             signupTabBtn.classList.add('active');
@@ -411,26 +418,8 @@
                     isFormValid = false;
                 }
             });
-
-            //     if (isFormValid) {
-            //         const successMessage = document.createElement('div');
-            //         successMessage.textContent = 'Form submitted successfully!';
-            //         successMessage.style.cssText = `
-            //             position: fixed; top: 20px; left: 50%; transform: translateX(-50%); 
-            //             background-color: #42b72a; color: white; padding: 15px 25px; 
-            //             border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1001;
-            //         `;
-            //         document.body.appendChild(successMessage);
-            //         setTimeout(() => {
-            //             successMessage.remove();
-            //         }, 3000);
-
-            //         form.reset();
-            //         inputs.forEach(clearError);
-            //     }
-            if(isFormValid){
-                // btnform.style.display='block'
-                window.location.href='404page.html';
+            if (isFormValid) {
+                 window.location.href = '404page.html';
             }
         };
 
