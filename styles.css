@@ -588,9 +588,8 @@
 }
 
 @media (max-width:478px) {
-    header img{
+    .header-cls img{
             width: 30%;
-
     }
 }
  @media(max-width: 900px) {
