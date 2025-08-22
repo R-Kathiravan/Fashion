@@ -13,6 +13,9 @@
 
 <body>
     <style>
+        *{
+            margin: 0;
+        }
         .about-us {
             position: relative;
 
@@ -636,7 +639,39 @@
                 font-size: 16px;
             }
         }
+        .Team{
+margin-bottom: 20%;
+        }
+        .team-grid{
+            display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))  ;
+gap: 70px;
+margin: 5%;
+      }
+        .team-content img{
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+  transition: transform 0.5s ease;
+cursor: pointer;
+ 
+        }
+        .team-content h4{
+            font-size: 18px;
+            margin: 2%;
+        }
+        .team-content p{
+            font-size: 16px;
+            margin: 3%;
+            color: #818181;
+            margin: 0%;
+            margin-bottom: 30px;
+        }
+        .team-content img:hover{
+  transform: scale(1.05);
+        }
     </style>
+
     <header class="header-cls">
         <img src="./assets/stackly-logo.png" alt="logo">
         <nav class="menu-items">
@@ -688,7 +723,7 @@
                     framework for global trade that benefits everyone. Our leadership is our commitment to a better
                     tomorrow.</p>
                 <div class="about-partners" data-aos="fade-up-left">
-                    <img src="./assets/sponser-img.webp" alt=""><img src="./assets/sponser-img1.webp" alt=""><img
+                    <img src="./assets/sponser-img.webp" alt="Image"><img src="./assets/sponser-img1.webp" alt=""><img
                         src="./assets/sponser-img2.webp" alt=""><img src="./assets/sponser-img3.png" alt=""><img
                         src="./assets/sponser-img9.webp" alt=""><img src="./assets/sponser-img4.png" alt="">
                 </div>
@@ -781,12 +816,39 @@
                 </div>
             </div>
         </section>
+        <section class="Team">
+            <div class="team-container">
+                <h1>Meet Our Team</h1>
+                <div class="team-grid">
+                    <div class="team-content" data-aos="fade-up-left">
+                        <img src="./assets/pexels-abhishek-kumar-100706288-9418564.jpg" alt="Image">
+                        <h4>Priya</h4>
+                        <p>Designer</p>
+                    </div>
+                    <div class="team-content" data-aos="fade-up-right">
+                        <img src="./assets/pexels-italo-melo-881954-2379005.jpg" alt="Image">
+                        <h4>John</h4>
+                        <p>stylist</p>
+                    </div>
+                    <div class="team-content" data-aos="fade-down-left">
+                        <img src="./assets/pexels-anthonyshkraba-production-8837525.jpg" alt="Image">
+                        <h4>Fathima</h4>
+                        <p>Art Curator</p>
+                    </div>
+                    <div class="team-content" data-aos="fade-down-right">
+                        <img src="./assets/pexels-chloekalaartist-1043471.jpg" alt="Image">
+                        <h4>Steve</h4>
+                        <p>Director</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="newsletter-footer">
             <div class="newsletter-container">
                 <div class="newsletter-content">
                     <div class="news-side1">
                         <h2>Sign Up Our <i>Newsletter</i> for <i>Insights</i></h2>
-                        <p>Stay updated with the latest property news, tips, and exclusive offers. Subscribe now and
+                        <p>Stay updated with the latest news, tips, and exclusive offers. Subscribe now and
                             never
                             miss an opportunity again.</p>
                     </div>
