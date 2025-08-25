@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <title>Services</title>
 </head>
+
 <body>
     <style>
-        *{
+        * {
             margin: 0;
-            
+            scroll-behavior: smooth;
+
         }
-        .services-nav-head{
+
+        .services-nav-head {
             background-image: url('./assets/pexels-craytive-1478477.jpg');
             background-position: center;
             background-size: cover;
@@ -21,34 +30,946 @@
             justify-content: center;
             flex-direction: column;
         }
-        .services-nav-head h1{
+
+        .services-nav-head h1 {
             font-size: 38px;
             color: rgb(200, 0, 255);
             margin: 1%;
         }
-        .services-nav-head a{
+
+        .services-nav-head a {
             text-decoration: none;
             color: black;
             font-size: 18px;
         }
-        .active-service{
+
+        .active-service {
             color: rgb(22, 37, 240) !important;
             font-size: 20px !important;
             font-weight: 700;
         }
 
+        .services-head {
+            text-align: center;
+        }
+
+        .services-head p {
+            line-height: 30px;
+        }
+        .service-body {
+             text-align: center;
+        }
+
+        .service-body h2 {
+            font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.6rem);
+            font-weight: 700;
+            margin: 0 0 12px;
+            color: #000000;
+            animation: fadeInDown 700ms ease both;
+        }
+
+        .service-subtitle {
+            color: #63a3f7;
+            font-size: 1rem;
+            margin: 0 auto 30px;
+            max-width: 65ch;
+            line-height: 1.6;
+            animation: fadeIn 800ms 120ms ease both;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+            gap: 50px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            padding: 22px 20px;
+            text-align: left;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            transform: translateY(15px);
+            animation: riseIn 700ms ease both;
+        }
+
+        .feature:hover {
+            transform: translateY(0);
+            box-shadow: 0 20px 45px rgba(124, 92, 255, 0.3);
+            transition: transform 280ms ease, box-shadow 280ms ease;
+        }
+
+        .icon {
+            font-size: 28px;
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #7c5cff, #22d3ee);
+            color: #0b0c10;
+            box-shadow: 0 8px 18px rgba(34, 211, 238, .25);
+            animation: float 3.6s ease-in-out infinite;
+        }
+
+        .feature h3 {
+            margin: 14px 0 8px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .feature p {
+            margin: 0;
+            color: #004db1;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(.97)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1)
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-6px)
+            }
+        }
+
+        .stats-section {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .service-Services {
+            text-align: center;
+            /* margin: 2%; */
+            border-radius: 30px;
+            border: 2px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            /* width: 100%; */
+            /* display: flex
+; */
+            height: 100vh;
+            align-content: center;
+        }
+
+        
+
+        .work-service {
+            background:
+                radial-gradient(1200px 600px at 10% -20%, #1a1740 0%, transparent 60%),
+                radial-gradient(800px 500px at 110% 10%, #083344 0%, transparent 55%),
+                linear-gradient(180deg, #0b0c10, #0e0f13);
+            /* margin: 7%; */
+            border-radius: 10px;
+
+        }
+
+        .work-service h2 {
+            text-align: center;
+            color: #004db1;
+            margin: 2%;
+        }
+
+        .workflow {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .work-container {
+            margin: 5%;
+            padding: 30px 20px;
+        }
+
+        .step {
+            background: #a2a2a2;
+            /* background: linear-gradient(180deg, blue, rgba(255,255,255,0.02)); */
+
+            padding: 20px;
+            border-radius: 15px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .step.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .icon-work {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 5px 12px rgba(255, 118, 145, 0.3);
+        }
+
+        .step h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .step p {
+            font-size: 18px;
+            color: #3b4ce5;
+            line-height: 1.5;
+        }
+
+        .service-testimonial {
+            margin: 5%;
+        }
+
+        .testimonial-card {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .testimonial-head h2 {
+            text-align: center;
+        }
+
+        .test-flip-card {
+            background-color: transparent;
+            width: 250px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 20px auto;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 1.4s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .test-flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .flip-card-front {
+            /* background: linear-gradient(135deg, #e29574, #bdb6b4); */
+            background-color: cadetblue;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .flip-card-front img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+
+
+        }
+
+        .flip-card-back {
+            /* background: linear-gradient(135deg, #236fbb, #68b7ee); */
+            background-color: darkslategray;
+            color: #fffbfb;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-back p {
+            margin: 2%;
+            /* padding: 20px; */
+
+        }
+
+        @media (max-width:1024px) {
+            .service-Services {
+                height: 100%;
+            }
+
+        }
+
+        .book-service-container {
+            background-image: url('./assets/contact-bg-banner1.jpg');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 5% 7% 10%;
+            color: white;
+            position: relative;
+            margin-top: 10%;
+        }
+
+        @media (max-width:468px) {
+            .book-service-container {
+                background-image: url('./assets/contact-bg-banner1.jpg');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+             
+        }
+
+        .contact-head {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            height: 100%;
+            margin-left: 5%;
+            overflow: hidden;
+
+        }
+
+        .contact-message h1 {
+            /* margin: auto; */
+            /* padding: 20px; */
+        }
+
+        .contact-message {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2%;
+            gap: 0px;
+            width: 100%;
+
+
+        }
+
+        .contact-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 3%;
+
+        }
+
+        .contact-inputs input {
+            padding: 14px 14px 14px 50px;
+            border: 1px solid rgb(34, 112, 112);
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 60%;
+        }
+
+        .contact-inputs textarea {
+            padding: 14px 14px 14px 50px;
+            border: 1px solid rgb(34, 112, 112);
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 60%;
+        }
+
+        .contact-inputs button {
+            padding: 12px;
+            width: 30%;
+            border: 1px solid rgba(0, 0, 0, 0.005);
+            background-color: #19ba7c;
+            color: white;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            margin-bottom: 1%;
+            border-radius: 10px;
+        }
+
+        .contact-inputs button:hover {
+            transform: translateX(10px);
+            background-color: #00ff9d;
+            color: white;
+        }
+
+        .contact-hr {
+            height: 2px;
+            background: #0d5aff;
+            width: 10%;
+            margin: 20px auto;
+            margin-left: 0%;
+            margin-right: auto;
+            margin-top: 0%;
+            margin-bottom: auto;
+        }
+
+        .header-cls {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0px;
+            background-color: rgba(46, 142, 94, 0.39);
+            position: relative;
+            width: 100%;
+            z-index: 1;
+            margin-right: 20px;
+        }
+
+        .header-cls img {
+            width: 10%;
+            padding: 16px;
+        }
+
+
+        .header-cls h1 {
+            color: #fff;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .menu-items a {
+            color: #000000;
+            text-decoration: none;
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 20px;
+            position: relative;
+            margin-right: 30px;
+        }
+
+        .menu-items a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .menu-items a:hover::after {
+            width: 100%;
+        }
+
+        .menu-items a:hover {
+            color: #ff4081;
+        }
+
+        .btn-close {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .popup-trigger-btn {
+            font-size: 1.2rem;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            background: none;
+            transition: all 0.3s ease;
+        }
+
+        .popup-trigger-btn ::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .popup-trigger-btn:hover::after {
+            width: 100%;
+        }
+
+
+
+        .popup-trigger-btn:hover {
+            transform: translateY(-3px);
+            color: #ff4081;
+
+        }
+
+        .footer {
+            background-color: #000000;
+            color: white;
+            padding: 30px;
+         }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #000000;
+        }
+
+        .footer h2,
+        .footer h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer p {
+            line-height: 1.6;
+            font-size: 14px;
+            color: #f7f7f7;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: #ff4b2b;
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social .social-icons img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+
+        .footer-social .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #010101;
+            font-size: 13px;
+            color: #fff8f8;
+            background-color: #000000;
+        }
+
+        .social-icons {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media (max-width:478px) {
+           .header-cls img{
+            width: 30%;
+    }
+        }
+
+        @media(max-width: 900px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-image {
+                height: 300px;
+            }
+        }
+
+        @media(max-width:468px) {
+            .menu-items {
+                flex-direction: column;
+                background: #000000dd;
+                position: fixed;
+                top: 0;
+                right: -350px;
+                width: 250px;
+                height: 100%;
+                padding: 60px 20px;
+                transition: right 0.3s ease;
+                z-index: 999;
+
+            }
+
+            .menu-items a {
+                color: white;
+
+            }
+
+            .menu-items button {
+                color: rgb(255, 255, 255);
+            }
+
+            .btn-close {
+                display: block;
+                color: red;
+            }
+
+
+            .hamburger {
+                display: block;
+                margin-right: 30px;
+                cursor: pointer;
+                color: white;
+
+            }
+
+            .menu-items.show {
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: flex-start;
+            }
+
+            .hamburger:hover {
+                color: #b82e5e;
+            }
+        }
+
+        @media(max-width:768px) {
+            .menu-items a {
+                font-size: 16px;
+            }
+        }
     </style>
+    <header class="header-cls">
+        <img src="./assets/stackly-logo.png" alt="logo">
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="404page.html">Collections</a>
+            <a href="404page.html">Contact</a>
+            <!-- <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button> -->
+            <a class="btn-close">Close</a>
+        </nav>
+
+        <div class="hamburger">
+            &#9776
+        </div>
+    </header>
     <section class="services">
-        <div class="services-container">
-            <div class="services-nav-head">
-                <h1>Services</h1>
-                <div>
+        <div class="services-nav-head">
+            <h1>Services</h1>
+            <div>
                 <a href="index.html">Home</a>/
                 <a class="active-service">Services</a>
+            </div>
+        </div>
+
+        <div class="service-Services"    >
+            <h2 style="margin: 4%;font-size: xxx-large;">Our Company Features</h2>
+            <p class="service-subtitle">
+                We provide a wide range of tailored solutions designed to meet your unique needs. Our focus is on
+                delivering high-quality, reliable, and personalized services that create real value for you. Whether
+                you're looking for expert guidance, hands-on support, or complete end-to-end solutions, we ensure
+                excellence in every step.
+            </p>
+
+            <div class="service-features" data-aos="fade-up" data-aos-delay="300"> 
+                 <div class="feature"  >
+                    <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Fast & Innovative</h3>
+                    <p>Quick design cycles and fresh ideas that keep you ahead of the competition.</p>
+                </div>
+
+                 <div class="feature" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest fabrics and cutting-edge tailoring techniques go into our collections.</p>
+                </div>
+
+                 <div class="feature" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h3>Trend-Led Strategy</h3>
+                    <p>Stay aligned with what's hot on the runway and in the streets worldwide.</p>
+                </div>
+
+                 <div class="feature" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Sustainable Materials</h3>
+                    <p>We prioritize eco-friendly fabrics and ethical sourcing to reduce our footprint.</p>
+                </div>
+
+                <div class="feature" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon"><i class="fa-solid fa-scissors"></i></div>
+                    <h3>Custom Tailoring</h3>
+                    <p>Perfect fits and bespoke designs crafted for your individual measurements.</p>
                 </div>
             </div>
-            
         </div>
     </section>
+    <section class="work-service">
+        <div class="work-container">
+            <h2>How We Work</h2>
+            <div class="workflow">
+                <div class="step">
+                    <div class="icon-work">1</div>
+                    <h3>Consultation</h3>
+                    <p>We understand your fashion goals and personal style preferences.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-work">2</div>
+                    <h3>Design</h3>
+                    <p>Our team curates outfits or custom designs tailored for you.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-work">3</div>
+                    <h3>Styling</h3>
+                    <p>Professional stylists refine your look with accessories and details.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-work">4</div>
+                    <h3>Delivery</h3>
+                    <p>Your styled outfit is delivered, ready to impress anywhere you go.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="service-testimonial">
+        <div class="testimonial-container">
+            <div class="testimonial-head">
+                <h2>TESTIMONIALS</h2>
+            </div>
+            <div class="testimonial-card">
+                <div class="test-flip-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/pexels-alex-green-5699868.jpg" class="testimonial-image" alt="image">
+                            <h4>Sarah</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt delectus accusantium
+                                saepe dolorum aspernatur iusto temporibus, fugit ipsum, reprehenderit repellendus
+                                quaerat sint minus enim iure, aut quisquam vitae error tempora!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-flip-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/pexels-kampus-8636600.jpg" class="testimonial-image" alt="image">
+                            <h4>Johnes</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt delectus accusantium
+                                saepe dolorum aspernatur iusto temporibus, fugit ipsum, reprehenderit repellendus
+                                quaerat sint minus enim iure, aut quisquam vitae error tempora!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-flip-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/pexels-keira-burton-6084178.jpg" class="testimonial-image" alt="image">
+                            <h4>Priya</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt delectus accusantium
+                                saepe dolorum aspernatur iusto temporibus, fugit ipsum, reprehenderit repellendus
+                                quaerat sint minus enim iure, aut quisquam vitae error tempora!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-flip-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/pexels-samad-ismayilov-231721-735552.jpg" alt="image">
+                            <h4>Ria</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt delectus accusantium
+                                saepe dolorum aspernatur iusto temporibus, fugit ipsum, reprehenderit repellendus
+                                quaerat sint minus enim iure, aut quisquam vitae error tempora!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-flip-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/pexels-chloekalaartist-1043471.jpg" alt="image">
+                            <h4>Director - Steve</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt delectus accusantium
+                                saepe dolorum aspernatur iusto temporibus, fugit ipsum, reprehenderit repellendus
+                                quaerat sint minus enim iure, aut quisquam vitae error tempora!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-service" >
+        <div class="book-service-container">
+            <div class="contact-us">
+                <div class="contact-head">
+                    <div class="contact-message" data-aos="fade-up-left">
+                        <h1>Contact US
+                            <hr class="contact-hr">
+                        </h1>
+
+                        <p>Reach out to us for any enquiry</p>
+                        <div class="contact-inputs">
+                            <input type="text" placeholder="Full Name">
+                            <input type="email" placeholder="Email">
+                            <input type="tel" placeholder="Mobile Number" maxlength="10">
+                            <textarea placeholder="Message"></textarea>
+                            <button onclick="window.location.href = 'index.html'">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer class="footer" id="footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Fashionista</h2>
+                <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="404page.html">Collections</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="404page.html">Blog</a></li>
+                    <li><a href="404page.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@Fashionista.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Location: 45 Fashion Street, Mumbai, India</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="404page.html"><img width="50" height="50"
+                            src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                            alt="Instagram"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            alt="Twitter"></a>
+                    <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios/50/pinterest.png"
+                            alt="pinterest" /></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Fashionista. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        
+    <script> 
+    AOS.init();
+        const steps = document.querySelectorAll('.step');
+
+        function showSteps() {
+            const trigger = window.innerHeight * 0.85;
+            steps.forEach(step => {
+                const rect = step.getBoundingClientRect().top;
+                if (rect < trigger) step.classList.add('show');
+            });
+        }
+
+        window.addEventListener('scroll', showSteps);
+        window.addEventListener('load', showSteps);
+    </script>
 </body>
+
 </html>
