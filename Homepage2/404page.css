@@ -146,16 +146,31 @@
 .footer-content-contact a:hover{
   color: #0385ff;
 }
+.footer-content-legal-link a{
+  text-decoration: none;
+  color: white;
+   text-align: justify;
 
+}
 .footer-content-legal-link li {
   list-style: none;
-  line-height: 70px;
   text-indent: 20px;
-  cursor: pointer;
-    transition: transform 0.5s ease;
+ text-align: justify;
+     transition: transform 0.5s ease;
 
 }
 .footer-content-legal-link li:hover{
+    color: #0385ff;
+  transform: translatey(-10px);
+}
+.footer-content-legal-link a {
+  line-height: 70px;
+  cursor: pointer;
+    transition: transform 0.5s ease;
+    /* color: white; */
+
+}
+.footer-content-legal-link a:hover{
   color: #0385ff;
   transform: translatey(-10px);
 }

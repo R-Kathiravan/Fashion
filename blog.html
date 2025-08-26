@@ -5,12 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
     <title>Blog</title>
 </head>
 
 <body>
     <style>
+        :root{
+            --font-color-nav-head:rgb(200, 0, 255);
+            --font-nav-head-a:black;
+            --font-active-blog:rgb(22, 37, 240);
+            --heading-font:black;
+            --black:black;
+            --btn-color:#ff4081;
+            --btn-hover:#e73370;
+            --btn-font-color:white;
+            --white:white;
+            --red:red;
+            --basic-font:black;
+            --news-btn:#222;
+            --news-date:#777;
+            --news-para:#444;
+            --news-btn-hover:#555;
+            --categories-bg:rgba(0, 0, 0, 0.5);
+            --categories-font:white;
+
+        }
+        html.dark-mode{
+              --font-color-nav-head: rgb(55, 200, 255);   /* invert purple to a neon cyan */
+    --font-nav-head-a: white;                   /* black → white */
+    --font-active-blog: rgb(180, 200, 255);     /* bright bluish tone */
+    --heading-font: white;                      /* black → white */
+    --black: white;                             /* inverted */
+    --btn-color: #ff80ab;                       /* softer pink for dark bg */
+    --btn-hover: #ff99bb;                       /* hover brighter */
+    --btn-font-color: black;                    /* white → black */
+    --white: #111;                              /* white → dark */
+    --red: #ff6b6b;                             /* red softened for dark bg */
+    --basic-font: #eee;                         /* black → light gray */
+    --news-btn: #ddd;                           /* dark → light */
+    --news-date: #aaa;                          /* medium gray */
+    --news-para: #ccc;                          /* softer for readability */
+    --news-btn-hover: #fff;  
+     --categories-bg: rgba(255, 255, 255, 0.15); /* inverted translucent */
+    --categories-font: #f5f5f5;       
+        }
+        body{
+            background-color: var(--white);
+        }
         .blog-nav-head {
             background-image: url('./assets/pexels-craytive-1478477.jpg');
             background-position: center;
@@ -24,41 +65,43 @@
 
         .blog-nav-head h1 {
             font-size: 38px;
-            color: rgb(200, 0, 255);
+            color:  var(--font-color-nav-head);
             margin: 1%;
         }
 
         .blog-nav-head a {
             text-decoration: none;
-            color: black;
+            color: var(--black);
             font-size: 18px;
         }
 
         .active-blog {
-            color: rgb(22, 37, 240) !important;
+            color: var(--font-active-blog) !important;
             font-size: 20px !important;
             font-weight: 700;
         }
 
         .blog-container {
-            width: 90%;
+            /* width: 90%; */
             margin: 50px auto;
             font-family: 'Poppins', sans-serif;
-        }
+            background-color: var(--white);
+          }
 
         .blog-heading {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #222;
+            color: var(--news-btn);
             position: relative;
+ 
         }
 
         .blog-heading::after {
             content: "";
             width: 60px;
             height: 3px;
-            background: #ff4081;
+            background: var(--btn-color);
             display: block;
             margin: 10px auto 0;
             border-radius: 5px;
@@ -68,7 +111,7 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 25px;
-        }
+         }
 
         .blog-featured {
             position: relative;
@@ -87,7 +130,7 @@
 
         .blog-featured:nth-child(1) img {
             width: 100%;
-            height: 550px;
+            height: 460px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
@@ -98,7 +141,9 @@
 
         .blog-text {
             padding: 20px;
-            background: #fff;
+            background: var(--white);
+                        color: var(--black);
+
         }
 
         .blog-featured .blog-text {
@@ -106,7 +151,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.9);
+            background:var(--white);
         }
 
         .blog-side {
@@ -116,7 +161,7 @@
         }
 
         .blog-card {
-            background: #fff;
+            background: var(--white);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -131,6 +176,13 @@
             width: 100%;
             height: 160px;
             object-fit: cover;
+            transition: transform 0.5s ease;
+
+        }
+
+        .blog-card img:hover {
+            transform: scale(1.1);
+
         }
 
         .blog-card .blog-text {
@@ -141,15 +193,15 @@
             display: inline-block;
             margin-top: 10px;
             padding: 8px 18px;
-            background: #ff4081;
-            color: #fff;
+            background: var(--btn-color);
+            color: var(--white);
             border-radius: 25px;
             text-decoration: none;
             transition: 0.3s ease;
         }
 
         .read-more:hover {
-            background: #e73370;
+            background: var(--btn-hover);
         }
 
         .news-content-grid {
@@ -157,30 +209,15 @@
             grid-template-columns: 1fr;
             gap: 50px;
         }
-
-        /* .news-content-container {
-            display: flex;
-            flex-direction: row;
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            align-items: flex-end;
-            gap: 30px;
-
+        .news-container{
+            background-color: var(--white);
         }
-
-        .news-content-container img {
-            width: 50%;
-            height: 425px;
-            border-radius: 30px;
-        } */
         .news-heading {
             margin: 3%;
             text-align: center;
             font-size: xx-large;
             margin-top: 5%;
+            color: var(--black);
         }
 
         .news-content-grid {
@@ -191,12 +228,12 @@
 
         .news-content-container {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 20px;
             border: 1px solid #ddd;
             border-radius: 12px;
             overflow: hidden;
-            background: #fff;
+            background: var(--white);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 15px;
         }
@@ -215,19 +252,19 @@
         .news-content-text h3 {
             font-size: 1.2rem;
             margin-bottom: 8px;
-            color: #222;
+            color: var(--news-btn);
         }
 
         .news-content-text .date {
             font-size: 0.85rem;
-            color: #777;
+            color: var(--news-date);
             display: block;
             margin-bottom: 10px;
         }
 
         .news-content-text p {
             font-size: 0.95rem;
-            color: #444;
+            color: var(--news-para);
             margin-bottom: 12px;
             line-height: 1.4;
         }
@@ -235,8 +272,8 @@
         .news-content-text a {
             display: inline-block;
             padding: 6px 12px;
-            background: #222;
-            color: #fff;
+            background: var(--news-btn);
+            color: var(--white);
             border-radius: 6px;
             text-decoration: none;
             font-size: 0.9rem;
@@ -244,7 +281,7 @@
         }
 
         .news-content-text a:hover {
-            background: #555;
+            background: var(--news-btn-hover);
         }
 
         .categories-head {
@@ -252,6 +289,7 @@
             text-align: center;
             font-size: xx-large;
             margin-top: 5%;
+            color: var(--black);
         }
 
         .categories-grid {
@@ -302,8 +340,8 @@
             right: 0;
             margin: 0;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
+            background: var(--categories-bg);
+            color: var(--categories-font);
             font-size: 20px;
             text-align: center;
         }
@@ -313,6 +351,7 @@
             text-align: center;
             font-size: xx-large;
             margin-top: 5%;
+            color: var(--black);
         }
 
         .popular-post-grid {
@@ -328,10 +367,11 @@
             border: 1px solid #ddd;
             border-radius: 12px;
             overflow: hidden;
-            background: #fff;
+            background: var(--white);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 15px;
             transition: all 0.7s ease;
+            color:var(--black);
         }
 
         .popular-post-text h4 {
@@ -353,13 +393,13 @@
             padding: 12px;
             border: 2px solid;
             border-radius: 30px;
-            background-color: #65aaf5;
-            color: #fff;
+            background-color: var(--btn-color);
+            color: var(--white);
             transition: all 0.6s ease;
         }
 
         .popular-post-content a:hover {
-            background-color: #047dff;
+            background-color: var(--btn-hover);
         }
 
         .newsletter-container {
@@ -369,7 +409,7 @@
             background-size: cover;
             background-attachment: fixed;
             padding: 5% 7% 10%;
-            color: white;
+            color:white;
             position: relative;
             margin-top: 10%;
         }
@@ -413,21 +453,21 @@
         }
 
         .news-side2 input::placeholder {
-            color: white;
+            color: var(--white);
         }
 
         .news-side2 button {
             padding: 12px;
             border-radius: 25px;
             border-color: #41404000;
-            color: #ffffff;
-            background-color: #1e2123;
+            color: var(--white);
+            background-color: var(--btn-color);
             cursor: pointer;
             margin: 9%;
         }
 
         .news-side2 button:hover {
-            background-color: #007bff;
+            background-color: var(--btn-hover);
         }
 
 
@@ -466,7 +506,7 @@
                 height: 100%;
             }
         }
-        
+
         .header-cls {
             display: flex;
             flex-direction: row;
@@ -487,7 +527,7 @@
 
 
         .header-cls h1 {
-            color: #fff;
+            color: var(--white);
             font-weight: bold;
             font-family: 'Playfair Display', serif;
             font-size: 24px;
@@ -495,7 +535,13 @@
             margin-left: 15px;
             cursor: pointer;
         }
-
+        .dark-btn{
+            background-color: #00000000;
+            border-color: #00000000;
+            cursor: pointer;
+              font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
         .menu-items {
             display: flex;
             flex-wrap: wrap;
@@ -503,7 +549,7 @@
         }
 
         .menu-items a {
-            color: #000000;
+            color: var(--black);
             text-decoration: none;
             padding: 10px;
             letter-spacing: 1px;
@@ -519,7 +565,7 @@
             bottom: 5px;
             width: 0%;
             height: 2px;
-            background: #fff;
+            background: var(--white);
             transition: width 0.3s ease;
         }
 
@@ -528,7 +574,7 @@
         }
 
         .menu-items a:hover {
-            color: #ff4081;
+            color: var(--btn-hover);
         }
 
         .btn-close {
@@ -555,7 +601,7 @@
             bottom: 5px;
             width: 0%;
             height: 2px;
-            background: #fff;
+            background: var(--white);
             transition: width 0.3s ease;
         }
 
@@ -567,35 +613,36 @@
 
         .popup-trigger-btn:hover {
             transform: translateY(-3px);
-            color: #ff4081;
+            color: var(--btn-hover);
 
         }
 
         .footer {
             background-color: #000000;
-            color: white;
+            color:var(--white);
             padding: 30px;
-         }
+        }
 
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-            background-color: #000000;
+            /* max-width: 1200px; */
+            /* margin: auto; */
+            background-color: black;
         }
 
         .footer h2,
         .footer h3 {
             margin-bottom: 15px;
             font-weight: 600;
+            color: white;
         }
 
         .footer p {
             line-height: 1.6;
             font-size: 14px;
-            color: #f7f7f7;
+            color: white;
         }
 
         .footer-links ul {
@@ -609,12 +656,12 @@
 
         .footer-links ul li a {
             text-decoration: none;
-            color: #ccc;
+            color: white;
             transition: color 0.3s;
         }
 
         .footer-links ul li a:hover {
-            color: #ff4b2b;
+            color: var(--btn-hover);
         }
 
         .footer-social .social-icons {
@@ -639,8 +686,8 @@
             padding-top: 15px;
             border-top: 1px solid #010101;
             font-size: 13px;
-            color: #fff8f8;
-            background-color: #000000;
+            color: white;
+            background-color: black;
         }
 
         .social-icons {
@@ -649,15 +696,15 @@
         }
 
         @media (max-width:478px) {
-           .header-cls img{
-            width: 30%;
-    }
+            .header-cls img {
+                width: 30%;
+            }
         }
 
         @media(max-width:468px) {
             .menu-items {
                 flex-direction: column;
-                background: #000000dd;
+                background: var(--black);
                 position: fixed;
                 top: 0;
                 right: -350px;
@@ -670,17 +717,17 @@
             }
 
             .menu-items a {
-                color: white;
+                color: var(--white);
 
             }
 
             .menu-items button {
-                color: rgb(255, 255, 255);
+                color:  var(--white);
             }
 
             .btn-close {
                 display: block;
-                color: red;
+                color: var(--red);
             }
 
 
@@ -688,7 +735,7 @@
                 display: block;
                 margin-right: 30px;
                 cursor: pointer;
-                color: white;
+                color:var(--white);
 
             }
 
@@ -702,7 +749,7 @@
             }
 
             .hamburger:hover {
-                color: #b82e5e;
+                color: var(--btn-hover);
             }
         }
 
@@ -711,8 +758,16 @@
                 font-size: 16px;
             }
         }
+ 
+
+        /* @media (prefers-color-scheme: dark) {
+            body {
+                background: #121212;
+                color: #ffffff;
+            }
+        } */
     </style>
-     <header class="header-cls">
+    <header class="header-cls">
         <img src="./assets/stackly-logo.png" alt="logo">
         <nav class="menu-items">
             <a href="index.html">Home</a>
@@ -721,8 +776,9 @@
             <a href="blog.html">Blog</a>
             <a href="404page.html">Collections</a>
             <a href="404page.html">Contact</a>
-            <!-- <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button> -->
             <a class="btn-close">Close</a>
+            <button id="theme-toggle" class="dark-btn">Change Theme</button>
+
         </nav>
 
         <div class="hamburger">
@@ -742,7 +798,7 @@
 
             <div class="blog-grid">
                 <div class="blog-featured" data-aos="fade-up-left">
-                    <img src="./assets/blog.jpeg" alt="Fashion Blog">
+                    <img src="./assets/crew-EMWgB-BTyh0-unsplash.jpg" alt="Fashion Blog">
                     <div class="blog-text">
                         <h2>Discover the New Fashion Trends</h2>
                         <p>Explore the latest trends, style tips, and creative inspirations from our fashion
@@ -761,7 +817,7 @@
                         </div>
                     </div>
 
-                    <div class="blog-card" data-aos="fade-down-right">
+                    <div class="blog-card" data-aos="fade-up-right">
                         <img src="./assets/blog-img.jpeg" alt="Fashion Blog">
                         <div class="blog-text">
                             <h2>Style Inspiration</h2>
@@ -946,7 +1002,7 @@
         </div>
         </div>
     </section>
-     <footer class="footer" id="footer" data-aos="fade-up">
+    <footer class="footer" id="footer" data-aos="fade-up">
         <div class="footer-container">
             <div class="footer-brand">
                 <h2>Fashionista</h2>
@@ -991,13 +1047,41 @@
             <p>© 2025 Fashionista. All Rights Reserved.</p>
         </div>
     </footer>
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
     <script>
-        AOS.init();
+        AOS.init({ once: true });
     </script>
+    <script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+  
+  // Function to apply the saved theme on page load
+  function applyTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      htmlElement.classList.add('dark-mode');
+    } else {
+      htmlElement.classList.remove('dark-mode');
+    }
+  }
+
+  // Apply theme when the page loads
+  applyTheme();
+
+  // Toggle theme and save the preference
+  themeToggle.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark-mode');
+    
+    // Save the current theme to localStorage
+    if (htmlElement.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
 
 </body>
 
