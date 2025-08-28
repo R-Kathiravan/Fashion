@@ -25,7 +25,9 @@
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
             <a href="404page.html">Contact</a>
-            <button class="popup-trigger-btn" id="show-popup-btn">Login / Signup</button>
+            <a class="popup-trigger-btn" id="show-popup-btn">Login / Signup</a>
+            <a id="theme-toggle" class="dark-btn">Change Theme</a>
+
 
             <a class="btn-close">Close</a>
         </nav>
@@ -327,8 +329,8 @@
             // easing: 'ease-in-out',
             // once: true
         });
-       
-  const container = document.getElementById('container');
+
+        const container = document.getElementById('container');
         const loginTabBtn = document.getElementById('login-tab-btn');
         const signupTabBtn = document.getElementById('signup-tab-btn');
         const tabIndicator = document.getElementById('tab-indicator');
@@ -430,6 +432,32 @@
         document.getElementById('login-form').addEventListener('submit', handleFormSubmit);
         document.getElementById('signup-form').addEventListener('submit', handleFormSubmit);
 
+
+          const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        // Apply theme when the page loads
+        applyTheme();
+
+        // Toggle theme and save the preference
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            // Save the current theme to localStorage
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
 
     </script>
 </body>
