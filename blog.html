@@ -42,13 +42,13 @@
             --btn-font-color: black;
             --white: #111;
             --red: #ff6b6b;
-             --basic-font: #eee;
+            --basic-font: #eee;
             --news-btn: #ddd;
             --news-date: #aaa;
             --news-para: #ccc;
-             --news-btn-hover: #fff;
+            --news-btn-hover: #fff;
             --categories-bg: rgba(255, 255, 255, 0.15);
-             --categories-font: #f5f5f5;
+            --categories-font: #f5f5f5;
         }
 
         body {
@@ -518,19 +518,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 6px 0px;
-            background-color: rgba(46, 142, 94, 0.39);
+            background-color:var(--white);
             position: relative;
             width: 100%;
             z-index: 1;
             margin-right: 20px;
         }
-
-        .header-cls img {
-            width: 10%;
-            padding: 16px;
-        }
-
-
         .header-cls h1 {
             color: var(--white);
             font-weight: bold;
@@ -775,11 +768,7 @@
                 color: #ffffff;
             }
         } */
-        .logo {
-            text-decoration: none;
-            font-size: 26px;
-            padding: 20px;
-        }
+
 
         .btn:hover {
             transform: scale(1.1);
@@ -800,10 +789,16 @@
             background: #ddd;
             color: black;
         }
+
+        .logo {
+            width:35%;
+            padding: 20px;
+        }
     </style>
     <header class="header-cls">
-        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
-        <a href="index.html" class="logo">Stackly</a>
+         <a href="index.html">
+        <img src="./assets/stackly-logo.png" alt="logo" class="logo">
+        </a>
 
         <nav class="menu-items">
             <a href="index.html">Home</a>

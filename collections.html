@@ -27,7 +27,7 @@
             --border-color: #ddd;
             --shadow-light: rgba(0, 0, 0, 0.1);
             --shadow-dark: rgba(0, 0, 0, 0.2);
-   
+            --border-card:rgba(0, 0, 0, 0.138);
 
         }
         
@@ -47,6 +47,8 @@
     --border-color: #333333;
     --shadow-light: rgba(255, 255, 255, 0.05);
     --shadow-dark: rgba(255, 255, 255, 0.1);
+        --border-card: rgba(255, 255, 255, 0.1);
+
 }
         body{
             background-color: var(--white);
@@ -125,6 +127,8 @@
             border-radius: 10px;
             padding: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        border: 2px solid var(--border-card);
+
             text-align: center;
             transition: 0.3s ease;
         }
@@ -205,6 +209,8 @@
         .access-card {
             background: var(--white);
             border-radius: 15px;
+                        border: 2px solid var(--border-card);
+
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
@@ -318,14 +324,11 @@
             background:var(--white);
             padding: 20px;
             border-radius: 15px;
-            border: 2px solid rgba(0, 0, 0, 0.138);
+            border: 2px solid var(--border-card);
             /* box-shadow: 0 5px 15px var(--accent); */
             max-width: 280px;
             margin: 0 auto;
             position: relative;
-
-            /* animation: heartbeat 1.9s infinite; */
-
         }
 
         .offer-card img {
@@ -334,11 +337,6 @@
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
-
-        /* .offer-card img:hover {
-      animation: heartbeat 1.5s infinite;
-    } */
-
         .offer-card h3 {
             margin: 15px 0 10px;
             color: var(--black);
@@ -457,19 +455,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 6px 0px;
-            background-color: rgba(46, 142, 94, 0.39);
+            background-color: var(--white);
             position: relative;
             width: 100%;
             z-index: 1;
             margin-right: 20px;
         }
-
-        .header-cls img {
-            width: 10%;
-            padding: 16px;
-        }
-
-
         .header-cls h1 {
             color: var(--white);
             font-weight: bold;
@@ -703,10 +694,7 @@
                 font-size: 16px;
             }
         }
- .logo{text-decoration: none;
-font-size: 26px;
-padding: 20px;
-}
+ 
  .btn:hover {
       transform: scale(1.1);
     }
@@ -726,10 +714,15 @@ padding: 20px;
       background: #ddd;
       color: black;
     }
+         .logo {
+     width: 35%;
+     padding: 16px;
+ }
     </style>
     <header class="header-cls">
-        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
-                  <a href="index.html"class="logo">Stackly</a>
+         <a href="index.html">
+        <img src="./assets/stackly-logo.png" alt="logo" class="logo">
+        </a>
 
         <nav class="menu-items">
             <a href="index.html">Home</a>

@@ -7,17 +7,43 @@
     <title>About</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
+
 
 
 </head>
 
 <body>
     <style>
-  
+        :root {
+            --white: white;
+            --black: black;
+            --hero-bg: antiquewhite;
+            --products-bg: rgb(122, 255, 255);
+            --customer-bg: rgb(235, 23, 118);
+            --categories-bg: cadetblue;
+            --border-card: #e0e0e0;
+            --icon: #007bff;
+            --card-h4: #343a40;
+            --card-p: #6c757d;
+        }
+
+        html.dark-mode {
+            --white: #121212;
+            --black: #e0e0e0;
+            --hero-bg: #21201d;
+            --products-bg: #004d40;
+            --customer-bg: #880e4f;
+            --categories-bg: #37474f;
+            --border-card: rgba(255, 255, 255, 0.1);
+            --icon: #64b5f6;
+            --card-h4: #ffffff;
+            --card-p: #aaaaaa;
+        }
+        body{
+            background-color: var(--white);
+        }
         .about-us {
             position: relative;
-
         }
 
         .about-heading {
@@ -27,13 +53,14 @@
             width: 100%;
             padding: 40px 0;
             flex-wrap: nowrap;
-            background-color: antiquewhite;
+            background-color: var(--hero-bg);
         }
 
         .about-text-content {
             text-align: center;
             max-width: 600px;
             margin: 0 20px;
+            color: var(--black);
         }
 
         .about-corner-image {
@@ -107,6 +134,7 @@
         .about-us-text-content {
             margin: 5%;
             text-align: center;
+            color: var(--black);
         }
 
         .about-clients-container {
@@ -127,12 +155,10 @@
         }
 
         .about-clients-products {
-            background-color: rgb(122, 255, 255);
+            background-color: var(--products-bg);
             height: 70vh;
             min-width: 700px;
             margin-left: 20%;
-
-
         }
 
         .about-products {
@@ -141,7 +167,7 @@
             text-align: center;
             margin: 5%;
             display: flex;
-            color: rgb(0, 0, 0);
+            color: var(--black);
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -153,7 +179,7 @@
             text-align: center;
             margin: 5%;
             display: flex;
-            color: rgb(0, 0, 0);
+            color: var(--black);
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -165,20 +191,20 @@
             text-align: center;
             margin: 5%;
             display: flex;
-            color: rgb(0, 0, 0);
+            color: var(--black);
             align-items: center;
             justify-content: center;
             flex-direction: column;
         }
 
         .about-clients-customer {
-            background-color: rgb(235, 23, 118);
+            background-color: var(--customer-bg);
             height: 70vh;
             min-width: 700px;
         }
 
         .about-clients-categories {
-            background-color: cadetblue;
+            background-color: var(--categories-bg);
             min-width: 600px;
             height: 70vh;
         }
@@ -197,6 +223,7 @@
 
         .choose-us-head {
             text-align: center;
+            color: var(--black);
         }
 
         .choose-us-head h1 {
@@ -211,8 +238,8 @@
         }
 
         .card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
+            background-color: var(--white);
+            border: 1px solid var(--border-card);
             border-radius: 8px;
             padding: 20px;
             text-align: center;
@@ -225,9 +252,9 @@
             top: 0;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #ffffff;
+            background-color: var(--white);
             border-radius: 50%;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-card);
             width: 80px;
             height: 80px;
             display: flex;
@@ -237,7 +264,7 @@
 
         .card-icon i {
             font-size: 36px;
-            color: #007bff;
+            color: var(--icon);
         }
 
         .card-content {
@@ -248,13 +275,13 @@
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 20px;
-            color: #343a40;
+            color: var(--card-h4);
         }
 
         .card-content p {
             font-size: 15px;
             line-height: 1.6;
-            color: #6c757d;
+            color: var(--card-p);
         }
 
 
@@ -282,7 +309,7 @@
             content: '';
             position: absolute;
             z-index: 0;
-            background-color: #007bff;
+            background-color: var(--icon);
             width: 100%;
             height: 100%;
             top: 0;
@@ -304,17 +331,17 @@
 
         .card:hover h4,
         .card:hover p {
-            color: #ffffff;
+            color: var(--white);
             transition: color 0.4s ease-in-out 0.1s;
         }
 
         .card:hover .card-icon {
-            background-color: #ffffff;
-            border-color: #007bff;
+            background-color: var(--white);
+            border-color: var(--icon);
         }
 
         .card:hover .card-icon i {
-            color: #007bff;
+            color: var(--icon);
         }
 
         .newsletter-container {
@@ -324,7 +351,7 @@
             background-size: cover;
             background-attachment: fixed;
             padding: 5% 7% 10%;
-            color: white;
+            color: var(--white);
             position: relative;
             margin-top: 10%;
         }
@@ -345,7 +372,7 @@
             grid-template-columns: 1fr 1fr;
             padding-top: 7%;
             padding-left: 5%;
-            color: white;
+            color:  white;
             justify-items: center;
             align-items: end;
             padding-right: 2%;
@@ -358,7 +385,7 @@
         .news-side2 input {
             background-color: transparent;
             border: none;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid  white;
             width: 100%;
             max-width: 400px;
             height: 50px;
@@ -376,8 +403,8 @@
             padding: 12px;
             border-radius: 25px;
             border-color: #41404000;
-            color: #ffffff;
-            background-color: #1e2123;
+            color: var(--white);
+            background-color: #54a3d7;
             cursor: pointer;
             margin: 9%;
         }
@@ -392,18 +419,17 @@
             justify-content: space-between;
             align-items: center;
             padding: 6px 0px;
-            background-color: rgba(46, 142, 94, 0.39);
+            background-color:var(--white);
             position: relative;
             width: 100%;
             z-index: 1;
             margin-right: 20px;
         }
 
-        .header-cls img {
-            width: 10%;
-            padding: 16px;
-        }
-
+         .logo {
+     width: 35%;
+     padding: 16px;
+ }
 
         .header-cls h1 {
             color: #fff;
@@ -422,7 +448,7 @@
         }
 
         .menu-items a {
-            color: #000000;
+            color: var(--black);
             text-decoration: none;
             padding: 10px;
             letter-spacing: 1px;
@@ -457,6 +483,26 @@
         .hamburger {
             display: none;
         }
+         .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .theme-toggle {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      margin-right: 10px;
+    }
+
+    body.dark .theme-toggle {
+      background: #ddd;
+      color: black;
+    }
+
 
         .popup-trigger-btn {
             font-size: 1.2rem;
@@ -572,10 +618,11 @@
             .header-cls img {
                 width: 30%;
             }
-             .newsletter-content{
+
+            .newsletter-content {
                 grid-template-columns: 1fr;
-             }
-             
+            }
+
         }
 
         @media(max-width: 900px) {
@@ -665,10 +712,16 @@
             cursor: pointer;
 
         }
+        .team-head{
+            font-size: xx-large;
+            color: var(--black);
+            text-align: center;
+        }
 
         .team-content h4 {
             font-size: 18px;
             margin: 2%;
+            color: var(--black);
         }
 
         .team-content p {
@@ -686,18 +739,22 @@
         .team-container h1 {
             margin-left: 7%;
         }
-        *{
-            overflow:visible;
+
+        * {
+            overflow: visible;
         }
-        .logo{text-decoration: none;
-font-size: 26px;
-padding: 20px;
-}
+
+        .logo {
+            text-decoration: none;
+            font-size: 26px;
+            padding: 20px;
+        }
     </style>
 
     <header class="header-cls">
-        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
-                  <a href="index.html"class="logo">Stackly</a>
+         <a href="index.html">
+        <img src="./assets/stackly-logo.png" alt="logo" class="logo">
+        </a>
 
         <nav class="menu-items">
             <a href="index.html">Home</a>
@@ -706,9 +763,7 @@ padding: 20px;
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
             <a href="contact.html">Contact</a>
- 
- 
-
+            <button class="btn theme-toggle" id="theme-toggle">🌙</button>
             <a class="btn-close">Close</a>
         </nav>
 
@@ -847,7 +902,7 @@ padding: 20px;
     </section>
     <section class="Team">
         <div class="team-container">
-            <h1>Meet Our Team</h1>
+            <h1 class="team-head">Meet Our Team</h1>
             <div class="team-grid">
                 <div class="team-content" data-aos="fade-up-left">
                     <img src="./assets/pexels-abhishek-kumar-100706288-9418564.jpg" alt="Image">
@@ -936,13 +991,13 @@ padding: 20px;
         </div>
     </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 
     <script>
         AOS.init({
             duration: 800,
         });
-        
+
 
         const container1 = document.getElementById("about-clients-container");
 
@@ -959,7 +1014,30 @@ padding: 20px;
 
             e.preventDefault();
         }, { passive: false });
-        
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
     </script>
 </body>
 

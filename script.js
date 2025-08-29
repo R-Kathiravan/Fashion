@@ -40,26 +40,23 @@ themeBtn.addEventListener("click", () => {
     });
 
 
-  //  function applyTheme() {
-  //   const savedTheme = localStorage.getItem('theme');
-  //   if (savedTheme === 'dark') {
-  //     htmlElement.classList.add('dark-mode');
-  //   } else {
-  //     htmlElement.classList.remove('dark-mode');
-  //   }
-  // }
+   function applyTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      htmlElement.classList.add('dark-mode');
+    } else {
+      htmlElement.classList.remove('dark-mode');
+    }
+  }
 
-  // // Apply theme when the page loads
-  // applyTheme();
+   applyTheme();
 
-  // // Toggle theme and save the preference
-  // themeToggle.addEventListener('click', () => {
-  //   htmlElement.classList.toggle('dark-mode');
+   themeToggle.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark-mode');
     
-  //   // Save the current theme to localStorage
-  //   if (htmlElement.classList.contains('dark-mode')) {
-  //     localStorage.setItem('theme', 'dark');
-  //   } else {
-  //     localStorage.setItem('theme', 'light');
-  //   }
-  // });
+     if (htmlElement.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });

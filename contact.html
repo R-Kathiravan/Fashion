@@ -265,18 +265,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 6px 0px;
-            background-color: rgba(46, 142, 94, 0.39);
-            position: relative;
+            background-color: var(--white);
+            position: fixed;
             width: 100%;
             z-index: 1;
             margin-right: 20px;
         }
 
-        .header-cls img {
-            width: 10%;
-            padding: 16px;
-        }
-
+        .logo {
+     width: 35%;
+     padding: 16px;
+ }
+*{
+    margin: 0;
+}
 
         .header-cls h1 {
             color: var(--white);
@@ -381,9 +383,7 @@
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            /* max-width: 1200px; */
-            /* margin: auto; */
+            gap: 30px; 
             background-color: black;
         }
 
@@ -514,11 +514,11 @@
             }
         }
 
-        .logo {
+        /* .logo {
             text-decoration: none;
             font-size: 26px;
             padding: 20px;
-        }
+        } */
 
         .btn:hover {
             transform: scale(1.1);
@@ -541,9 +541,9 @@
         }
     </style>
     <header class="header-cls">
-        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
-        <a href="index.html" class="logo">Stackly</a>
-
+        <a href="index.html">
+        <img src="./assets/stackly-logo.png" alt="logo" class="logo">
+        </a>
         <nav class="menu-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>

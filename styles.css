@@ -68,15 +68,16 @@
      justify-content: space-between;
      align-items: center;
      padding: 6px 0px;
-     background-color: var(--menu-bg);
+     /* background-color: var(--menu-bg); */
+     background-color: #ffffff;
      position: fixed;
      width: 100%;
      z-index: 1;
      margin-right: 20px;
  }
 
- .header-cls img {
-     width: 10%;
+ .logo {
+     width: 35%;
      padding: 16px;
  }
 
@@ -90,10 +91,7 @@
      margin-left: 15px;
      cursor: pointer;
  }
-.logo{text-decoration: none;
-font-size: 26px;
-padding: 20px;
-}
+ 
  .menu-items {
      display: flex;
      flex-wrap: wrap;
@@ -160,7 +158,7 @@ padding: 20px;
       background: #333;
       color: white;
       border: none;
-      padding: 8px 12px;
+      padding: 6px 12px;
       border-radius: 6px;
       cursor: pointer;
       transition: transform 0.3s ease, background 0.3s ease;

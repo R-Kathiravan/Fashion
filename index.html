@@ -16,8 +16,9 @@
 
 <body>
     <header class="header-cls">
-        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
-        <a href="index.html" class="logo">Stackly</a>
+        <a href="index.html">
+        <img src="./assets/stackly-logo.png" alt="logo" class="logo" >
+    </a>
         <nav class="menu-items">
             <a href="./Homepage2/index.html">Home</a>
             <a href="about.html">About</a>
@@ -442,15 +443,12 @@
             }
         }
 
-        // Apply theme when the page loads
-        applyTheme();
+         applyTheme();
 
-        // Toggle theme and save the preference
-        themeToggle.addEventListener('click', () => {
+         themeToggle.addEventListener('click', () => {
             htmlElement.classList.toggle('dark-mode');
 
-            // Save the current theme to localStorage
-            if (htmlElement.classList.contains('dark-mode')) {
+             if (htmlElement.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
             } else {
                 localStorage.setItem('theme', 'light');
