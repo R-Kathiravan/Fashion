@@ -69,7 +69,7 @@
      align-items: center;
      padding: 6px 0px;
      /* background-color: var(--menu-bg); */
-     background-color: #ffffff;
+     background-color: var(--white);
      position: fixed;
      width: 100%;
      z-index: 1;
