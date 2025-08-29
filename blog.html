@@ -566,7 +566,7 @@
             bottom: 5px;
             width: 0%;
             height: 2px;
-            background: var(--white);
+            background: var(--btn-color);
             transition: width 0.3s ease;
         }
 
@@ -610,9 +610,6 @@
         .popup-trigger-btn:hover::after {
             width: 100%;
         }
-
-
-
         .popup-trigger-btn:hover {
             transform: translateY(-3px);
             color: var(--btn-hover);
@@ -737,7 +734,7 @@
                 display: block;
                 margin-right: 30px;
                 cursor: pointer;
-                color: var(--white);
+                color: var(--black);
 
             }
 
@@ -790,16 +787,17 @@
             color: black;
         }
 
-        .logo {
-            width:35%;
-            padding: 20px;
-        }
+      .logo {
+      padding: 16px;
+     font-size: 36px;
+     text-decoration: none;
+     color: red;
+     font-weight: bolder;
+ }
+
     </style>
     <header class="header-cls">
-         <a href="index.html">
-        <img src="./assets/stackly-logo.png" alt="logo" class="logo">
-        </a>
-
+                <a href="index.html"  class="logo"> Stackly</a>
         <nav class="menu-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -1036,7 +1034,7 @@
     <footer class="footer" id="footer" data-aos="fade-up">
         <div class="footer-container">
             <div class="footer-brand">
-                <h2>Fashionista</h2>
+                <h2>Stackly</h2>
                 <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
             </div>
 
@@ -1054,7 +1052,7 @@
 
             <div class="footer-contact">
                 <h3>Contact Us</h3>
-                <p>Email: support@Fashionista.com</p>
+                <p>Email: support@Stackly.com</p>
                 <p>Phone: +91 98765 43210</p>
                 <p>Location: 45 Fashion Street, Mumbai, India</p>
             </div>
@@ -1075,7 +1073,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Fashionista. All Rights Reserved.</p>
+            <p>© 2025 Stackly. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="script.js"></script>
@@ -1088,8 +1086,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
-        // Function to apply the saved theme on page load
-        function applyTheme() {
+         function applyTheme() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 htmlElement.classList.add('dark-mode');
@@ -1097,15 +1094,9 @@
                 htmlElement.classList.remove('dark-mode');
             }
         }
-
-        // Apply theme when the page loads
         applyTheme();
-
-        // Toggle theme and save the preference
         themeToggle.addEventListener('click', () => {
             htmlElement.classList.toggle('dark-mode');
-
-            // Save the current theme to localStorage
             if (htmlElement.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
             } else {

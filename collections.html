@@ -501,7 +501,7 @@
             bottom: 5px;
             width: 0%;
             height: 2px;
-            background: var(--white);
+            background:var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -510,7 +510,7 @@
         }
 
         .menu-items a:hover {
-            color: var(--btn-hover);
+            color: var(--accent);
         }
 
         .btn-close {
@@ -671,7 +671,7 @@
                 display: block;
                 margin-right: 30px;
                 cursor: pointer;
-                color:var(--white);
+                color: var(--black);
 
             }
 
@@ -714,15 +714,16 @@
       background: #ddd;
       color: black;
     }
-         .logo {
-     width: 35%;
-     padding: 16px;
+     .logo {
+      padding: 16px;
+     font-size: 36px;
+     text-decoration: none;
+     color: red;
+     font-weight: bolder;
  }
     </style>
     <header class="header-cls">
-         <a href="index.html">
-        <img src="./assets/stackly-logo.png" alt="logo" class="logo">
-        </a>
+              <a href="index.html"  class="logo"> Stackly</a>
 
         <nav class="menu-items">
             <a href="index.html">Home</a>
@@ -1313,7 +1314,7 @@
      <footer class="footer" id="footer" data-aos="fade-up">
         <div class="footer-container">
             <div class="footer-brand">
-                <h2>Fashionista</h2>
+                <h2>Stackly</h2>
                 <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
             </div>
 
@@ -1331,7 +1332,7 @@
 
             <div class="footer-contact">
                 <h3>Contact Us</h3>
-                <p>Email: support@Fashionista.com</p>
+                <p>Email: support@Stackly.com</p>
                 <p>Phone: +91 98765 43210</p>
                 <p>Location: 45 Fashion Street, Mumbai, India</p>
             </div>
@@ -1352,7 +1353,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Fashionista. All Rights Reserved.</p>
+            <p>© 2025 Stackly. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="script.js"></script>
@@ -1395,8 +1396,8 @@
             }, 1000);
         }
 
-        startCountdown("timer1", 10); // 10 min
-        startCountdown("timer2", 15); // 15 min
+        startCountdown("timer1", 10);  
+        startCountdown("timer2", 15);  
 
 
         const quantityContainers = document.querySelectorAll('.quantity');
@@ -1434,8 +1435,7 @@
           const themeToggle = document.getElementById('theme-toggle');
   const htmlElement = document.documentElement;
   
-  // Function to apply the saved theme on page load
-  function applyTheme() {
+   function applyTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       htmlElement.classList.add('dark-mode');
@@ -1444,15 +1444,12 @@
     }
   }
 
-  // Apply theme when the page loads
-  applyTheme();
+   applyTheme();
 
-  // Toggle theme and save the preference
-  themeToggle.addEventListener('click', () => {
+   themeToggle.addEventListener('click', () => {
     htmlElement.classList.toggle('dark-mode');
     
-    // Save the current theme to localStorage
-    if (htmlElement.classList.contains('dark-mode')) {
+     if (htmlElement.classList.contains('dark-mode')) {
       localStorage.setItem('theme', 'dark');
     } else {
       localStorage.setItem('theme', 'light');

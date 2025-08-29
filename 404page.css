@@ -31,10 +31,14 @@
      position: relative;
      margin-right: 30px;
  }
-      .logo {
-     width: 35%;
-     padding: 16px;
+  .logo {
+      padding: 16px;
+     font-size: 36px;
+     text-decoration: none;
+     color: red;
+     font-weight: bolder;
  }
+
  .menu-items a::after {
      content: '';
      position: absolute;

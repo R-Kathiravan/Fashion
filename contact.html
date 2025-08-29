@@ -272,13 +272,10 @@
             margin-right: 20px;
         }
 
-        .logo {
-     width: 35%;
-     padding: 16px;
- }
-*{
-    margin: 0;
-}
+
+        * {
+            margin: 0;
+        }
 
         .header-cls h1 {
             color: var(--white);
@@ -322,7 +319,7 @@
             bottom: 5px;
             width: 0%;
             height: 2px;
-            background: white;
+            background: var(--btn-hover);
             transition: width 0.3s ease;
         }
 
@@ -383,7 +380,7 @@
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px; 
+            gap: 30px;
             background-color: black;
         }
 
@@ -490,8 +487,7 @@
                 display: block;
                 margin-right: 30px;
                 cursor: pointer;
-                color: var(--white);
-
+                color: var(--black);
             }
 
             .menu-items.show {
@@ -539,18 +535,24 @@
             background: #ddd;
             color: black;
         }
+
+        .logo {
+      padding: 16px;
+     font-size: 36px;
+     text-decoration: none;
+     color: red;
+     font-weight: bolder;
+ }
     </style>
     <header class="header-cls">
-        <a href="index.html">
-        <img src="./assets/stackly-logo.png" alt="logo" class="logo">
-        </a>
+        <a href="index.html" class="logo"> Stackly</a>
         <nav class="menu-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
-            <a href="404page.html">Contact</a>
+            <a href="contact.html">Contact</a>
             <a class="btn-close">Close</a>
             <button class="btn theme-toggle" id="theme-toggle">🌙</button>
 
@@ -588,7 +590,7 @@
                 </form>
             </div>
             <div class="contact-address">
-                <div class="address con"  data-aos="fade-up" data-aos-delay="100" >
+                <div class="address con" data-aos="fade-up" data-aos-delay="100">
                     <i class="fa-solid fa-location-dot"></i>
                     <p>MMR Complex,<br> Chinna Thirupathi,<br> near Chinna Muniyappan Kovil,<br><i> Salem</i>, <br>Tamil
                         Nadu 636008</p>
@@ -634,7 +636,7 @@
     </section>
     <h2 class="head"> Frequently Asked Questions</h2>
 
-    <section class="faq"  data-aos="fade-up" data-aos-delay="100">
+    <section class="faq" data-aos="fade-up" data-aos-delay="100">
         <div>
             <div class="faq-card">
                 <div class="faq-header">
@@ -703,7 +705,7 @@
     <footer class="footer" id="footer" data-aos="fade-up">
         <div class="footer-container">
             <div class="footer-brand">
-                <h2>Fashionista</h2>
+                <h2>Stackly</h2>
                 <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
             </div>
 
@@ -721,7 +723,7 @@
 
             <div class="footer-contact">
                 <h3>Contact Us</h3>
-                <p>Email: support@Fashionista.com</p>
+                <p>Email: support@Stackly.com</p>
                 <p>Phone: +91 98765 43210</p>
                 <p>Location: 45 Fashion Street, Mumbai, India</p>
             </div>
@@ -742,7 +744,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Fashionista. All Rights Reserved.</p>
+            <p>© 2025 Stackly. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="script.js"></script>

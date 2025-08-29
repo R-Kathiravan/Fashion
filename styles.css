@@ -77,8 +77,11 @@
  }
 
  .logo {
-     width: 35%;
-     padding: 16px;
+      padding: 16px;
+     font-size: 36px;
+     text-decoration: none;
+     color: red;
+     font-weight: bolder;
  }
 
 
@@ -115,7 +118,7 @@
      bottom: 5px;
      width: 0%;
      height: 2px;
-     background: var(--white);
+     background: var(--accent);
      transition: width 0.3s ease;
  }
 
@@ -169,18 +172,7 @@
       background: #ddd;
       color: black;
     }
- /* .hero {
-     background-image: url('./assets/hero-img.jpg');
-     background-size: cover;
-     background-repeat: no-repeat;
-     background-position: center center;
-     height: 100vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     position: relative;
- } */
-  
+ 
  .banner {
      /* position: relative; */
      min-height: 100vh;
@@ -1151,6 +1143,3 @@
          transform: translateX(-5px);
      }
  }
-
-
- 
