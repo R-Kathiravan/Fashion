@@ -34,7 +34,10 @@
      position: relative;
      margin-right: 30px;
  }
-
+.logo{text-decoration: none;
+font-size: 26px;
+padding: 20px;
+}
  .menu-items a::after {
      content: '';
      position: absolute;

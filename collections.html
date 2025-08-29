@@ -703,19 +703,43 @@
                 font-size: 16px;
             }
         }
- 
+ .logo{text-decoration: none;
+font-size: 26px;
+padding: 20px;
+}
+ .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .theme-toggle {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      margin-right: 10px;
+    }
+
+    body.dark .theme-toggle {
+      background: #ddd;
+      color: black;
+    }
     </style>
     <header class="header-cls">
-        <img src="./assets/stackly-logo.png" alt="logo">
+        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
+                  <a href="index.html"class="logo">Stackly</a>
+
         <nav class="menu-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
-            <a href="404page.html">Contact</a>
+            <a href="contact.html">Contact</a>
             <a class="btn-close">Close</a>
-            <button id="theme-toggle" class="dark-btn">Change Theme</button>
+                   <button class="btn theme-toggle" id="theme-toggle">🌙</button>
 
         </nav>
 
@@ -814,21 +838,6 @@
                             <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
                         </div>
                     </div>
-                    <!-- <div class="card">
-                        <img src="./assets/Kurta Pajama-men.webp" alt="">
-                        <h3>Kurta Pajama</h3>
-                        <p>$40</p>
-                        <div class="quantity">
-                            <button class="qty-btn minus">-</button>
-                            <input type="number" class="qty-input" value="1" min="1">
-                            <button class="qty-btn plus">+</button>
-                        </div>
-                        <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                        </div>
-                    </div> -->
-
                 </div>
 
                 <div id="female" class="products">
@@ -902,20 +911,6 @@
                             <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
                         </div>
                     </div>
-                    <!-- <div class="card">
-                        <img src="./assets/saree.jpg" alt="">
-                        <h3>Sarees</h3>
-                        <p>$45</p>
-                        <div class="quantity">
-                            <button class="qty-btn minus">-</button>
-                            <input type="number" class="qty-input" value="1" min="1">
-                            <button class="qty-btn plus">+</button>
-                        </div>
-                        <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                        </div>
-                    </div> -->
                 </div>
 
                 <div id="kids" class="products">
@@ -975,20 +970,6 @@
                             <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
                         </div>
                     </div>
-                    <!-- <div class="card">
-                        <img src="./assets/kid-rompers.webp" alt="">
-                        <h3>Kids Rompers (for toddlers)</h3>
-                        <p>$20</p>
-                        <div class="quantity">
-                            <button class="qty-btn minus">-</button>
-                            <input type="number" class="qty-input" value="1" min="1">
-                            <button class="qty-btn plus">+</button>
-                        </div>
-                        <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="accessories-products">
@@ -1012,23 +993,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="access-card">
-                        <img src="./assets/hat-male.jpg" alt="watch">
-                        <div class="action">
-                            <h3> Cap</h3>
-                            <p>$15</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn-like-male" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="access-card" data-aos="fade-up" >
                         <img src="./assets/chain-male.webp" alt="watch">
                         <div class="action">
@@ -1368,7 +1332,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="404page.html">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
 

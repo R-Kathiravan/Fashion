@@ -10,48 +10,51 @@
 
 <body>
     <style>
-        :root{
-            --font-color-nav-head:rgb(200, 0, 255);
-            --font-nav-head-a:black;
-            --font-active-blog:rgb(22, 37, 240);
-            --heading-font:black;
-            --black:black;
-            --btn-color:#ff4081;
-            --btn-hover:#e73370;
-            --btn-font-color:white;
-            --white:white;
-            --red:red;
-            --basic-font:black;
-            --news-btn:#222;
-            --news-date:#777;
-            --news-para:#444;
-            --news-btn-hover:#555;
-            --categories-bg:rgba(0, 0, 0, 0.5);
-            --categories-font:white;
+        :root {
+            --font-color-nav-head: rgb(200, 0, 255);
+            --font-nav-head-a: black;
+            --font-active-blog: rgb(22, 37, 240);
+            --heading-font: black;
+            --black: black;
+            --btn-color: #ff4081;
+            --btn-hover: #e73370;
+            --btn-font-color: white;
+            --white: white;
+            --red: red;
+            --basic-font: black;
+            --news-btn: #222;
+            --news-date: #777;
+            --news-para: #444;
+            --news-btn-hover: #555;
+            --categories-bg: rgba(0, 0, 0, 0.5);
+            --categories-font: white;
 
         }
-        html.dark-mode{
-              --font-color-nav-head: rgb(55, 200, 255);   /* invert purple to a neon cyan */
-    --font-nav-head-a: white;                   /* black → white */
-    --font-active-blog: rgb(180, 200, 255);     /* bright bluish tone */
-    --heading-font: white;                      /* black → white */
-    --black: white;                             /* inverted */
-    --btn-color: #ff80ab;                       /* softer pink for dark bg */
-    --btn-hover: #ff99bb;                       /* hover brighter */
-    --btn-font-color: black;                    /* white → black */
-    --white: #111;                              /* white → dark */
-    --red: #ff6b6b;                             /* red softened for dark bg */
-    --basic-font: #eee;                         /* black → light gray */
-    --news-btn: #ddd;                           /* dark → light */
-    --news-date: #aaa;                          /* medium gray */
-    --news-para: #ccc;                          /* softer for readability */
-    --news-btn-hover: #fff;  
-     --categories-bg: rgba(255, 255, 255, 0.15); /* inverted translucent */
-    --categories-font: #f5f5f5;       
+
+        html.dark-mode {
+            --font-color-nav-head: rgb(55, 200, 255);
+            --font-nav-head-a: white;
+            --font-active-blog: rgb(180, 200, 255);
+            --heading-font: white;
+            --black: white;
+            --btn-color: #ff80ab;
+            --btn-hover: #ff99bb;
+            --btn-font-color: black;
+            --white: #111;
+            --red: #ff6b6b;
+             --basic-font: #eee;
+            --news-btn: #ddd;
+            --news-date: #aaa;
+            --news-para: #ccc;
+             --news-btn-hover: #fff;
+            --categories-bg: rgba(255, 255, 255, 0.15);
+             --categories-font: #f5f5f5;
         }
-        body{
+
+        body {
             background-color: var(--white);
         }
+
         .blog-nav-head {
             background-image: url('./assets/pexels-craytive-1478477.jpg');
             background-position: center;
@@ -65,7 +68,7 @@
 
         .blog-nav-head h1 {
             font-size: 38px;
-            color:  var(--font-color-nav-head);
+            color: var(--font-color-nav-head);
             margin: 1%;
         }
 
@@ -86,7 +89,7 @@
             margin: 50px auto;
             font-family: 'Poppins', sans-serif;
             background-color: var(--white);
-          }
+        }
 
         .blog-heading {
             text-align: center;
@@ -94,7 +97,7 @@
             margin-bottom: 30px;
             color: var(--news-btn);
             position: relative;
- 
+
         }
 
         .blog-heading::after {
@@ -111,7 +114,7 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 25px;
-         }
+        }
 
         .blog-featured {
             position: relative;
@@ -142,7 +145,7 @@
         .blog-text {
             padding: 20px;
             background: var(--white);
-                        color: var(--black);
+            color: var(--black);
 
         }
 
@@ -151,7 +154,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background:var(--white);
+            background: var(--white);
         }
 
         .blog-side {
@@ -209,9 +212,11 @@
             grid-template-columns: 1fr;
             gap: 50px;
         }
-        .news-container{
+
+        .news-container {
             background-color: var(--white);
         }
+
         .news-heading {
             margin: 3%;
             text-align: center;
@@ -371,7 +376,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 15px;
             transition: all 0.7s ease;
-            color:var(--black);
+            color: var(--black);
         }
 
         .popular-post-text h4 {
@@ -409,7 +414,7 @@
             background-size: cover;
             background-attachment: fixed;
             padding: 5% 7% 10%;
-            color:white;
+            color: white;
             position: relative;
             margin-top: 10%;
         }
@@ -535,14 +540,16 @@
             margin-left: 15px;
             cursor: pointer;
         }
-        .dark-btn{
+
+        .dark-btn {
             background-color: #00000000;
             border-color: #00000000;
             color: var(--black);
             cursor: pointer;
-              font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 20px;
         }
+
         .menu-items {
             display: flex;
             flex-wrap: wrap;
@@ -572,6 +579,7 @@
 
         .menu-items a:hover::after {
             width: 100%;
+            color: var(--btn-hover);
         }
 
         .menu-items a:hover {
@@ -620,7 +628,7 @@
 
         .footer {
             background-color: #000000;
-            color:var(--white);
+            color: var(--white);
             padding: 30px;
         }
 
@@ -723,7 +731,7 @@
             }
 
             .menu-items button {
-                color:  var(--white);
+                color: var(--white);
             }
 
             .btn-close {
@@ -736,7 +744,7 @@
                 display: block;
                 margin-right: 30px;
                 cursor: pointer;
-                color:var(--white);
+                color: var(--white);
 
             }
 
@@ -759,7 +767,7 @@
                 font-size: 16px;
             }
         }
- 
+
 
         /* @media (prefers-color-scheme: dark) {
             body {
@@ -767,18 +775,45 @@
                 color: #ffffff;
             }
         } */
+        .logo {
+            text-decoration: none;
+            font-size: 26px;
+            padding: 20px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin-right: 10px;
+        }
+
+        body.dark .theme-toggle {
+            background: #ddd;
+            color: black;
+        }
     </style>
     <header class="header-cls">
-        <img src="./assets/stackly-logo.png" alt="logo">
+        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
+        <a href="index.html" class="logo">Stackly</a>
+
         <nav class="menu-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
-            <a href="404page.html">Contact</a>
+            <a href="contact.html">Contact</a>
             <a class="btn-close">Close</a>
-            <button id="theme-toggle" class="dark-btn">Change Theme</button>
+            <button class="btn theme-toggle" id="theme-toggle">🌙</button>
 
         </nav>
 
@@ -1018,7 +1053,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="404page.html">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
 
@@ -1055,34 +1090,34 @@
         AOS.init({ once: true });
     </script>
     <script>
-  const themeToggle = document.getElementById('theme-toggle');
-  const htmlElement = document.documentElement;
-  
-  // Function to apply the saved theme on page load
-  function applyTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      htmlElement.classList.add('dark-mode');
-    } else {
-      htmlElement.classList.remove('dark-mode');
-    }
-  }
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
 
-  // Apply theme when the page loads
-  applyTheme();
+        // Function to apply the saved theme on page load
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
 
-  // Toggle theme and save the preference
-  themeToggle.addEventListener('click', () => {
-    htmlElement.classList.toggle('dark-mode');
-    
-    // Save the current theme to localStorage
-    if (htmlElement.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-</script>
+        // Apply theme when the page loads
+        applyTheme();
+
+        // Toggle theme and save the preference
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            // Save the current theme to localStorage
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 
 </body>
 

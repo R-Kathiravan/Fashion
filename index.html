@@ -15,29 +15,31 @@
 </head>
 
 <body>
-    <!-- <div class="container"> -->
     <header class="header-cls">
-        <img src="./assets/stackly-logo.png" alt="logo">
+        <!-- <img src="./assets/stackly-logo.png" alt="logo"> -->
+        <a href="index.html" class="logo">Stackly</a>
         <nav class="menu-items">
             <a href="./Homepage2/index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
-            <a href="404page.html">Contact</a>
+            <a href="contact.html">Contact</a>
             <a class="popup-trigger-btn" id="show-popup-btn">Login / Signup</a>
-            <a id="theme-toggle" class="dark-btn">Change Theme</a>
-
-
+            <button class="btn theme-toggle" id="theme-toggle">🌙</button>
             <a class="btn-close">Close</a>
         </nav>
-
         <div class="hamburger">
             &#9776
         </div>
     </header>
+    <!-- <button class="btn scroll-top" id="scrollTopBtn">⬆</button> -->
 
-    <section class="hero" id="hero">
+    <section class="hero banner" id="hero">
+        <div class="banner-background">
+            <div class="bg-image image1"></div>
+            <div class="bg-image image3"></div>
+        </div>
         <div class="hero-content" data-aos="fade-left">
             <h2>Welcome to Fashionista</h2>
             <h3>Redefining Your Style</h3>
@@ -208,9 +210,9 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html"> Services</a></li>
-                    <li><a href="404page.html">Blog</a></li>
-                    <li><a href="404page.html">Collections</a></li>
-                    <li><a href="404page.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
 
@@ -326,8 +328,7 @@
     <script>
         AOS.init({
             duration: 800,
-            // easing: 'ease-in-out',
-            // once: true
+            once: true
         });
 
         const container = document.getElementById('container');
@@ -339,18 +340,15 @@
         const showPopupBtn = document.getElementById('show-popup-btn');
         const closePopupBtn = document.getElementById('close-popup-btn');
         const btnform = document.getElementById('btn-form');
-        // btnform.style.display='none';
 
         showPopupBtn.addEventListener('click', () => {
             modalOverlay.classList.add('active');
-            // container.style.display='block';
-            // AOS.refresh({duration:100});
+            container.style.display = 'block';
         });
 
         const closeModal = () => {
             modalOverlay.classList.remove('active');
             container.style.display = 'none';
-
         };
 
         closePopupBtn.addEventListener('click', closeModal);
@@ -433,8 +431,8 @@
         document.getElementById('signup-form').addEventListener('submit', handleFormSubmit);
 
 
-          const themeToggle = document.getElementById('theme-toggle');
-  const htmlElement = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
         function applyTheme() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
