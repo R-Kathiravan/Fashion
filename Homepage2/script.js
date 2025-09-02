@@ -29,11 +29,11 @@ document.querySelector(".hamburger").addEventListener("click", function () {
     document.querySelector(".menu-items").classList.remove("show");
     });
 
-     const themeBtn = document.getElementById("theme-toggle");
-themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-    });
+//      const themeBtn = document.getElementById("theme-toggle");
+// themeBtn.addEventListener("click", () => {
+//       document.body.classList.toggle("dark");
+//       themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+//     });
 
     const backToTopBtn = document.getElementById("backToTop");
 

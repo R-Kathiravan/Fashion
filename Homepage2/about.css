@@ -92,8 +92,8 @@ body {
     }
 
     .theme-toggle {
-      background: #333;
-      color: white;
+   background: var(--black);
+    color: var(--white);
       border: none;
       padding: 12px 12px;
       border-radius:50%;
