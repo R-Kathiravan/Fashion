@@ -81,6 +81,7 @@ body {
     justify-content: space-between;
     gap: 30px;
     cursor: pointer;
+    margin-right: 20px;;
 }
 
 .menu-icons a {

@@ -1,28 +1,29 @@
-:root{
-    --white:white;
-    --black:black;
-    --logo:rgb(0, 72, 255);
-    --hero-bg-r:radial-gradient(circle at 85% 15%,
+:root {
+    --white: white;
+    --black: black;
+    --logo: rgb(0, 72, 255);
+    --hero-bg-r: radial-gradient(circle at 85% 15%,
             rgba(142, 197, 252, 0.5),
             transparent 40%),
         radial-gradient(circle at 85% 65%,
             rgba(224, 195, 252, 0.5),
             transparent 40%);
-    --hero-bg:#f3e8ff;
-    --hero-head:#1003ff;
-    --hero-p:#0353ff;
+    --hero-bg: #f3e8ff;
+    --hero-head: #1003ff;
+    --hero-p: #0353ff;
     --hero-btn: rgb(109, 84, 255);
-        --hero-btn-hov: rgb(39, 1, 255);
+    --hero-btn-hov: rgb(39, 1, 255);
 
-    --i-col:#0346ff;
-    --divider:linear-gradient(to bottom, #e91e63, #9c27b0);
-    --value-i:#27ae60;
-    --dim-text:#333;
-    --dim-p:#666;
-    --border:rgba(0, 0, 0, 0.219);
-    --contact-btn:rgb(138, 138, 255);
-    --contact-btn-hov:#3c00ff;
- }
+    --i-col: #0346ff;
+    --divider: linear-gradient(to bottom, #e91e63, #9c27b0);
+    --value-i: #27ae60;
+    --dim-text: #333;
+    --dim-p: #666;
+    --border: rgba(0, 0, 0, 0.219);
+    --contact-btn: rgb(138, 138, 255);
+    --contact-btn-hov: #3c00ff;
+}
+
 html.dark-mode {
     --white: #121212;
     --black: #ffffff;
@@ -47,10 +48,11 @@ html.dark-mode {
     --contact-btn: #424242;
     --contact-btn-hov: #5c6bc0;
 }
+
 body {
     margin: 0;
     padding: 0;
-            font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--white);
 }
 
@@ -65,13 +67,13 @@ body {
     z-index: 1;
 }
 
- .logo {
-      padding: 14px;
-     font-size: 36px;
-     text-decoration: none;
-     color: red;
-     font-weight: bolder;
- }
+.logo {
+    padding: 14px;
+    font-size: 36px;
+    text-decoration: none;
+    color: red;
+    font-weight: bolder;
+}
 
 .menu-items {
     display: flex;
@@ -87,29 +89,31 @@ body {
 .hamburger {
     display: none;
 }
+
 .btn:hover {
-      transform: scale(1.1);
-    }
+    transform: scale(1.1);
+}
 
-    .theme-toggle {
-   background: var(--black);
+.theme-toggle {
+    background: var(--black);
     color: var(--white);
-      border: none;
-      padding: 12px 12px;
-      border-radius:50%;
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease;
-      margin-right: 10px;
-            position: fixed;      
-      bottom: 50px;          
-      right: 20px;     
-      z-index: 1000;      
-    }
+    border: none;
+    padding: 12px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    margin-right: 10px;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 1000;
+}
 
-    body.dark .theme-toggle {
-      background: #ddd;
-      color: black;
-    }
+body.dark .theme-toggle {
+    background: #ddd;
+    color: black;
+}
+
 .menu-items a {
     text-decoration: none;
     color: var(--black);
@@ -130,6 +134,7 @@ body {
     justify-content: space-between;
     gap: 30px;
     cursor: pointer;
+    margin-right: 20px;
 }
 
 .menu-icons a {
@@ -300,11 +305,13 @@ body {
         transition: right 0.5s ease;
         z-index: 999;
         /* color: #0385ff; */
-     }
-    .menu-items a{
-                font-size:18px !important;
+    }
+
+    .menu-items a {
+        font-size: 18px !important;
         color: white;
     }
+
     .btn-close {
         display: block;
         color: rgb(0, 0, 0);
@@ -317,7 +324,7 @@ body {
         display: block;
         margin-right: 30px;
         cursor: pointer;
-        color:var(--black);
+        color: var(--black);
 
     }
 
@@ -351,7 +358,7 @@ body {
 .about-us {
     width: 100%;
     position: relative;
-     padding-top: 4%;
+    padding-top: 4%;
 }
 
 .about-hero {
@@ -362,7 +369,7 @@ body {
     text-align: justify;
     min-height: 65vh;
     background-color: var(--hero-bg);
-    background-image:var(--hero-bg-r)
+    background-image: var(--hero-bg-r)
 }
 
 .about-hero h1 {
@@ -385,12 +392,15 @@ body {
     color: white;
     border-color: rgba(0, 0, 0, 0.096);
 }
-.about-hero a:hover{
-    background-color:var(--hero-btn-hov) ;
+
+.about-hero a:hover {
+    background-color: var(--hero-btn-hov);
 }
-.hero-content{
+
+.hero-content {
     margin: 3%;
 }
+
 .about-company {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -402,7 +412,8 @@ body {
     font-size: 36px;
     color: var(--black);
 }
-.about-company h3{
+
+.about-company h3 {
     color: var(--black);
 }
 
@@ -471,7 +482,7 @@ body {
 
 .journey-item i {
     font-size: 40px;
-    color:var(--i-col) ;
+    color: var(--i-col);
     margin-bottom: 10px;
 }
 
@@ -480,14 +491,15 @@ body {
     margin: 10px 0;
     color: var(--black);
 }
-.journey-item p{
+
+.journey-item p {
     color: var(--black);
 }
 
 .divider {
     width: 2px;
     height: 100px;
-    background:var(--divider) ;
+    background: var(--divider);
     border-radius: 5px;
 }
 
@@ -512,17 +524,20 @@ body {
 }
 
 .award-card:hover {
-  transform: translateY(-8px) scale(1);  
+    transform: translateY(-8px) scale(1);
 }
-.award-card h3{
+
+.award-card h3 {
     color: var(--black);
 }
+
 .award-card i {
     font-size: 2rem;
     color: var(--i-col);
     margin-bottom: 10px;
 }
-.award-card p{
+
+.award-card p {
     color: var(--black);
 }
 
@@ -639,24 +654,24 @@ body {
 }
 
 #backToTop {
-      position: fixed;
-      bottom: 120px;
-      right: 30px;
-      background: var(--black);
-      color: var(--white);
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      cursor: pointer;
-      display: none; 
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, background 0.3s;
-      z-index: 1999;
-    }
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s;
+    z-index: 1999;
+}
 
-    #backToTop:hover {
-      background: #444;
-      transform: translateY(-5px);
-    }
+#backToTop:hover {
+    background: #444;
+    transform: translateY(-5px);
+}
