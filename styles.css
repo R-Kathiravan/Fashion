@@ -75,11 +75,11 @@
  }
 
  .logo {
-     padding: 8px;
-     font-size: 36px;
-     text-decoration: none;
-     color: red;
-     font-weight: 550;
+     padding: 16px;
+            font-size: 36px;
+            text-decoration: none;
+            color: red;
+            font-weight: bolder;
  }
 
 
@@ -129,8 +129,7 @@
      border-color: #00000000;
      color: var(--black);
      cursor: pointer;
-     /* font-family: 'Playfair Display', serif; */
-     font-size: 16px;
+      font-size: 16px;
      transition: all 0.3s ease;
  }
 
