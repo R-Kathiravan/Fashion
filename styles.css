@@ -4,6 +4,7 @@
      margin: 0;
      padding: 0;
      font-family: 'Poppins', sans-serif;
+     background-color: var(--white);
  }
 
  :root {
@@ -58,9 +59,7 @@
      --error-color: #ef5350;
  }
 
- body {
-     background-color: var(--white);
- }
+
 
  .header-cls {
      display: flex;
@@ -68,7 +67,7 @@
      justify-content: space-between;
      align-items: center;
      padding: 6px 0px;
-      background-color: var(--white);
+     background-color: var(--white);
      position: fixed;
      width: 100%;
      z-index: 1;
@@ -76,11 +75,11 @@
  }
 
  .logo {
-      padding: 14px;
+     padding: 8px;
      font-size: 36px;
      text-decoration: none;
      color: red;
-     font-weight: bolder;
+     font-weight: 550;
  }
 
 
@@ -132,12 +131,13 @@
      cursor: pointer;
      /* font-family: 'Playfair Display', serif; */
      font-size: 16px;
-      transition: all 0.3s ease;
+     transition: all 0.3s ease;
  }
-.dark-btn:hover{
-    transform: translateY(-3px);
+
+ .dark-btn:hover {
+     transform: translateY(-3px);
      color: var(--accent);
-}    
+ }
 
  .menu-items a:hover {
      color: var(--accent);
@@ -151,36 +151,36 @@
      display: none;
  }
 
-    
-    .btn:hover {
-      transform: scale(1.1);
-    }
 
-    .theme-toggle {
-      background: #333;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease;
-      margin-right: 10px;
-        /* position: fixed;
+ .btn:hover {
+     transform: scale(1.1);
+ }
+
+ .theme-toggle {
+     background: #333;
+     color: white;
+     border: none;
+     padding: 6px 12px;
+     border-radius: 6px;
+     cursor: pointer;
+     transition: transform 0.3s ease, background 0.3s ease;
+     margin-right: 10px;
+     /* position: fixed;
   bottom: 50px;
   right: 20px;
   z-index: 1000; */
-    }
+ }
 
-    body.dark .theme-toggle {
-      background: #ddd;
-      color: black;
-    }
- 
+ body.dark .theme-toggle {
+     background: #ddd;
+     color: black;
+ }
+
  .banner {
      /* position: relative; */
      min-height: 100vh;
      overflow: hidden;
-      display: flex;
+     display: flex;
      align-items: center;
      justify-content: center;
      position: relative;
@@ -193,60 +193,65 @@
      z-index: -1;
      filter: brightness(60%);
      overflow: hidden;
-     
- }
- 
-.bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    animation: zoomFade 12s infinite ease-in-out;
-    opacity: 0;
-    transform: scale(1);
-}
- 
-.image1 {
-    background-image: url('./assets/hero-bg1.jpg');
-    animation-delay: 0s;
- 
-}
 
-.image3 {
-    background-image: url('./assets/hero-bg2.jpg');
-    animation-delay: 6s;
- 
-}
-/* .image1,
+ }
+
+ .bg-image {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100vh;
+     background-size: cover;
+     background-position: center;
+     animation: zoomFade 12s infinite ease-in-out;
+     opacity: 0;
+     transform: scale(1);
+ }
+
+ .image1 {
+     background-image: url('./assets/hero-bg1.jpg');
+     animation-delay: 0s;
+
+ }
+
+ .image3 {
+     background-image: url('./assets/hero-bg2.jpg');
+     animation-delay: 6s;
+
+ }
+
+ /* .image1,
 .image3 {
     animation: zoomFade 6s ease-in-out infinite;  
 } */
 
-@keyframes zoomFade {
-    0% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    10% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-    90% {
-        opacity: 0;
-        transform: scale(1.15);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-}
+ @keyframes zoomFade {
+     0% {
+         opacity: 0;
+         transform: scale(1);
+     }
+
+     10% {
+         opacity: 1;
+         transform: scale(1.05);
+     }
+
+     50% {
+         opacity: 1;
+         transform: scale(1.1);
+     }
+
+     90% {
+         opacity: 0;
+         transform: scale(1.15);
+     }
+
+     100% {
+         opacity: 0;
+         transform: scale(1.2);
+     }
+ }
 
 
 
@@ -756,11 +761,8 @@
      height: 50px;
  }
 
- @media (max-width:478px) {
-     .header-cls img {
-         width: 30%;
-     }
- }
+
+
 
  @media(max-width: 900px) {
      .contact-container {
@@ -835,7 +837,7 @@
 
 
  .popup-trigger-btn {
-     font-size:16px;
+     font-size: 16px;
      color: rgb(0, 0, 0);
      border: none;
      cursor: pointer;

@@ -13,10 +13,13 @@ body{
   background-color: white;
 }
 
-.header-cls img {
-  width: 10%;
-  padding: 16px;
-}
+ .logo {
+      padding: 14px;
+     font-size: 30px;
+     text-decoration: none;
+     color: red;
+     font-weight: 700;
+ }
 
 .menu-items {
   display: flex;
@@ -32,8 +35,11 @@ body{
  }
 
 .menu-items a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
+    text-decoration: none;
+    color: var(--black);
+    font-size: 18px;
+     letter-spacing: 2px;
+  padding: 10px;
 }
 
 .menu-items a:hover::after {
@@ -105,17 +111,15 @@ body{
   grid-template-columns: repeat(4, 1fr);
   background-color: #000000;
   color: white;
-  align-items: center;
-  justify-items: center;
+ 
 }
 
 .footer-grid h3 {
   color: #0385ff;
 }
 
-.footer-content-company img {
-  width: 100%;
-  height: 100%;
+.footer-content-company   {
+  margin: 7%;
 
 }
 .footer-nav-grid{

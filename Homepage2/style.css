@@ -60,7 +60,7 @@ body {
 
  .logo {
       padding: 14px;
-     font-size: 30px;
+     font-size: 36px;
      text-decoration: none;
      color: red;
      font-weight: 700;
@@ -84,6 +84,9 @@ body {
 .menu-items a {
   text-decoration: none;
   color: var(--black);
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 10px;
 }
 
 .menu-items a:hover::after {
