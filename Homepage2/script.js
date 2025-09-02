@@ -22,12 +22,28 @@ function slideTestimonials() {
 
 setInterval(slideTestimonials, 3000);  
 
-document.querySelector(".hamburger").addEventListener("click", function () {
-    document.querySelector(".menu-items").classList.toggle("show");
+const hamburger = document.querySelector(".hamburger");
+const menu = document.querySelector(".menu-items");
+const closeBtn = document.querySelector(".btn-close");
+
+ hamburger.addEventListener("click", function (e) {
+  e.stopPropagation();  
+  menu.classList.toggle("show");
 });
- document.querySelector(".btn-close").addEventListener("click", function () {
-    document.querySelector(".menu-items").classList.remove("show");
-    });
+
+ closeBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+  menu.classList.remove("show");
+});
+
+ document.addEventListener("click", function (e) {
+  if (menu.classList.contains("show") && 
+      !menu.contains(e.target) && 
+      !hamburger.contains(e.target)) {
+    menu.classList.remove("show");
+  }
+});
+
 
 //      const themeBtn = document.getElementById("theme-toggle");
 // themeBtn.addEventListener("click", () => {
