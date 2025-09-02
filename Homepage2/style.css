@@ -43,6 +43,8 @@ body {
   padding: 0;
             font-family: 'Poppins', sans-serif;
   background-color: var(--white);
+      overflow-x: hidden;
+
 }
 
 .header-cls {
@@ -272,6 +274,9 @@ body.dark .theme-toggle {
   background: #ff6f61;
   color: white;
 }
+.accessories{
+  overflow-x: hidden;
+}
 
 .items-grid {
   display: grid;
@@ -361,6 +366,7 @@ body.dark .theme-toggle {
   padding: 80px 20px;
   position: relative;
   margin-top: 10%;
+  overflow-x: hidden;
 }
 
 .about-us::before {
@@ -492,6 +498,7 @@ body.dark .theme-toggle {
   padding: 50px 20px;
   background: var(--white);
   margin-top: 5%;
+  overflow-x: hidden;
 }
 
 .testimonial-content h1 {
@@ -576,6 +583,7 @@ body.dark .theme-toggle {
   text-align: center;
   padding: 60px 20px;
   background: var(--white);
+  overflow-x:hidden;
 }
 
 .special-offers h1 {
@@ -829,6 +837,9 @@ body.dark .theme-toggle {
     color:var(--black);
 
   }
+  .menu-items a{
+    color: white;
+  }
 
   .menu-items.show {
     right: 0;
@@ -916,7 +927,10 @@ body.dark .theme-toggle {
   }
 
 }
+.contact-us{
+      overflow-x: hidden;
 
+}
 .contact-head {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1030,7 +1044,7 @@ iframe.map:hover {
   margin-right: 5%;
   gap: 20px;
   padding-bottom: 20px;
-
+  overflow-x:hidden;
 }
 
 .reach-bottom-container {
@@ -1049,8 +1063,6 @@ iframe.map:hover {
 }
 
 .reach-top-container h4 {
-  /* border: 1px solid;
-            border-radius: 96%; */
   width: auto;
   padding: 6px;
   font-size: 26px;

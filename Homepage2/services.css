@@ -24,6 +24,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background-color: var(--white);
+    /* overflow: hidden; */
 }
 
 .header-cls {
