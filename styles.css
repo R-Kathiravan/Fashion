@@ -68,8 +68,7 @@
      justify-content: space-between;
      align-items: center;
      padding: 6px 0px;
-     /* background-color: var(--menu-bg); */
-     background-color: var(--white);
+      background-color: var(--white);
      position: fixed;
      width: 100%;
      z-index: 1;
@@ -77,7 +76,7 @@
  }
 
  .logo {
-      padding: 16px;
+      padding: 14px;
      font-size: 36px;
      text-decoration: none;
      color: red;
@@ -85,7 +84,7 @@
  }
 
 
- .header-cls h1 {
+ /* .header-cls h1 {
      color: var(--white);
      font-weight: bold;
      font-family: 'Playfair Display', serif;
@@ -94,7 +93,7 @@
      margin-left: 15px;
      cursor: pointer;
  }
- 
+  */
  .menu-items {
      display: flex;
      flex-wrap: wrap;
