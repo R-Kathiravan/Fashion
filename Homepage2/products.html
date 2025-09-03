@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header-cls">
+        <a href="index.html" class="logo"> Stackly</a>
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About US</a>
+            <a href="services.html">Services</a>
+            <!-- <a href="404page.html">Shop</a> -->
+            <a href="products.html">Products</a>
+            <a href="404page.html">Offers</a>
+            <a class="btn-close">Close</a>
+        </nav>
+        <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
+        <nav class="menu-icons">
+            <a href="404page.html"><i class="fa-solid fa-magnifying-glass"></i></a></i>
+            <a href="404page.html"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="404page.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="404page.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </nav>
+        <div class="hamburger"> &#9776 </div>
+    </header>
+
+    <section class="products">
+        <div class="products-hero">
+            <h1>Discover Your Style</h1>
+            <p>Trendy outfits and accessories for Men, Women & Kids</p>
+            <a href="#categories">Shop Now</a>
+        </div>
+        <div class="categories-container" id="categories">
+            <h1 class="head">Categories</h1>
+            <div class="grid">
+                <div data-aos="fade-up" >
+                    <div class="cat">
+                        <img src="./asstes/male-cat.webp" alt="male categories">
+                        <div class="cat-content">
+                            <h2>Male Products</h2>
+                            <a href="#male-products">See Now!</a>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="cat">
+                        <img src="./asstes/women-cat.jpg" alt="male categories">
+                        <div class="cat-content">
+                            <h2>Women Products</h2>
+                            <a href="#women-products">See Now!</a>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="cat">
+                        <img src="./asstes/kids-cat.jpg" alt="male categories">
+                        <div class="cat-content">
+                            <h2>Kids Products</h2>
+                            <a href="#kids-products">See Now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-container">
+            <div class="head">Products</div>
+            <section class="male-products" id="male-products">
+                <h1 class="sub-head">Men products</h1>
+                <div class="grid">
+                    <div class="product-card"  data-aos="fade-up" data-aos-delay="100">
+                        <img src="./asstes/blazer-men.jpg" alt="Product">
+                        <div class="product-info">
+                            <h3>Stylish Jacket</h3>
+                            <p>₹1,999</p>
+                        </div>
+                        <div class="overlay">
+                            <button onclick="addToCart('Stylish Jacket')">Add to Cart</button>
+                            <span onclick="toggleLike(this)">❤</span>
+                        </div>
+                    </div>
+                    <div class="product-card"  data-aos="fade-up" data-aos-delay="200">
+                        <img src="./asstes/men-shirt.jpg" alt="Product">
+                        <div class="product-info">
+                            <h3>Shirt</h3>
+                            <p>₹1,099</p>
+                        </div>
+                        <div class="overlay" >
+                            <button onclick="addToCart('Shirt')">Add to Cart</button>
+                            <span onclick="toggleLike(this)">❤</span>
+                        </div>
+                    </div>
+                    <div class="product-card"  data-aos="fade-up" data-aos-delay="300">
+                        <img src="./asstes/men-jeans.jpg" alt="Product">
+                        <div class="product-info">
+                            <h3>Stylish Jeans</h3>
+                            <p>₹1,599</p>
+                        </div>
+                        <div class="overlay">
+                            <button onclick="addToCart('Jeans')">Add to Cart</button>
+                            <span onclick="toggleLike(this)">❤</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="./asstes/men-cap.webp" alt="Product">
+                        <div class="product-info">
+                            <h3>Premium Cap</h3>
+                            <p>₹999</p>
+                        </div>
+                        <div class="overlay">
+                            <button onclick="addToCart('Cap')">Add to Cart</button>
+                            <span onclick="toggleLike(this)">❤</span>
+                        </div>
+                    </div>
+                </div>
+                <section class="women-products" id="women-products">
+                    <h1 class="sub-head">Women products</h1>
+                    <div class="grid">
+                        <div class="product-card" data-aos="fade-down" data-aos-delay="100">
+                            <img src="./asstes/saree.jpg" alt="Product">
+                            <div class="product-info">
+                                <h3>Traditional Saree's</h3>
+                                <p>₹4,999</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Sarees')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                        <div class="product-card" data-aos="fade-down" data-aos-delay="200">
+                            <img src="./asstes/women-shitr.jpg" alt="Product">
+                            <div class="product-info">
+                                <h3>Stylish Shirt</h3>
+                                <p>₹2,999</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Womens Shirt')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                        <div class="product-card" data-aos="fade-down" data-aos-delay="300">
+                            <img src="./asstes/women-kurthi.jpg" alt="Product">
+                            <div class="product-info">
+                                <h3>Kurthi</h3>
+                                <p>₹1,399</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Kurthis')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                        <div class="product-card" data-aos="fade-down" data-aos-delay="400">
+                            <img src="./asstes/women-hoodies.jpg" alt="Product">
+                            <div class="product-info">
+                                <h3>Women's Hoodies</h3>
+                                <p>₹3,999</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Women Hoodies')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="kids-products" id="kids-products">
+                    <h1 class="sub-head">Kids products</h1>
+                    <div class="grid">
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./asstes/kid-shirt.webp" alt="Product">
+                            <div class="product-info">
+                                <h3>Stylish Shirts</h3>
+                                <p>₹999</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Kids Shirt')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./asstes/kid-t-shirt.webp" alt="Product">
+                            <div class="product-info">
+                                <h3>Premium T-Shirt</h3>
+                                <p>₹1,199</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Premium T-Shirt')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./asstes/kids-Dungarees.jpg" alt="Product">
+                            <div class="product-info">
+                                <h3>Dungarees</h3>
+                                <p>₹1,899</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Dungarees')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                            <img src="./asstes/kids-kurtha.jpg" alt="Product">
+                            <div class="product-info">
+                                <h3>Kid's Kurtha</h3>
+                                <p>₹799</p>
+                            </div>
+                            <div class="overlay">
+                                <button onclick="addToCart('Kids Kurtha')">Add to Cart</button>
+                                <span onclick="toggleLike(this)">❤</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <div class="featured-container" data-aos="zoom-in" data-aos-delay="100">
+                <h1 class="head">Featured Collections</h1>
+                <div class="featured-grid">
+                    <div class="featured-col1">
+                        <div class="featured-product-card1">
+                            <img class="featured-product1" src="./asstes/men-hoodies.jpg" alt="Men's Winter Jacket">
+                            <div class="featured-info">
+                                <h3>Men's Hoodies</h3>
+                                <p>₹1,999</p>
+                                <a href="#" class="shop-btn">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-col2">
+                        <div class="featured-product-card">
+                            <img src="./asstes/Scarves-women.jpg" alt="Women's Summer Dress">
+                            <div class="featured-info">
+                                <h3>Women Screves</h3>
+                                <p>₹2,999</p>
+                                <a href="#" class="shop-btn">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <div class="featured-product-card">
+                            <img src="./asstes/kid-shirt.webp" alt="Kids Shoes">
+                            <div class="featured-info">
+                                <h3>Kids Shirt</h3>
+                                <p>₹2,499</p>
+                                <a href="#" class="shop-btn">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offers-container">
+                <div class="offers-content"  data-aos="fade-up">
+                    <h1>Seasonal sale banners (e.g., Flat 50% Off on Summer Collection)</h1>
+                    <h3>Buy 1 Get 1 Free deals</h3>
+                    <a href="404page.html">Grap Now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="customer-assurance-container">
+        <h1 class="head"> Customer Assurance</h1>
+        <div class="customer-assurance">
+            <div data-aos="fade-up" data-aos-delay="100">
+            <div class="assurance-item">
+                <span class="icon">🚚</span>
+                <h4>Free Shipping</h4>
+                <p>On all orders above ₹999</p>
+            </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+            <div class="assurance-item">
+                <span class="icon">🔄</span>
+                <h4>Easy Returns</h4>
+                <p>7-day hassle-free returns</p>
+            </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+            <div class="assurance-item">
+                <span class="icon">💳</span>
+                <h4>Secure Payment</h4>
+                <p>100% safe & trusted checkout</p>
+            </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400">
+            <div class="assurance-item">
+                <span class="icon">⭐</span>
+                <h4>Top Quality</h4>
+                <p>Handpicked premium products</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-head">
+            <div class="footer-grid">
+                <div class="footer-content-company">
+                    <a href="index.html" class="logo"> Stackly</a>
+                    <p>Where Trends Begin.</p>
+
+                </div>
+                <div class="footer-content-nav">
+                    <h3>Quick Links</h3>
+                    <nav class="footer-nav-grid">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About US</a>
+                        <a href="services.html">Services</a>
+                        <!-- <a href="404page.html">Shop</a> -->
+                        <a href="products.html">Products</a>
+                        <a href="404page.html">Offers</a>
+                        <a href="404page.html">Buynow</a>
+                    </nav>
+                </div>
+                <div class="footer-content-contact">
+                    <h3>Contact US</h3>
+                    <a href="404page.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>TN Salem</p>
+                    </a>
+                    <a href="404page.html">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+91 1234567890</p>
+                    </a>
+                    <a href="404page.html">
+                        <i class="fa-solid fa-at"></i>
+                        <p>info@gmail.com</p>
+                    </a>
+                </div>
+                <div class="footer-content-legal-link">
+                    <h3>Legal Link</h3>
+                    <nav>
+                        <li><a href="404page.html">Policy</a> </li>
+                        <li><a href="404page.html">Terms & Conditons</a></li>
+                        <li><a href="404page.html">Disclimer</a></li>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-copy">
+                © 2025 Stackly. All Rights Reserved.
+                <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+            </div>
+
+        </div>
+    </footer>
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            // duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+    </script>
+    <script>
+        function addToCart(productName) {
+            alert(productName + " added to cart!");
+        }
+
+        function toggleLike(element) {
+            element.classList.toggle("liked");
+        }
+    </script>
+</body>
+
+</html>

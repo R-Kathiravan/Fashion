@@ -96,6 +96,8 @@
  .menu-items {
      display: flex;
      flex-wrap: wrap;
+     flex-direction: row;
+     align-items: center;
 
  }
 
@@ -807,7 +809,7 @@
          display: block;
          margin-right: 30px;
          cursor: pointer;
-         color: white;
+         color: var(--black);
 
      }
 
@@ -822,6 +824,9 @@
 
      .hamburger:hover {
          color: #b82e5e;
+     }  
+     .home-select{
+        left: 70% !important;
      }
  }
 
@@ -1147,3 +1152,31 @@
          transform: translateX(-5px);
      }
  }
+
+ .menu-item {
+  position: relative;
+}
+
+.home-select {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 170px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  color: black;
+    padding: 20px;
+
+  /* text-align: center; */
+}
+.home-select a{
+color: black;
+    font-size: 16px !important; 
+    /* padding: 10px; */
+    /* margin: 20px; */
+}
+
+.menu-item:hover .home-select {
+  display: block;
+}

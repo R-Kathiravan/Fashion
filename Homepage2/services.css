@@ -11,8 +11,8 @@
     --a-btn-hov:#037cfe;
 }
 html.dark-mode {
-    --white: #121212;
-    --black: #e0e0e0;
+    --white: #000000;
+    --black: #ffffff;
     --box-shadow: rgba(255, 255, 255, 0.05);
     --icons: #64b5f6;
     --card-hov: #64b5f6;
