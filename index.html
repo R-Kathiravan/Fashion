@@ -424,6 +424,8 @@
             document.getElementById("welcome-text").textContent = username;
             document.getElementById("disp_mail").textContent = login_email;
             document.getElementById("user_logo").textContent = username[0];
+            showPopupBtn.style.display = "none";
+
         }
 
         window.onload = function () {
@@ -432,7 +434,8 @@
             if (savedUser && savedMail) {
                 showUser(savedUser, savedMail);
                 // document.getElementById("login-form").style.display = "none";
-                // showPopupBtn.style.display = "none";
+                showPopupBtn.style.display = "none";
+
             }
             else {
                 document.getElementById("user-icon").style.display = "none";
