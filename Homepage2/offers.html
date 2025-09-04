@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers</title>
+    <link rel="stylesheet" href="offers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header-cls">
+        <a href="index.html" class="logo"> Stackly</a>
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About US</a>
+            <a href="services.html">Services</a>
+            <!-- <a href="404page.html">Shop</a> -->
+            <a href="products.html">Products</a>
+            <a href="offers.html">Offers</a>
+            <a class="btn-close">Close</a>
+        </nav>
+        <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
+        <nav class="menu-icons">
+            <a href="404page.html"><i class="fa-solid fa-magnifying-glass"></i></a></i>
+            <a href="404page.html"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="404page.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="404page.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </nav>
+        <div class="hamburger"> &#9776 </div>
+    </header>
+    <section class="offers">
+        <div class="offers-hero">
+            <h1>Unwrap the best of fashion at unbeatable prices.<br></h1>
+            <p>From trendy essentials to timeless classics, everything is on sale—just for you!</p>
+            <a href="#shop-now">Shop now</a>
+        </div>
+        <div class="categories" id="shop-now">
+            <h1 class="head">Handpicked Deals, Just for You</h1>
+            <div class="categories-grid" data-aos="fade-up"> 
+                <div class="categories-card">
+                    <img src="./asstes/men-hoodies.jpg" alt="Sec">
+                    <div class="cat-info">
+                        <a href="#male-offers">Shop for Men</a>
+                    </div>
+                    <span class="badge"><i>Flat 40% Off on Hoodies & Jackets</i></span>
+                </div>
+                <div class="categories-card">
+                    <img src="./asstes/women-dress-scraves.jpg" alt="Sec">
+                    <div class="cat-info">
+                        <a href="#women-offers">Shop for Women</a>
+                    </div>
+                    <span class="badge"><i>Up to 50% Off on Dresses & Scarves</i></span>
+                </div>
+                <div class="categories-card">
+                    <img src="./asstes/kids-cat-offer.jpg" alt="Sec">
+                    <div class="cat-info">
+                        <a href="#kids-offers">Shop for Kids</a>
+                    </div>
+                    <span class="badge"><i>Trendy Styles Starting at ₹499</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="offers-container">
+            <div class="male-offers" id="male-offers">
+                <h1 class="head">Male Products</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="./asstes/blazor-men-peaky-blinders.webp">
+                        <div class="offer-badge"><span>Flat 40% Off</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Blazors</h4>
+                            <p class="product-price">₹1,999</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="./asstes/men-kurtha.jpeg">
+                        <div class="offer-badge"><span>Starting ₹499</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Traditional Kurta</h4>
+                            <p class="product-price">₹2,999</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="./asstes/men-casual-shirt.jpeg">
+                        <div class="offer-badge"><span>Buy 1 Get 1</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Casual Shirt</h4>
+                            <p class="product-price">₹999</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="./asstes/men-suit.avif">
+                        <div class="offer-badge"><span>20% OFF</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Modern Suit</h4>
+                            <p class="product-price">₹1,899</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="women-offers" id="women-offers">
+                <h1 class="head">Women's Products</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="100">
+                        <img src="./asstes/women-saree.jpeg">
+                        <div class="offer-badge"><span>Starting ₹499</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Women Saree</h4>
+                            <p class="product-price">₹3,399</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="200">
+                        <img src="./asstes/women-suit.jpg">
+                        <div class="offer-badge"><span>20% OFF</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title"> Business Suit</h4>
+                            <p class="product-price">₹2,199</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="300">
+                        <img src="./asstes/women-salwar.jpeg">
+                        <div class="offer-badge"><span>Buy 1 Get 1</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Salwar Kameez</h4>
+                            <p class="product-price">₹2,799</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="400">
+                        <img src="./asstes/women-winter-coat.jpeg">
+                        <div class="offer-badge"><span>Flat 40% Off</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Winter Coat</h4>
+                            <p class="product-price">₹1,499</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kids-offers" id="kids-offers">
+                <h1 class="head">Kid's Products</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="100">
+                        <img src="./asstes/kid-Sherwani.webp">
+                        <div class="offer-badge"><span>Buy 1 Get 1</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Boy's Sherwani</h4>
+                            <p class="product-price">₹1,899</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="200">
+                        <img src="./asstes/kid-casual-wear.jpeg">
+                        <div class="offer-badge"><span>20% OFF</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Boy's Casual Wear</h4>
+                            <p class="product-price">₹999</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="300">
+                        <img src="./asstes/kid hoodies.jpeg">
+                        <div class="offer-badge"><span>Starting ₹499</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Hoodies</h4>
+                            <p class="product-price">₹1,199</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-down" data-aos-delay="400">
+                        <img src="./asstes/kid-gown.jpeg">
+                        <div class="offer-badge"><span>Flat 40% Off</span></div>
+                        <div class="card-info">
+                            <h4 class="product-title">Traditional Gown</h4>
+                            <p class="product-price">₹1,099</p>
+                            <span class="cta-button" onclick="addtocart()">🛒 Add to Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flash-offers">
+            <div class="flash-offer-head">
+                <h1 class="head">Flash Sale - Limited Time Only!</h1>
+                <div class="timer" id="deal-timer">
+                    Deal ends in: 00:00:00
+                </div>
+            </div>
+            <div class="grid">
+                <div class="flash-card" data-aos="zoom-in">
+                    <img src="./asstes/men-shirt-1.webp" alt="Men's Sneakers">
+                    <div class="flash-info">
+                        <h3>Men's Shirt</h3>
+                        <p>Buy 1 Get 2</p>
+                        <button onclick="addtocart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flash-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./asstes/Scarves-women.jpg" alt="Men's Sneakers">
+                    <div class="flash-info">
+                        <h3>Women's Scraves</h3>
+                        <p> 55% Off </p>
+                        <button onclick="addtocart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flash-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./asstes/kids-formal.jpg" alt="Men's Sneakers">
+                    <div class="flash-info">
+                        <h3>Kids Formal Shrits</h3>
+                        <p>Flat 65% Off </p>
+                        <button onclick="addtocart()">Add to cart</button>
+                    </div>
+                </div>
+                <div class="flash-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./asstes/all in one.jpg" alt="Men's Sneakers">
+                    <div class="flash-info">
+                        <h3><b><i>Family Shirt Combo</i> - Men, Women & Kids</b></h3>
+                        <p>Flat 85% Off</p>
+                        <button onclick="addtocart()">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customer-assurance-container">
+            <h1 class="head"> Customer Assurance</h1>
+            <div class="customer-assurance">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="assurance-item">
+                        <span class="icon">🚚</span>
+                        <h4>Free Shipping</h4>
+                        <p>On all orders above ₹999</p>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="assurance-item">
+                        <span class="icon">🔄</span>
+                        <h4>Easy Returns</h4>
+                        <p>7-day hassle-free returns</p>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="assurance-item">
+                        <span class="icon">💳</span>
+                        <h4>Secure Payment</h4>
+                        <p>100% safe & trusted checkout</p>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="assurance-item">
+                        <span class="icon">⭐</span>
+                        <h4>Top Quality</h4>
+                        <p>Handpicked premium products</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-head">
+            <div class="footer-grid">
+                <div class="footer-content-company">
+                    <a href="index.html" class="logo"> Stackly</a>
+                    <p>Where Trends Begin.</p>
+
+                </div>
+                <div class="footer-content-nav">
+                    <h3>Quick Links</h3>
+                    <nav class="footer-nav-grid">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About US</a>
+                        <a href="services.html">Services</a>
+                        <!-- <a href="404page.html">Shop</a> -->
+                        <a href="products.html">Products</a>
+                        <a href="offers.html">Offers</a>
+                    </nav>
+                </div>
+                <div class="footer-content-contact">
+                    <h3>Contact US</h3>
+                    <a href="404page.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>TN Salem</p>
+                    </a>
+                    <a href="404page.html">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+91 1234567890</p>
+                    </a>
+                    <a href="404page.html">
+                        <i class="fa-solid fa-at"></i>
+                        <p>info@gmail.com</p>
+                    </a>
+                </div>
+                <div class="footer-content-legal-link">
+                    <h3>Legal Link</h3>
+                    <nav>
+                        <li><a href="404page.html">Policy</a> </li>
+                        <li><a href="404page.html">Terms & Conditons</a></li>
+                        <li><a href="404page.html">Disclimer</a></li>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-copy">
+                © 2025 Stackly. All Rights Reserved.
+                <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+            </div>
+
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        function addtocart() {
+            alert("Item Added To Cart,Thank You!")
+        }
+
+    </script>
+    <script>
+
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = `Deal ends in: ${hours}:${minutes}:${seconds}`;
+
+                if (--timer < 0) {
+                    display.textContent = "Offer Expired!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let dealDuration = 60 * 480;
+            let display = document.getElementById("deal-timer");
+            startTimer(dealDuration, display);
+        };
+    </script>
+</body>
+
+</html>

@@ -17,9 +17,8 @@
            <a href="index.html">Home</a>
             <a href="about.html">About US</a>
             <a href="services.html">Services</a>
-            <a href="404page.html">Shop</a>
-            <a href="404page.html">Products</a>
-            <a href="404page.html">Offers</a>
+             <a href="products.html">Products</a>
+            <a href="offers.html">Offers</a>
             <a class="btn-close">Close</a>
         </nav>
         <nav class="menu-icons">
@@ -50,11 +49,9 @@
                         <a href="index.html">Home</a>
                         <a href="about.html">About US</a>
                         <a href="services.html">Services</a>
-                        <a href="404page.html">Shop</a>
-                        <a href="404page.html">Products</a>
-                        <a href="404page.html">Offers</a>
-                        <a href="404page.html">Buynow</a>
-                    </nav>
+                         <a href="products.html">Products</a>
+                        <a href="offers.html">Offers</a>
+                     </nav>
                 </div>
                 <div class="footer-content-contact">
                     <h3>Contact US</h3>
@@ -87,6 +84,35 @@
         </div>
     </footer>
     <script src="script.js"></script>
+      <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 
 </html>
