@@ -31,6 +31,15 @@
             <a href="contact.html">Contact</a>
             <a class="popup-trigger-btn" id="show-popup-btn">Login / Signup</a>
             <button class="btn theme-toggle" id="theme-toggle">🌙</button>
+            <div id="user-icon">
+                <div id="user_logo" class="user-logo"></div>
+                <div class="user-tooltip">
+                    <p id="welcome-text"></p>
+                    <p id="disp_mail"></p>
+                    <button id="logout-btn">Logout</button>
+
+                </div>
+            </div>
             <a class="btn-close">Close</a>
         </nav>
         <div class="hamburger">
@@ -262,12 +271,13 @@
                             <h3>Login</h3>
                             <div class="input-group">
                                 <i class="fa fa-envelope"></i>
-                                <input type="email" placeholder="Enter Email Address" required>
+                                <input type="email" id="login_email" placeholder="Enter Email Address" required>
                                 <span class="error-message"></span>
                             </div>
                             <div class="input-group">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Enter Your Password" required minlength="8">
+                                <input type="password" id="login_pass" placeholder="Enter Your Password" required
+                                    minlength="8">
                                 <span class="error-message"></span>
                             </div>
                             <a href="404page.html" class="forgot-password">Forgot Password?</a>
@@ -291,17 +301,18 @@
                             <h3>Create Account</h3>
                             <div class="input-group">
                                 <i class="fa fa-user"></i>
-                                <input type="text" placeholder="Full Name" required>
+                                <input type="text" id="signup_name" placeholder="Full Name" required>
                                 <span class="error-message"></span>
                             </div>
                             <div class="input-group">
                                 <i class="fa fa-envelope"></i>
-                                <input type="email" placeholder="Email Address" required>
+                                <input type="email" id="signup_email" placeholder="Email Address" required>
                                 <span class="error-message"></span>
                             </div>
                             <div class="input-group">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Create Password" required minlength="8">
+                                <input type="password" id="signup_password" placeholder="Create Password" required
+                                    minlength="8">
                                 <span class="error-message"></span>
                             </div>
                             <button type="submit" id="btn-form">Signup</button>
@@ -342,6 +353,127 @@
         const showPopupBtn = document.getElementById('show-popup-btn');
         const closePopupBtn = document.getElementById('close-popup-btn');
         const btnform = document.getElementById('btn-form');
+        // document.getElementById('signup-form').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+
+        //     const name = document.getElementById('signup_name').value.trim();
+        //     const email = document.getElementById('signup_email').value.trim();
+        //     const password = document.getElementById('signup_password').value;
+        //     console.log("Name:", name);
+        //     console.log("Email:", email);
+        //     console.log("Password:", password);
+        //     sessionStorage.setItem("Name", name);
+        //     sessionStorage.setItem("Email", email);
+        //     sessionStorage.setItem("Password", password);
+        // });
+        // const savedUser = sessionStorage.getItem("Name");
+        // if (savedUser) {
+        //     showUser(savedUser);
+        //     document.getElementById("login-form").style.display = "none"; // hide form after login
+        // }
+
+        // document.getElementById('login-form').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     const login_email = document.getElementById('login_email').value.trim();
+        //     const login_password = document.getElementById('login_pass').value;
+        //     const user_name = sessionStorage.getItem("Name");
+        //     const val_mail = sessionStorage.getItem("Email");
+        //     const val_pass = sessionStorage.getItem("Password");
+        //     if (login_email == val_mail && login_password == val_pass) {
+        //         alert("User Name and Password Are correct");
+        //         closeModal();
+        //         showUser(user_name)
+        //     }
+        //     else {
+        //         alert("Username and Password are not correct")
+        //     }
+        //     function showUser(username) {
+        //         document.getElementById("user-icon").style.display = "block";
+        //         document.getElementById("welcome-text").textContent = "Welcome, " + user_name;
+        //     }
+        // });
+        // window.onload = function () {
+        //     const savedUser = sessionStorage.getItem("Name");
+        //     if (savedUser) {
+        //         showUser(savedUser);
+        //     }
+        // };
+
+        document.getElementById('signup-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            loginTabBtn.classList.add('active');
+            tabIndicator.style.transform = 'translateX(0%)';
+            container.classList.add('signup-active');
+
+
+            const name = document.getElementById('signup_name').value.trim();
+            const email = document.getElementById('signup_email').value.trim();
+            const password = document.getElementById('signup_password').value;
+
+            console.log("Name:", name);
+            console.log("Email:", email);
+
+            sessionStorage.setItem("Name", name);
+            sessionStorage.setItem("Email", email);
+            sessionStorage.setItem("Password", password);
+
+        });
+
+        function showUser(username, login_email) {
+            document.getElementById("user-icon").style.display = "block";
+            document.getElementById("welcome-text").textContent = username;
+            document.getElementById("disp_mail").textContent = login_email;
+            document.getElementById("user_logo").textContent = username[0];
+        }
+
+        window.onload = function () {
+            const savedUser = sessionStorage.getItem("Name");
+            const savedMail = sessionStorage.getItem("Email");
+            if (savedUser && savedMail) {
+                showUser(savedUser, savedMail);
+                // document.getElementById("login-form").style.display = "none";
+                // showPopupBtn.style.display = "none";
+            }
+            else {
+                document.getElementById("user-icon").style.display = "none";
+                document.getElementsByClassName("user-logo").style.display = "none";
+                showPopupBtn.style.display = "block";
+            }
+        };
+
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const login_email = document.getElementById('login_email').value.trim();
+            const login_password = document.getElementById('login_pass').value;
+            const user_name = sessionStorage.getItem("Name");
+            const val_mail = sessionStorage.getItem("Email");
+            const val_pass = sessionStorage.getItem("Password");
+
+            if (login_email === val_mail && login_password === val_pass) {
+                alert("User Name and Password Are correct");
+                closeModal();
+                showUser(user_name, login_email);
+                document.getElementById("login-form").style.display = "none";
+            } else {
+                alert("Username and Password are not correct");
+            }
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const logoutBtn = document.getElementById("logout-btn");
+            if (logoutBtn) {
+                logoutBtn.addEventListener("click", () => {
+                    sessionStorage.clear();
+                    document.getElementById("user-icon").style.display = "none";
+                });
+            }
+        });
+        const signupForm = document.getElementById("signup-form");
+        const loginForm = document.getElementById("login-form");
+        const signupBtn = document.getElementById("btn-form");
+        const formSlider = document.querySelector(".form-slider");
+        signupBtn.disabled = true;
+        signupBtn.style.opacity = "0.6";
 
         showPopupBtn.addEventListener('click', () => {
             modalOverlay.classList.add('active');
@@ -352,7 +484,6 @@
             modalOverlay.classList.remove('active');
             container.style.display = 'none';
         };
-
         closePopupBtn.addEventListener('click', closeModal);
 
         modalOverlay.addEventListener('click', (event) => {
@@ -366,7 +497,6 @@
             loginTabBtn.classList.remove('active');
             signupTabBtn.classList.add('active');
             tabIndicator.style.transform = 'translateX(100%)';
-
         });
 
         loginTabBtn.addEventListener('click', () => {
@@ -393,45 +523,61 @@
         const validateInput = (input) => {
             if (input.value.trim() === '' && input.hasAttribute('required')) {
                 showError(input, 'This field is required.');
-                return;
+                return false;
             }
             if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
                 showError(input, 'Please enter a valid email address.');
-                return;
+                return false;
             }
             if (input.hasAttribute('minlength') && input.value.length < input.minLength) {
                 showError(input, `Must be at least ${input.minLength} characters.`);
-                return;
+                return false;
             }
             clearError(input);
+            return true;
+        };
+
+        const validateForm = (form) => {
+            const inputs = form.querySelectorAll('input');
+            let isFormValid = true;
+
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isFormValid = false;
+                }
+            });
+
+            // const submitBtn = form.querySelector('button[type="submit"]');
+            const submitBtn = document.getElementById("btn-form")
+            submitBtn.disabled = !isFormValid;
+
+            return isFormValid;
         };
 
         allInputs.forEach(input => {
             input.addEventListener('input', () => {
-                validateInput(input);
+                validateForm(input.form);
             });
         });
 
         const handleFormSubmit = (event) => {
             event.preventDefault();
             const form = event.target;
-            const inputs = form.querySelectorAll('input');
-            let isFormValid = true;
 
-            inputs.forEach(input => {
-                validateInput(input);
-                if (input.parentElement.classList.contains('error')) {
-                    isFormValid = false;
+            if (validateForm(form)) {
+                if (form.id === 'signup-form') {
+                    alert("Signup successful! Please login.");
+                    loginTabBtn.click();
+                    form.reset();
+                } else if (form.id === 'login-form') {
+                    alert("Login successful!");
+                    closeModal();
                 }
-            });
-            if (isFormValid) {
-                window.location.href = '404page.html';
             }
         };
 
         document.getElementById('login-form').addEventListener('submit', handleFormSubmit);
         document.getElementById('signup-form').addEventListener('submit', handleFormSubmit);
-
 
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;

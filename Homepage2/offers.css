@@ -5,13 +5,17 @@
         --black: black;
         --dim-text: #777;
         --btn-dim-text: #333;
+        --box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
     }
 
     html.dark-mode {
-        --white: #121212;
-        --black: #e0e0e0;
+        --white: #000000;
+        --black: #ffffff;
         --dim-text: #aaaaaa;
         --btn-dim-text: #e0e0e0;
+        --box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+
     }
 
     body {
@@ -342,7 +346,7 @@
         .menu-items {
             display: none;
         }
-      
+
     }
 
     .offers-hero {
@@ -362,19 +366,23 @@
         margin: 0%;
         font-size: 38px;
     }
+
     @media (max-width:478px) {
-          .offers-hero h1{
+        .offers-hero h1 {
             font-size: 25px;
         }
-        .offers-hero p{
+
+        .offers-hero p {
             font-size: 14px;
         }
-        .offers-hero a{
+
+        .offers-hero a {
             padding: 0px;
             font-size: 12px;
         }
     }
-    .offers-hero a{
+
+    .offers-hero a {
         text-decoration: none;
         padding: 16px;
         font-size: 16px;
@@ -382,7 +390,8 @@
         border-radius: 15px;
         color: white;
     }
-    .offers-hero a:hover{
+
+    .offers-hero a:hover {
         background-color: #0385ff;
     }
 
@@ -444,8 +453,7 @@
         text-align: center;
         padding: 20px;
         color: #ffffff;
-        /* background-color: white; */
-        z-index: 2;
+         z-index: 2;
         transition: bottom 0.4s ease;
         display: flex;
         flex-direction: column;
@@ -484,6 +492,7 @@
         font-weight: bold;
         z-index: 3;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
     }
 
     @media (max-width:478px) {
@@ -532,7 +541,33 @@
         font-size: 18px;
         font-weight: 600;
         /* transform: rotate(35deg); */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: var(--box-shadow);
+        animation: heartbeat 2.7s ease-in-out infinite;
+
+    }
+
+    @keyframes heartbeat {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        14% {
+            transform: scale(1.3);
+        }
+
+        28% {
+            transform: scale(1);
+        }
+
+        42% {
+            transform: scale(1.3);
+        }
+
+        70% {
+            transform: scale(1);
+        }
     }
 
     .card-info {
@@ -572,7 +607,7 @@
     }
 
     .product-card:hover {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--box-shadow);
     }
 
     .flash-offer-p {
@@ -600,12 +635,12 @@
 
     .flash-card:hover {
         transform: translateY(-8px);
+        box-shadow: 0 0 20px rgba(90, 20, 255, 0.507);
     }
 
     .flash-card img {
         width: 100%;
         height: 320px;
-        /* aspect-ratio: 1/1; */
         object-fit: cover;
     }
 
