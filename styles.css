@@ -1181,59 +1181,61 @@
  }
 
  .user-logo {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  /* background-color: var(--white); */
-  background-color: #4a00e0;
-   color:white;
-  font-weight: bold;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative;
-  text-transform: uppercase;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.103);
-  margin-right: 10px;
-}
-
- .user-tooltip {
-  display: none;
-  position: absolute;
-  top: 55px;
- right: 20px;
-  background: #222;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-size: 14px;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 10;
-}
-
- #user-icon:hover .user-tooltip {
-  display: block;
+     width: 55px;
+     height: 55px;
+     border-radius: 50%;
+     /* background-color: var(--white); */
+     background-color: #4a00e0;
+     color: white;
+     font-weight: bold;
+     font-size: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     position: relative;
+     text-transform: uppercase;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.103);
+     margin-right: 10px;
  }
 
-#logout-btn {
-  margin-top: 8px;
-  background: #ff4b2b;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-#logout-btn:hover {
-  background: #ff1a1a;
-}
-#btn-form:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
+ .user-tooltip {
+     display: none;
+     position: absolute;
+     top: 55px;
+     right: 20px;
+     background: #222;
+     color: #fff;
+     padding: 10px 15px;
+     border-radius: 8px;
+     font-size: 14px;
+     white-space: nowrap;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+     z-index: 10;
+ }
+
+ #user-icon:hover .user-tooltip {
+     display: block;
+ }
+
+ #logout-btn {
+     margin-top: 8px;
+     background: #ff4b2b;
+     color: #fff;
+     border: none;
+     padding: 6px 12px;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 13px;
+     font-weight: bold;
+     transition: background 0.3s ease;
+ }
+
+ #logout-btn:hover {
+     background: #ff1a1a;
+ }
+
+ #btn-form:disabled {
+     background: #ccc;
+     cursor: not-allowed;
+ }

@@ -386,7 +386,9 @@ body.dark .theme-toggle {
 .blog-hero a:hover {
     background-color: #004cff;
 }
-
+.featured-blog{
+    overflow-x: hidden;
+}
 .featured-grid {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -452,7 +454,7 @@ body.dark .theme-toggle {
     }
 
     .trending-right {
-        padding-top: 21%;
+        padding-top: 21% !important;
     }
 
     .newsletter-container{
