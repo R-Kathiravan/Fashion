@@ -1033,11 +1033,11 @@ body.dark .theme-toggle {
 }
 
 .contact-maps iframe {
-  width: 100%;
+  width: 90%;
   height: 400px;
   border: 0;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
   margin: 20px 0;
   background: var(--map-linear-g);
   padding: 8px;
