@@ -65,6 +65,8 @@ body {
 
 .menu-items a {
     text-decoration: none;
+      flex-wrap: wrap;
+
     color: var(--black);
     font-size: 18px;
      letter-spacing: 1px;

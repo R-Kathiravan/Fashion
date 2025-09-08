@@ -3,7 +3,7 @@
 :root {
     --white: white;
     --black: black;
-    --logo: rgb(0, 72, 255);
+    --logo: rgb(97, 107, 133);
     --hero-bg-r: radial-gradient(circle at 85% 15%,
             rgba(142, 197, 252, 0.5),
             transparent 40%),
@@ -82,6 +82,8 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+      flex-wrap: wrap;
+
     background-color: var(--white);
 }
 

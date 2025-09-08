@@ -1168,6 +1168,7 @@
      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
      color: black;
      padding: 20px;
+     z-index: 1000;
  }
 
  .home-select a {
@@ -1202,8 +1203,7 @@
   display: none;
   position: absolute;
   top: 55px;
-  /* left: 85%; */
-right: 20px;
+ right: 20px;
   background: #222;
   color: #fff;
   padding: 10px 15px;
