@@ -158,24 +158,23 @@
  }
 
  .theme-toggle {
-     background: #333;
-     color: white;
+     background: var(--black);
+     color: var(--white);
      border: none;
      padding: 6px 12px;
      border-radius: 6px;
      cursor: pointer;
      transition: transform 0.3s ease, background 0.3s ease;
      margin-right: 10px;
-     /* position: fixed;
-  bottom: 50px;
-  right: 20px;
-  z-index: 1000; */
  }
+    .theme-toggle i{
+        color: var(--white);
+    }
 
- body.dark .theme-toggle {
+ /* body.dark .theme-toggle {
      background: #ddd;
      color: black;
- }
+ } */
 
  .banner {
      /* position: relative; */
@@ -663,7 +662,7 @@
      border-radius: 8px;
      cursor: pointer;
      transition: 0.3s ease;
-     width: 15%;
+     width: 20%;
      text-align: center;
  }
 
@@ -825,6 +824,9 @@
 
      .home-select {
          left: 70% !important;
+     }
+     .contact-form button{
+        width: 30%;
      }
  }
 

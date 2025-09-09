@@ -307,7 +307,7 @@
         .menu-items {
             display: flex;
             flex-wrap: wrap;
-
+            align-items: center;
         }
 
         .menu-items a {
@@ -520,20 +520,18 @@
         }
 
         .theme-toggle {
-            background: #333;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease;
-            margin-right: 10px;
-        }
-
-        body.dark .theme-toggle {
-            background: #ddd;
-            color: black;
-        }
+     background: var(--black);
+     color: var(--white);
+     border: none;
+     padding: 6px 12px;
+     border-radius: 6px;
+     cursor: pointer;
+     transition: transform 0.3s ease, background 0.3s ease;
+     margin-right: 10px;
+ }
+    .theme-toggle i{
+        color: var(--white);
+    }
 
         .logo {
             padding: 16px;
@@ -553,7 +551,7 @@
             <a href="collections.html">Collections</a>
             <a href="contact.html">Contact</a>
             <a class="btn-close">Close</a>
-            <button class="btn theme-toggle" id="theme-toggle">🌙</button>
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-cog"></i></button>
 
         </nav>
 
@@ -724,7 +722,7 @@
                 <h3>Contact Us</h3>
                 <p>Email: support@Stackly.com</p>
                 <p>Phone: +91 98765 43210</p>
-                <p>Location: 45 Fashion Street, Mumbai, India</p>
+                <p>Location: MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
             </div>
 
             <div class="footer-social">

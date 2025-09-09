@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Blog</title>
 </head>
 
 <body>
     <style>
-                 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
 
         :root {
             --font-color-nav-head: rgb(200, 0, 255);
@@ -55,8 +56,8 @@
 
         body {
             background-color: var(--white);
-                        font-family: 'Poppins', sans-serif;
-            margin:0;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
         }
 
         .blog-nav-head {
@@ -529,12 +530,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 6px 0px;
-            background-color:var(--white);
+            background-color: var(--white);
             position: fixed;
             width: 100%;
             z-index: 100;
             margin-right: 20px;
         }
+
         .header-cls h1 {
             color: var(--white);
             font-weight: bold;
@@ -557,7 +559,7 @@
         .menu-items {
             display: flex;
             flex-wrap: wrap;
-
+            align-items: center;
         }
 
         .menu-items a {
@@ -621,6 +623,7 @@
         .popup-trigger-btn:hover::after {
             width: 100%;
         }
+
         .popup-trigger-btn:hover {
             transform: translateY(-3px);
             color: var(--btn-hover);
@@ -783,32 +786,30 @@
         }
 
         .theme-toggle {
-            background: #333;
-            color: white;
+            background: var(--black);
+            color: var(--white);
             border: none;
-            padding: 8px 12px;
+            padding: 6px 12px;
             border-radius: 6px;
             cursor: pointer;
             transition: transform 0.3s ease, background 0.3s ease;
             margin-right: 10px;
         }
 
-        body.dark .theme-toggle {
-            background: #ddd;
-            color: black;
+        .theme-toggle i {
+            color: var(--white);
         }
 
-      .logo {
-      padding: 16px;
-     font-size: 36px;
-     text-decoration: none;
-     color: red;
-     font-weight: bolder;
- }
-
+        .logo {
+            padding: 16px;
+            font-size: 36px;
+            text-decoration: none;
+            color: red;
+            font-weight: bolder;
+        }
     </style>
     <header class="header-cls">
-                <a href="index.html"  class="logo"> Stackly</a>
+        <a href="index.html" class="logo"> Stackly</a>
         <nav class="menu-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -817,7 +818,7 @@
             <a href="collections.html">Collections</a>
             <a href="contact.html">Contact</a>
             <a class="btn-close">Close</a>
-            <button class="btn theme-toggle" id="theme-toggle">🌙</button>
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-cog"></i></button>
 
         </nav>
 
@@ -1065,7 +1066,7 @@
                 <h3>Contact Us</h3>
                 <p>Email: support@Stackly.com</p>
                 <p>Phone: +91 98765 43210</p>
-                <p>Location: 45 Fashion Street, Mumbai, India</p>
+                <p>Location: MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
             </div>
 
             <div class="footer-social">
@@ -1097,7 +1098,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
-         function applyTheme() {
+        function applyTheme() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 htmlElement.classList.add('dark-mode');

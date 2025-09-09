@@ -33,11 +33,11 @@ dots.forEach((dot, i) => {
  setInterval(nextTestimonial, 4000);
 
  showTestimonial(index);
-     const themeBtn = document.getElementById("theme-toggle");
-themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-    });
+//      const themeBtn = document.getElementById("theme-toggle");
+// themeBtn.addEventListener("click", () => {
+//       document.body.classList.toggle("dark");
+//       themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+//     });
 
 
    function applyTheme() {
