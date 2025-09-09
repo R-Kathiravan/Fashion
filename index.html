@@ -46,6 +46,8 @@
             &#9776
         </div>
     </header>
+    <div id="toast" class="toast"></div>
+
     <!-- <button class="btn scroll-top" id="scrollTopBtn">⬆</button> -->
     <section class="hero banner" id="hero">
         <div class="banner-background">
@@ -67,23 +69,25 @@
                 <img src="./assets/photo-15.jpeg" alt="Men's Collection">
                 <h3>Men's Collection</h3>
                 <p>Explore our premium range of men's wear from casual to formal.</p>
-                <a href="404page.html" class="btn">Shop Now</a>
+                <!-- <a href="404page.html" class="btn">Shop Now</a> -->
             </div>
 
             <div class="collection-card">
                 <img src="./assets/pexels-taina-bernard-1861666-3571535.jpg" alt="Women's Collection">
                 <h3>Women's Collection</h3>
                 <p>Elegant dresses, stylish outfits, and accessories for every occasion.</p>
-                <a href="404page.html" class="btn">Shop Now</a>
+                <!-- <a href="404page.html" class="btn">Shop Now</a> -->
             </div>
 
             <div class="collection-card">
                 <img src="./assets/girl-sunglasses-posing-with-shopping-bags.jpg" alt="Kids' Collection">
                 <h3>Kids' Collection</h3>
                 <p>Fun, colorful, and comfortable clothing for the little ones.</p>
-                <a href="404page.html" class="btn">Shop Now</a>
+                <!-- <a href="404page.html" class="btn">Shop Now</a> -->
             </div>
         </div>
+        <a href="collections.html" class="btn">View All Collections</a>
+
     </section>
     <section class="about-section" id="about" data-aos="fade-up">
         <div class="about-container">
@@ -104,7 +108,7 @@
                     Whether you're making a statement or embracing everyday glamour, <strong>Stackly</strong>
                     ensures you shine effortlessly.
                 </p>
-                <a href="404page.html" class="about-btn">Explore Our Story</a>
+                <a href="about.html" class="about-btn">Explore Our Story</a>
             </div>
         </div>
     </section>
@@ -152,7 +156,7 @@
                     <h3>The Art of Effortless Style</h3>
                     <p>Discover how to create timeless looks with fewer pieces, mastering the art of minimalism
                         while keeping your wardrobe versatile and sophisticated.</p>
-                    <a href="404page.html" class="read-more">Read More</a>
+                    <!-- <a href="404page.html" class="read-more">Read More</a> -->
                 </div>
             </div>
 
@@ -164,7 +168,7 @@
                     <h3>5 Trends to Watch This Season</h3>
                     <p>From bold prints to muted tones, here's what's making waves in the fashion world this
                         season—and how to style them with confidence.</p>
-                    <a href="404page.html" class="read-more">Read More</a>
+                    <!-- <a href="404page.html" class="read-more">Read More</a> -->
                 </div>
             </div>
 
@@ -176,11 +180,11 @@
                     <h3>Behind the Seams: Sustainable Fashion</h3>
                     <p>A closer look at how premium fabrics, ethical sourcing, and timeless design come together to
                         create pieces that last a lifetime.</p>
-                    <a href="404page.html" class="read-more">Read More</a>
+                    <!-- <a href="404page.html" class="read-more">Read More</a> -->
                 </div>
             </div>
-
         </div>
+        <a href="blog.html" class="read-more">Read More</a>
     </section>
     <section class="contact-section" id="contact" data-aos="fade-up">
         <div class="contact-container">
@@ -193,18 +197,20 @@
                     request, our team is here to help.
                 </p>
 
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <a href="404page.html">Send </a>
+                <form id="contact_form">
+                    <input type="text" id="user_name" placeholder="Your Name" required>
+                    <input type="email" id="user_email" placeholder="Your Email" required>
+                    <input type="text" id="user_reg" placeholder="Subject">
+                    <textarea id="user_message" placeholder="Your Message" rows="5" required></textarea>
+                    <!-- <a href="404page.html">Send </a> -->
+                    <button type="submit">Send</button>
                 </form>
-
                 <div class="contact-info">
-                    <p><strong> Address:</strong> 45, Stackly Avenue, Fashion Street, New Delhi, India</p>
+                    <p><strong> Address:</strong> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil,
+                        <i>Salem</i>, Tamil Nadu
+                    </p>
                     <p><strong> Phone:</strong> +91 98765 43210</p>
-                    <p><strong> Email:</strong> hello@Stackly.com</p>
+                    <p><strong> Email:</strong> info@thestackly.com</p>
                 </div>
             </div>
         </div>
@@ -230,9 +236,9 @@
 
             <div class="footer-contact">
                 <h3>Contact Us</h3>
-                <p>Email: support@Stackly.com</p>
+                <p>Email: info@thestackly.com</p>
                 <p>Phone: +91 98765 43210</p>
-                <p>Location: 45 Fashion Street, Mumbai, India</p>
+                <p>Location: MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
             </div>
 
             <div class="footer-social">
@@ -439,7 +445,7 @@
             }
             else {
                 document.getElementById("user-icon").style.display = "none";
-                document.getElementsByClassName("user-logo").style.display = "none";
+                // document.getElementsByClassName("user-logo").style.display = "none";
                 showPopupBtn.style.display = "block";
             }
         };
@@ -454,12 +460,14 @@
             const val_pass = sessionStorage.getItem("Password");
 
             if (login_email === val_mail && login_password === val_pass) {
-                alert("User Name and Password Are correct");
+                // alert("User Name and Password Are correct");
+                showToast("Login Successfull", "success")
                 closeModal();
                 showUser(user_name, login_email);
-                document.getElementById("login-form").style.display = "none";
+                // document.getElementById("login-form").style.display = "none";
             } else {
-                alert("Username and Password are not correct");
+                // alert("Username and Password are not correct");
+                showToast("Username and Password are not correct", "error");
             }
         });
         document.addEventListener("DOMContentLoaded", () => {
@@ -468,6 +476,8 @@
                 logoutBtn.addEventListener("click", () => {
                     sessionStorage.clear();
                     document.getElementById("user-icon").style.display = "none";
+                    showPopupBtn.style.display="block";
+                    
                 });
             }
         });
@@ -569,13 +579,16 @@
 
             if (validateForm(form)) {
                 if (form.id === 'signup-form') {
-                    alert("Signup successful! Please login.");
+                    // alert("");
+                    showToast("Signup successful! Please login.", "success")
                     loginTabBtn.click();
                     form.reset();
-                } else if (form.id === 'login-form') {
-                    alert("Login successful!");
-                    closeModal();
                 }
+                // else if (form.id === 'login-form') {
+                //     alert("Login successful!");
+                //     showToast("User Name and Password Are not correct", "error")
+                //     closeModal();
+                // }
             }
         };
 
@@ -604,6 +617,34 @@
                 localStorage.setItem('theme', 'light');
             }
         });
+        const form_contact = document.getElementById("contact_form");
+        const toast = document.getElementById("toast");
+
+        form_contact.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const con_name = document.getElementById("user_name").value.trim();
+            const con_email = document.getElementById("user_email").value.trim();
+            const con_reg = document.getElementById("user_reg").value.trim();
+            const con_message = document.getElementById("user_message").value.trim();
+
+            if (con_name && con_email.includes("@") && con_reg && con_message) {
+                showToast(con_name + " Your Message has sent successfully!", "success");
+                form_contact.reset();
+            } else {
+                showToast(" Please fill all fields correctly!", "error");
+            }
+        });
+
+        function showToast(message, type) {
+            toast.textContent = message;
+            toast.style.background = (type === "error") ? "#f44336" : "#4CAF50";
+            toast.className = "toast show";
+
+            setTimeout(() => {
+                toast.className = "toast";
+            }, 5000);
+        }
 
     </script>
 </body>

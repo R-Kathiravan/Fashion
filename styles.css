@@ -277,7 +277,6 @@
 
  .hero-content h2 {
      font-size: 3rem;
-     font-family: 'Playfair Display', serif;
      margin-bottom: 10px;
  }
 
@@ -362,7 +361,7 @@
      min-height: 50px;
  }
 
- .collection-card .btn {
+ .collections .btn {
      display: inline-block;
      margin: 15px 0 20px;
      padding: 10px 20px;
@@ -373,7 +372,7 @@
      transition: background 0.3s ease;
  }
 
- .collection-card .btn:hover {
+ .collections .btn:hover {
      background: var(--accent-dark);
  }
 
@@ -381,8 +380,6 @@
      padding: 80px 5%;
      background-color: var(--white);
      font-family: 'Poppins', sans-serif;
-     /* margin-top: 10%; */
-     /* margin-bottom: 10%; */
  }
 
  .about-container {
@@ -656,7 +653,7 @@
      box-shadow: 0 0 5px rgba(255, 79, 129, 0.4);
  }
 
- .contact-form a {
+ .contact-form button {
      text-decoration: none;
      background: #ff4f81;
      color: white;
@@ -1000,18 +997,18 @@
      position: absolute;
      left: 18px;
      top: 16px;
-     color: var(--footer-p);
+     color: #ccc;
      transition: color 0.3s, transform 0.3s;
  }
 
  .input-group input {
      width: 85%;
      padding: 14px 14px 14px 50px;
-     border: 1px solid var(--border-color);
+     border: 1px solid #e0e0e0;
      border-radius: 10px;
      font-size: 1rem;
      font-family: 'Poppins', sans-serif;
-     background-color: var(--blog-bg);
+     background-color: #faf9f6;
      transition: all 0.3s;
  }
 
@@ -1027,7 +1024,7 @@
  }
 
  .error-message {
-     color: var(--error-color);
+     color: #d90429;
      font-size: 0.8rem;
      padding-left: 5px;
      display: none;
@@ -1035,7 +1032,7 @@
  }
 
  .input-group.error input {
-     border-color: var(--error-color);
+     border-color: #d90429;
      animation: shake 0.4s;
  }
 
@@ -1046,7 +1043,7 @@
  .form-section a.forgot-password {
      display: block;
      text-align: right;
-     color: var(--primary-color);
+     color: #6a5af9;
      text-decoration: none;
      font-size: 0.9rem;
      margin-top: -1rem;
@@ -1058,7 +1055,7 @@
      padding: 14px;
      border: none;
      border-radius: 10px;
-     color: var(--white);
+     color: white;
      font-size: 1.1rem;
      font-weight: 600;
      cursor: pointer;
@@ -1239,3 +1236,26 @@
      background: #ccc;
      cursor: not-allowed;
  }
+ .toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1500;
+  left: 50%;
+  bottom: 30px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
