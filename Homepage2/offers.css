@@ -70,21 +70,15 @@
         color: var(--white);
         border: none;
         padding: 12px 12px;
-        border-radius: 50%;
+        border-radius: 30%;
         cursor: pointer;
         transition: transform 0.3s ease, background 0.3s ease;
         margin-right: 10px;
-        position: fixed;
+        /* position: fixed;
         bottom: 50px;
         right: 20px;
-        z-index: 1000;
+        z-index: 1000; */
     }
-
-    body.dark .theme-toggle {
-        background: #ddd;
-        color: black;
-    }
-
     .menu-items a {
         text-decoration: none;
         color: var(--black);

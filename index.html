@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -21,7 +20,6 @@
             <div class="menu-item">
                 <a>Home</a>
                 <div class="home-select">
-                    <!-- <a href="index.html">Home Page1</a><br><br> -->
                     <a href="./Homepage2/index.html">Home Page2</a>
                 </div>
             </div> <a href="about.html">About</a>
@@ -37,7 +35,6 @@
                     <p id="welcome-text"></p>
                     <p id="disp_mail"></p>
                     <button id="logout-btn">Logout</button>
-
                 </div>
             </div>
             <a class="btn-close">Close</a>
@@ -48,7 +45,6 @@
     </header>
     <div id="toast" class="toast"></div>
 
-    <!-- <button class="btn scroll-top" id="scrollTopBtn">⬆</button> -->
     <section class="hero banner" id="hero">
         <div class="banner-background">
             <div class="bg-image image1"></div>
@@ -476,8 +472,8 @@
                 logoutBtn.addEventListener("click", () => {
                     sessionStorage.clear();
                     document.getElementById("user-icon").style.display = "none";
-                    showPopupBtn.style.display="block";
-                    
+                    showPopupBtn.style.display = "block";
+
                 });
             }
         });

@@ -120,24 +120,17 @@ position: relative;
 }
 
 .theme-toggle {
-  background: var(--black);
+  background: var(--black); 
     color: var(--white);
   border: none;
       padding: 12px 12px;
-  border-radius: 50%;
+  border-radius: 30%;
   cursor: pointer;
   transition: transform 0.3s ease, background 0.3s ease;
   margin-right: 10px;
-  position: fixed;
-  bottom: 50px;
-  right: 20px;
-  z-index: 1010;
 }
 
-body.dark .theme-toggle {
-  background: #ddd;
-  color: black;
-}
+ 
 
 .hero {
   position: relative;
