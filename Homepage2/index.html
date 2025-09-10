@@ -42,12 +42,12 @@
                     <button id="logout-btn">Logout</button>
                 </div>
             </div>
-            <nav class="menu-icons">
+            <!-- <nav class="menu-icons">
                 <a href="404page.html"><i class="fa-solid fa-magnifying-glass"></i></a></i>
                 <a href="404page.html"><i class="fa-regular fa-heart"></i></a>
                 <a href="404page.html"><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="404page.html" class="user-icon-head"><i class="fa-solid fa-circle-user"></i></a>
-            </nav>
+            </nav> -->
             <div class="hamburger"> &#9776 </div>
 
         </header>
@@ -363,16 +363,19 @@
                         <h1>Welcome Back</h1>
                         <p>Login to continue.</p>
                         <form id="login-form">
-                            <label>Email</label>
-                            <input type="email" class="form-input" id="login-mail" placeholder="you@example.com"
-                                required>
-                            <!-- <span class="error-message"></span> -->
-                            <label>Password</label>
-                            <input type="password" class="form-input" id="login-password"
-                                placeholder="Enter your password" required>
-                            <!-- <span class="error-message"></span> -->
-
-                            <button class="submit-btn">Login</button>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" id="login-mail" placeholder="you@example.com"
+                                    required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" class="form-input" id="login-password"
+                                    placeholder="Enter your password" minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                                <button class="submit-btn">Login</button>
                         </form>
                         <p class="form-switch-text">No account? <a href="#" id="showSignup">Sign Up</a></p>
                     </div>
@@ -389,19 +392,19 @@
                                 <label>Email</label>
                                 <input type="email" class="form-input" id="signup-email" placeholder="you@example.com"
                                     required>
-                                <!-- <span class="error-message"></span> -->
+                                <span class="error-message"></span>
                             </div>
                             <div class="input-group">
                                 <label>Password</label>
                                 <input type="password" class="form-input" id="signup-password"
-                                    placeholder="Create a password" required minlength="8">
-                                <!-- <span class="error-message"></span> -->
+                                    placeholder="Create a password" minlength="8">
+                                <span class="error-message"></span>
                             </div>
                             <div class="input-group">
                                 <label>Confirm Password</label>
                                 <input type="password" class="form-input" id="signup-confirm-password"
-                                    placeholder="Confirm your password" required minlength="8">
-                                <!-- <span class="error-message"></span> -->
+                                    placeholder="Confirm your password" minlength="8">
+                                <span class="error-message"></span>
                             </div>
                             <button class="submit-btn">Sign Up</button>
                         </form>
@@ -479,7 +482,13 @@
             e.preventDefault();
             const Login_Email = document.getElementById("login-mail").value.trim();
             const Login_Pass = document.getElementById("login-password").value.trim();
+            let isValid = true;
 
+            [Login_Email, Login_Pass].forEach((input) => {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
             const val_email = sessionStorage.getItem("Email");
             const val_pass = sessionStorage.getItem("Password");
             if (Login_Email == val_email && Login_Pass == val_pass) {
@@ -487,7 +496,6 @@
                 modal.style.display = "none";
                 document.getElementById("user-icon").style.display = "block";
                 openBtn.style.display = "none";
-                // user_icon_head.style.display="none"
             }
             else {
                 showToast("Mail and Password Not Correct", "error")
@@ -502,7 +510,13 @@
             const signup_password = document.getElementById("signup-password").value;
             const signup_confirm_pass = document.getElementById("signup-confirm-password").value;
             let password_status = false
-            console.log(signup_Name, signup_email, signup_password, signup_confirm_pass)
+             let isValid = true;
+
+            [signup_Name, signup_email, signup_password, signup_confirm_pass].forEach((input) => {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
             if (signup_password !== signup_confirm_pass) {
                 showToast("Passwords are not same", "error");
                 password_status = true;
@@ -516,7 +530,7 @@
                 signupForm.classList.add("form-hidden");
                 loginForm.classList.remove("form-hidden");
                 loginForm.classList.add("form-visible");
-                showUser(signup_Name,signup_email)
+                // showUser(signup_Name, signup_email)
             }
             else {
                 showToast("sign up not successfull", "error")
@@ -556,39 +570,71 @@
                 });
             }
         });
-        // const showError = (input, message) => {
-        //     const inputGroup = input.parentElement;
-        //     inputGroup.classList.add('error');
-        //     const errorSpan = inputGroup.querySelector('.error-message');
-        //     errorSpan.textContent = message;
-        // };
+        const showError = (input, message) => {
+            const errorSpan = input.nextElementSibling;
+            if (errorSpan) errorSpan.textContent = message;
+            input.classList.add("input-error");
+        };
 
-        // const clearError = (input) => {
-        //     const inputGroup = input.parentElement;
-        //     inputGroup.classList.remove('error');
-        //     const errorSpan = inputGroup.querySelector('.error-message');
-        //     errorSpan.textContent = '';
-        // };
-
-        // const validateInput = (input) => {
-        //     if (input.value.trim() === '' && input.hasAttribute('required')) {
-        //         showError(input, 'This field is required.');
-        //         return false;
-        //     }
-        //     if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
-        //         showError(input, 'Please enter a valid email address.');
-        //         return false;
-        //     }
-        //     if (input.hasAttribute('minlength') && input.value.length < input.minLength) {
-        //         showError(input, `Must be at least ${input.minLength} characters.`);
-        //         return false;
-        //     }
-        //     clearError(input);
-        //     return true;
-        // };
+        const clearError = (input) => {
+            const errorSpan = input.nextElementSibling;
+            if (errorSpan) errorSpan.textContent = "";
+            input.classList.remove("input-error");
+        };
 
 
+        const validateInput = (input) => {
+            if (!(input instanceof HTMLInputElement)) return true;
+            if (input.value.trim() === '' && input.hasAttribute('required')) {
+                showError(input, 'This field is required.');
+                return false;
+            }
+            if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                showError(input, 'Please enter a valid email address.');
+                return false;
+            }
+            if (input.hasAttribute('minlength') && input.value.length < input.minLength) {
+                showError(input, `Must be at least ${input.minLength} characters.`);
+                return false;
+            }
+            clearError(input);
+            return true;
+        };
 
+        const validateForm = (form) => {
+            const inputs = form.querySelectorAll('input');
+            let isFormValid = true;
+
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isFormValid = false;
+                }
+            });
+
+            // const submitBtn = document.getElementById("btn-form")
+            // submitBtn.disabled = !isFormValid;
+
+            return isFormValid;
+        };
+        const allInputs = document.querySelectorAll(".input-group input")
+        allInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateForm(input.form);
+            });
+        });
+
+        const handleFormSubmit = (event) => {
+            event.preventDefault();
+            const form = event.target;
+
+            if (validateForm(form)) {
+                if (form.id === 'signup-form') {
+                    form.reset();
+                }
+            }
+        };
+        loginForm.addEventListener('submit', handleFormSubmit);
+        signupForm.addEventListener('submit', handleFormSubmit);
         function showToast(message, type) {
             toast.textContent = message;
             toast.style.background = (type === "error") ? "#f44336" : "#4CAF50";

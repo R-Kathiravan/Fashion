@@ -1484,13 +1484,17 @@
     background-color: #fef2f2;
   }
 
-  .error-message {
-    font-size: 0.875rem;
-    color: #ef4444;
-    margin-top: 0.3rem;
-    min-height: 18px;
-   }
- 
+ .input-error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: block;
+}
+
   #user-icon {
     position: relative;
     display: inline-block;
