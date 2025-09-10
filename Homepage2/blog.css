@@ -356,7 +356,7 @@ body.dark .theme-toggle {
 }
 
 .blog-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./asstes/blog_hero_img.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.248), rgba(0, 0, 0, 0.084)), url('./asstes/blog_hero_img.jpg');
     background-size: cover;
     background-position: center;
     min-height: 60vh;

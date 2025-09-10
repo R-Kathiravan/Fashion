@@ -1373,6 +1373,19 @@
     .image-section img {
       display: none;
     }
+    .form-section{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./asstes/login-bg.jpg');
+      background-position: center center;
+      background-size: cover;
+      color: white !important;
+    }
+      .form-section p {
+        color: white !important;
+      }
+      .form-section a{
+        color: #ff0084 !important;
+        font-weight: 600;
+      }
   }
 
   .form-wrapper {
@@ -1476,48 +1489,8 @@
     color: #ef4444;
     margin-top: 0.3rem;
     min-height: 18px;
-    /* reserve space so UI doesn’t jump */
-  }
-
-  /* .user-logo {
-     width: 55px;
-     height: 55px;
-     border-radius: 10%;
-      background-color: #42e1fd;
-     color: white;
-     font-weight: bold;
-     font-size: 20px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     cursor: pointer;
-     position: relative;
-     text-transform: uppercase;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.103);
-     margin-right: 10px;
- }
-
- .user-tooltip {
-     display: none;
-     position: absolute;
-     top: 55px;
-     right: 20px;
-     background: #222;
-     color: #fff;
-     padding: 10px 15px;
-     border-radius: 8px;
-     font-size: 14px;
-     white-space: nowrap;
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-     z-index: 10;
- }
-
- #user-icon:hover .user-tooltip {
-     display: block;
- }
-
-
- } */
+   }
+ 
   #user-icon {
     position: relative;
     display: inline-block;
