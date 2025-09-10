@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
 
-:root{
-    --white:white;
-    --black:black;
-    --price:#ff4081;
+:root {
+    --white: white;
+    --black: black;
+    --price: #ff4081;
     --bg-linear-gardient: linear-gradient(135deg, #ff2129, #fd8e6f);
-    --dim-text:#555;
+    --dim-text: #555;
 }
+
 html.dark-mode {
     --white: #121212;
     --black: #ffffff;
@@ -14,6 +15,7 @@ html.dark-mode {
     --bg-linear-gardient: linear-gradient(135deg, #ef5350, #ff8a65);
     --dim-text: #aaaaaa;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -45,7 +47,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-      flex-wrap: wrap;
+    flex-wrap: wrap;
 
     background-color: var(--white);
 }
@@ -210,27 +212,28 @@ body.dark .theme-toggle {
 
 
 #backToTop {
-      position: fixed;
-      bottom: 120px;
-      right: 30px;
-      background: var(--black);
-      color: var(--white);
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      cursor: pointer;
-      display: none; 
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, background 0.3s;
-      z-index: 1999;
-    }
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s;
+    z-index: 1999;
+}
 
-    #backToTop:hover {
-      background: #444;
-      transform: translateY(-5px);
-    }
+#backToTop:hover {
+    background: #444;
+    transform: translateY(-5px);
+}
+
 @media (max-width: 768px) {
     .header-cls img {
         width: 40%;
@@ -653,7 +656,8 @@ body.dark .theme-toggle {
     padding: 15px;
     transition: transform 0.3s ease;
 }
-.assurance-item h4{
+
+.assurance-item h4 {
     color: var(--black);
 }
 
@@ -677,4 +681,89 @@ body.dark .theme-toggle {
 .assurance-item p {
     font-size: 0.9rem;
     color: var(--dim-text);
+}
+
+.access-card {
+    background: var(--white);
+    border-radius: 15px;
+    border: 2px solid var(--border-card);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    width: 260px;
+    text-align: center;
+    /* height: auto; */
+}
+
+.access-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.access-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.2s ease-in;
+}
+
+.access-card img:hover {
+    transform: scale(1.1);
+}
+
+.action {
+    padding: 15px;
+}
+
+.action h3 {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+.action p {
+    margin: 5px 0 15px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.acc-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.overlay1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.overlay1 button,
+.overlay1 span {
+    background: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.overlay1 button:hover {
+    background: #ff4081;
+    color: #fff;
+}
+
+.overlay1 span {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay1 span.liked {
+    color: red;
 }

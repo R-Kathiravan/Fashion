@@ -44,7 +44,6 @@
         </div>
     </header>
     <div id="toast" class="toast"></div>
-
     <section class="hero banner" id="hero">
         <div class="banner-background">
             <div class="bg-image image1"></div>
@@ -133,11 +132,11 @@
             </div>
         </div>
 
-        <div class="dots">
+        <!-- <div class="dots">
             <span class="dot active"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-        </div>
+        </div> -->
 
     </section>
     <section class="blog-section" id="blog" data-aos="fade-up">
@@ -456,14 +455,11 @@
             const val_pass = sessionStorage.getItem("Password");
 
             if (login_email === val_mail && login_password === val_pass) {
-                // alert("User Name and Password Are correct");
-                showToast("Login Successfull", "success")
+                 showToast("Login Successfull", "success")
                 closeModal();
                 showUser(user_name, login_email);
-                // document.getElementById("login-form").style.display = "none";
-            } else {
-                // alert("Username and Password are not correct");
-                showToast("Username and Password are not correct", "error");
+             } else {
+                 showToast("Username and Password are not correct", "error");
             }
         });
         document.addEventListener("DOMContentLoaded", () => {
@@ -556,8 +552,7 @@
                 }
             });
 
-            // const submitBtn = form.querySelector('button[type="submit"]');
-            const submitBtn = document.getElementById("btn-form")
+             const submitBtn = document.getElementById("btn-form")
             submitBtn.disabled = !isFormValid;
 
             return isFormValid;

@@ -20,8 +20,8 @@
             --head: rgb(153, 0, 255);
             --primary: #007bff;
             --primary-dark: #0056b3;
-            --accent: #ff4081;
-            --accent-dark: #d81b60;
+            --accent: #4a40ff;
+            --accent-dark: #1b24d8;
             --bg-card: #ffffff;
             --text-main: #333;
             --text-secondary: #777;
@@ -59,6 +59,13 @@
             margin: 0;
         }
 
+        .head-nav {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
         .head-nav a {
             text-decoration: none;
             font-size: 18px;
@@ -92,6 +99,7 @@
             flex-direction: column;
 
         }
+
         .tabs {
             display: flex;
             justify-content: center;
@@ -181,12 +189,13 @@
         }
 
         .btn-like {
-            background: var(--accent);
+            background: #0056b3;
             color: var(--white);
+            font-size: larger;
         }
 
         .btn-like:hover {
-            background: #d81b60;
+            background: #007bff;
         }
 
         .accessories-products {
@@ -486,8 +495,7 @@
         .menu-items {
             display: flex;
             flex-wrap: wrap;
-                align-items: center;
-
+            align-items: center;
         }
 
         .menu-items a {
@@ -507,7 +515,7 @@
             bottom: 5px;
             width: 0%;
             height: 2px;
-            background: var(--accent);
+            background: #e73370;
             transition: width 0.3s ease;
         }
 
@@ -516,7 +524,7 @@
         }
 
         .menu-items a:hover {
-            color: var(--accent);
+            color: #e73370;
         }
 
         .btn-close {
@@ -750,11 +758,11 @@
     <section class="collection">
         <div class="collection-container">
             <div class="head-nav">
-                <a href="index.html">Home</a>/
-                <span class="active-nav">Collection</span>
                 <h1>All Products</h1>
-                <!-- <button id="theme-toggle" class="dark-btn">Change Theme</button> -->
-
+                <div>
+                    <a href="index.html">Home</a>/
+                    <span class="active-nav">Collection</span>
+                </div>
             </div>
         </div>
         <h1 class="head" id="products">Clothing Products</h1>
