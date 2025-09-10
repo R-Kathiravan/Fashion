@@ -32,7 +32,7 @@
                 <a class="btn-close">Close</a>
             </nav>
             <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
-                            <button class="open-btn" id="openModal">Login / Signup</button>
+            <button class="open-btn" id="openModal">Login / Signup</button>
 
             <div id="user-icon">
                 <div id="user_logo" class="user-logo"></div>
@@ -356,8 +356,7 @@
 
             <div class="card-container">
                 <div class="image-section">
-                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop"
-                        alt="Fashion">
+                    <img src="./asstes/login-bg.jpg" alt="Fashion">
                 </div>
                 <div class="form-section">
                     <div id="login-form" class="form-wrapper form-visible">
@@ -517,6 +516,7 @@
                 signupForm.classList.add("form-hidden");
                 loginForm.classList.remove("form-hidden");
                 loginForm.classList.add("form-visible");
+                showUser(signup_Name,signup_email)
             }
             else {
                 showToast("sign up not successfull", "error")
