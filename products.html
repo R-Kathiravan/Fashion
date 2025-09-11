@@ -139,7 +139,7 @@
             overflow: hidden;
             max-width: 900px;
             width: 100%;
-            animation: pop 0.3s ease;
+            animation: pop 0.3s ease-out;
         }
 
         .close-btn {
@@ -170,13 +170,10 @@
         .modal-left img {
             width: 100%;
             height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            border-radius: 12px;
+            display: block;
             padding: 15px;
         }
 
-        /* Right side (details) */
         .modal-right {
             flex: 1.2;
             padding: 25px;
@@ -188,12 +185,18 @@
         .modal-right h2 {
             margin: 0;
             font-size: 1.6rem;
+            line-height: 1.2;
         }
 
         .modal-right .price {
             font-size: 1.3rem;
             font-weight: bold;
             color: #111;
+        }
+
+        .modal-right label {
+            font-weight: 500;
+            margin-top: 5px;
         }
 
         .modal-right input,
@@ -203,6 +206,7 @@
             border-radius: 8px;
             width: 100%;
             font-size: 1rem;
+            box-sizing: border-box;
         }
 
         #confirmBtn {
@@ -214,6 +218,7 @@
             cursor: pointer;
             font-weight: bold;
             transition: background 0.3s;
+            margin-top: 10px;
         }
 
         #confirmBtn:hover {
@@ -233,17 +238,39 @@
         }
 
         @media (max-width: 768px) {
+            .modal {
+                overflow-y: auto;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
             .modal-content {
                 flex-direction: column;
-                max-width: 95%;
+                width: 100%;
+                max-width: 400px;
+                margin: 5vh auto;
+            }
+
+            .modal-left {
+                min-width: unset;
             }
 
             .modal-left img {
                 max-height: 250px;
+                width: auto;
+                padding: 20px;
             }
 
             .modal-right {
                 padding: 20px;
+            }
+
+            .modal-right h2 {
+                font-size: 1.4rem;
+            }
+
+            .modal-right .price {
+                font-size: 1.2rem;
             }
         }
 
@@ -263,7 +290,7 @@
         .header-cls h1 {
             color: var(--white);
             font-weight: bold;
-            font-family: 'Playfair Display', serif;
+            /* font-family: 'Playfair Display', serif; */
             font-size: 24px;
             letter-spacing: 2px;
             margin-left: 15px;
@@ -438,7 +465,7 @@
             }
         }
 
-        @media(max-width:468px) {
+        @media(max-width:768px) {
             .menu-items {
                 flex-direction: column;
                 background: var(--black);
@@ -1319,7 +1346,7 @@
                     <input type="text" id="modalCoupon" placeholder="Optional">
                     <button id="confirmBtn">Confirm & Add to Cart</button>
                 </div>
-            </div> dvfejrkkr
+            </div>
         </div>
     </section>
     <footer class="footer" id="footer" data-aos="fade-up">
