@@ -412,6 +412,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
+            text-decoration: none;
         }
 
         .cart-btn:hover {
@@ -503,7 +504,7 @@
             text-decoration: none;
             padding: 10px;
             letter-spacing: 1px;
-            font-size: 20px;
+            font-size: 16px;
             position: relative;
             margin-right: 30px;
         }
@@ -651,7 +652,7 @@
             }
         }
 
-        @media(max-width:468px) {
+        @media(max-width:768px) {
             .menu-items {
                 flex-direction: column;
                 background: var(--black);
@@ -745,10 +746,11 @@
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
             <a href="contact.html">Contact</a>
             <a class="btn-close">Close</a>
-            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-cog"></i></button>
-
+<button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
         </nav>
 
         <div class="hamburger">
@@ -779,144 +781,148 @@
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/men-shirt.jpg" alt="">
                         <h3>Men's Shirt</h3>
-                        <p>$25</p>
-                        <div class="quantity">
-                            <button class="qty-btn minus">-</button>
-                            <input type="number" class="qty-input" value="1" min="1">
-                            <button class="qty-btn plus">+</button>
-                        </div>
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-shirt" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/blazer-men.jpg" alt="">
                         <h3> Blazer</h3>
-                        <p>$40</p>
+                        <!-- <p>$40</p>
                         <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-blazors" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/men-t-shirt.jpg" alt="">
                         <h3>T-Shirt</h3>
-                        <p>$25</p>
+                        <!-- <p>$25</p>
                         <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-t-shirt" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/men-hoodies.jpg" alt="">
                         <h3>Hoodies</h3>
-                        <p>$40</p>
+                        <!-- <p>$40</p>
                         <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-hoodies" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/men-jeans.jpg" alt="">
                         <h3>Jeans</h3>
-                        <p>$25</p>
+                        <!-- <p>$25</p>
                         <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-jeans" class="cart-btn">View More</a>
                         </div>
                     </div>
                 </div>
 
                 <div id="female" class="products">
                     <div class="card" data-aos="fade-up">
-                        <img src="./assets/top-girls.jpg" alt="">
+                        <img src="./assets/women-hijab1.jpg" alt="">
                         <h3>Women's Dress</h3>
-                        <p>$30</p>
+                        <!-- <p>$30</p>
                         <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-hijab" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/women-t-shirt.webp" alt="">
                         <h3>Women's T-Shirt</h3>
                         <p>$45</p>
-                        <div class="quantity">
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-t-shirt" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/women-shitr.jpg" alt="">
                         <h3>Women's Shirt</h3>
                         <p>$45</p>
-                        <div class="quantity">
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-shirt" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/women-kurthi.jpg" alt="">
                         <h3>Kurthi</h3>
                         <p>$45</p>
-                        <div class="quantity">
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-kurthi" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/women-hoodies.jpg" alt="">
                         <h3>Hoodies</h3>
                         <p>$45</p>
-                        <div class="quantity">
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-hoodies" class="cart-btn">View More</a>
                         </div>
                     </div>
                 </div>
@@ -925,57 +931,61 @@
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/kid-t-shirt.webp" alt="">
                         <h3>Kids T-Shirt</h3>
-                        <p>$15</p>
-                        <div class="quantity">
+                        <!-- <p>$15</p> -->
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kids-t-shirt" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/kid-shirt.webp" alt="">
                         <h3>Kids Shirts</h3>
-                        <p>$20</p>
-                        <div class="quantity">
+                        <!-- <p>$20</p> -->
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kid-shirt" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/kids-Dungarees.jpg" alt="">
                         <h3>Kids Dungarees</h3>
                         <p>$20</p>
-                        <div class="quantity">
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kid-dungarees" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="card" data-aos="fade-up">
                         <img src="./assets/kids-kurtha.jpg" alt="">
                         <h3>Kids Kurtha</h3>
                         <p>$20</p>
-                        <div class="quantity">
+                        <!-- <div class="quantity">
                             <button class="qty-btn minus">-</button>
                             <input type="number" class="qty-input" value="1" min="1">
                             <button class="qty-btn plus">+</button>
-                        </div>
+                        </div> -->
                         <div class="buttons">
-                            <button class="cart-btn">Add to Cart</button>
-                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kids-kurtha" class="cart-btn">View More</a>
                         </div>
                     </div>
                 </div>
@@ -988,33 +998,32 @@
                         <img src="./assets/watch-male.jpg" alt="watch">
                         <div class="action">
                             <h3>Men's Watch</h3>
-                            <p>$10</p>
-                            <div class="quantity">
+                            <!-- <p>$10</p> -->
+                            <!-- <div class="quantity">
                                 <button class="qty-btn minus">-</button>
                                 <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-watch" class="cart-btn">View More</a>
                         </div>
                     </div>
                     <div class="access-card" data-aos="fade-up">
                         <img src="./assets/chain-male.webp" alt="watch">
                         <div class="action">
                             <h3> Chain</h3>
-                            <p>$30</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
+                            <!-- <p>$30</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div> -->
                             <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                                <!-- <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                                <a href="products.html#male-chain" class="cart-btn">View More</a>
                             </div>
                         </div>
                     </div>
@@ -1022,16 +1031,16 @@
                         <img src="./assets/shoes-male.webp" alt="watch">
                         <div class="action">
                             <h3>Shoes </h3>
-                            <p>$10</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
+                            <!-- <p>$10</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div> -->
                             <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                                <!-- <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                                <a href="products.html#male-shoes" class="cart-btn">View More</a>
                             </div>
                         </div>
                     </div>
@@ -1039,217 +1048,207 @@
                         <img src="./assets/wallet-male.jpg" alt="watch">
                         <div class="action">
                             <h3>Wallet </h3>
-                            <p>$40</p>
-                            <div class="quantity">
+                            <!-- <p>$40</p> -->
+                            <!-- <div class="quantity">
                                 <button class="qty-btn minus">-</button>
                                 <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-wallet" class="cart-btn">View More</a>
                         </div>
                     </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/sunglass-male.jpg" alt="watch">
-                        <div class="action">
-                            <h3>Sunglass</h3>
-                            <p>$40</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Female -->
-                <h1 class="head">Women Accessories</h1>
-                <div class="grid">
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/woman-ring.jpg" alt="ring">
-                        <div class="action">
-                            <h3>Diamond Earings</h3>
-                            <p>$255</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/women-shoes.jpg" alt="ring">
-                        <div class="action">
-                            <h3>Shoes</h3>
-                            <p>$25</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/handbag-woman.jpg" alt="ring">
-                        <div class="action">
-                            <h3>Handbag</h3>
-                            <p>$45</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/Scarves-women.jpg" alt="ring">
-                        <div class="action">
-                            <h3>Scarves</h3>
-                            <p>$35</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/bracelet-women.jpg" alt="ring">
-                        <div class="action">
-                            <h3>Bracelet</h3>
-                            <p>$69</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="head">Kids Accessories</h1>
-                <div class="grid">
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/sunglass-kids.jpg" alt="kids sunglasses">
-                        <div class="action">
-                            <h3>Sunglasses</h3>
-                            <p>$8</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/kid-bottle.webp" alt="kids sunglasses">
-                        <div class="action">
-                            <h3>Bottles</h3>
-                            <p>$15</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/kids-shoe.webp" alt="kids sunglasses">
-                        <div class="action">
-                            <h3>Shoes</h3>
-                            <p>$29</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/bags-kids.jpg" alt="kids sunglasses">
-                        <div class="action">
-                            <h3>Bags</h3>
-                            <p>$39</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="access-card" data-aos="fade-up">
-                        <img src="./assets/watch-kids.jpg" alt="kids sunglasses">
-                        <div class="action">
-                            <h3>Watch</h3>
-                            <p>$8</p>
-                            <div class="quantity">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                            <div class="acc-buttons">
-                                <button class="cart-btn">Add to Cart</button>
-                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
-                            </div>
+                 <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/sunglass-male.jpg" alt="watch">
+                    <div class="action">
+                        <h3>Sunglass</h3>
+                        <!-- <p>$40</p>
+                <div class="quantity">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" class="qty-input" value="1" min="1">
+                    <button class="qty-btn plus">+</button>
+                </div> -->
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                    <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-glass" class="cart-btn">View More</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
+            <!-- Female -->
+            <h1 class="head">Women Accessories</h1>
+            <div class="grid">
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/woman-ring.jpg" alt="ring">
+                    <div class="action">
+                        <h3>Diamond Earings</h3>
+                        <!-- <p>$255</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div> -->
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-earring" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/women-shoes.jpg" alt="ring">
+                    <div class="action">
+                        <h3>Shoes</h3>
+                        <!-- <p>$25</p>
+                            <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#women-shoe" class="cart-btn">View More</a>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/handbag-woman.jpg" alt="ring">
+                    <div class="action">
+                        <h3>Handbag</h3>
+                        <!-- <p>$45</p> -->
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#women-handbag" class="cart-btn">View More</a>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/Scarves-women.jpg" alt="ring">
+                    <div class="action">
+                        <h3>Scarves</h3>
+                        <!-- <p>$35</p> -->
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#women-scraves" class="cart-btn">View More</a>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/bracelet-women.jpg" alt="ring">
+                    <div class="action">
+                        <h3>Bracelet</h3>
+                        <!-- <p>$69</p> -->
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#women-bracelet" class="cart-btn">View More</a>
+                    </div>
+                </div>
+            </div>
+            <h1 class="head">Kids Accessories</h1>
+            <div class="grid">
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/sunglass-kids.jpg" alt="kids sunglasses">
+                    <div class="action">
+                        <h3>Sunglasses</h3>
+                        <p>$8</p>
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#kids-glass" class="cart-btn">View More</a>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/kid-bottle.webp" alt="kids sunglasses">
+                    <div class="action">
+                        <h3>Bottles</h3>
+                        <p>$15</p>
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#kid-bottle" class="cart-btn">View More</a>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/kids-shoe.webp" alt="kids sunglasses">
+                    <div class="action">
+                        <h3>Shoes</h3>
+                        <p>$29</p>
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#kid-shoe" class="cart-btn">View More</a>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/bags-kids.jpg" alt="kids sunglasses">
+                    <div class="action">
+                        <h3>Bags</h3>
+                        <p>$39</p>
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html#kid-bag" class="cart-btn">View More</a>
+                    </div>
+                </div>
+                <div class="access-card" data-aos="fade-up">
+                    <img src="./assets/watch-kids.jpg" alt="kids sunglasses">
+                    <div class="action">
+                        <h3>Watch</h3>
+                        <p>$8</p>
+                        <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                    </div>
+                    <div class="acc-buttons">
+                        <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                        <a href="products.html #kid-watch" class="cart-btn">View More</a>
+                    </div>
+                </div>
+            </div>
     </section>
-    <section class="offers">
+    <!-- <section class="offers">
         <div class="offers-head">
             <h1 class="head">Live Offers</h1>
         </div>
@@ -1324,7 +1323,7 @@
                 </div>
 
             </div>
-    </section>
+    </section> -->
     <footer class="footer" id="footer" data-aos="fade-up">
         <div class="footer-container">
             <div class="footer-brand">
@@ -1336,10 +1335,12 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="collections.html">Collections</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="blog.html">Blog</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>

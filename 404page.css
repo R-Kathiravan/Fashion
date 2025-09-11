@@ -35,7 +35,7 @@
      text-decoration: none;
      padding: 10px;
      letter-spacing: 1px;
-     font-size: 20px;
+     font-size: 16px;
      position: relative;
      margin-right: 30px;
 
@@ -198,7 +198,7 @@
      }
  }
 
- @media(max-width:468px) {
+ @media(max-width:768px) {
      .menu-items {
          flex-direction: column;
          background: #222;

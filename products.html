@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buynow</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+        :root {
+            --white: white;
+            --black: black;
+            --blue: blue;
+            --head: rgb(153, 0, 255);
+            --primary: #007bff;
+            --primary-dark: #0056b3;
+            --accent: #4a40ff;
+            --accent-dark: #1b24d8;
+            --bg-card: #ffffff;
+            --text-main: #333;
+            --text-secondary: #777;
+            --tab-color: #555;
+            --border-color: #ddd;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.2);
+            --border-card: rgba(0, 0, 0, 0.138);
+
+        }
+
+        html.dark-mode {
+            --white: #121212;
+            --black: #ffffff;
+            --bg-card: #1E1E1E;
+            --text-main: #E0E0E0;
+            --text-secondary: #AAAAAA;
+            --blue: #42A5F5;
+            --head: #6600ff;
+            --primary: #64B5F6;
+            --primary-dark: #90CAF9;
+            --accent: #F48FB1;
+            --accent-dark: #F8BBD0;
+            --tab-color: #777777;
+            --border-color: #333333;
+            --shadow-light: rgba(255, 255, 255, 0.05);
+            --shadow-dark: rgba(255, 255, 255, 0.1);
+            --border-card: rgba(255, 255, 255, 0.1);
+
+        }
+
+        body {
+            background-color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            font-size: 36px;
+            margin: 5%;
+            text-align: center;
+            color: var(--black);
+        }
+
+        .sub-head {
+            font-size: 24px;
+            margin-left: 4%;
+            margin: 3%;
+            color: var(--black);
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            color: var(--black);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 3%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(20, 3, 255, 0.496);
+        }
+
+        .product-card img {
+            width: 300px;
+            height: 300px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #111, #333);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: linear-gradient(135deg, #444, #000);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            animation: pop 0.3s ease;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            color: #e63946;
+        }
+
+        .modal-left {
+            flex: 1;
+            min-width: 280px;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-left img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        /* Right side (details) */
+        .modal-right {
+            flex: 1.2;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal-right h2 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+
+        .modal-right .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .modal-right input,
+        .modal-right textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        #confirmBtn {
+            background: linear-gradient(135deg, #111, #444);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        #confirmBtn:hover {
+            background: linear-gradient(135deg, #000, #666);
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0.85);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                flex-direction: column;
+                max-width: 95%;
+            }
+
+            .modal-left img {
+                max-height: 250px;
+            }
+
+            .modal-right {
+                padding: 20px;
+            }
+        }
+
+        .header-cls {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0px;
+            background-color: var(--white);
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            margin-right: 20px;
+        }
+
+        .header-cls h1 {
+            color: var(--white);
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .dark-btn {
+            background-color: #00000000;
+            border-color: #00000000;
+            color: var(--black);
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .menu-items a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 16px;
+            position: relative;
+            margin-right: 30px;
+        }
+
+        .menu-items a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: #e73370;
+            transition: width 0.3s ease;
+        }
+
+        .menu-items a:hover::after {
+            width: 100%;
+        }
+
+        .menu-items a:hover {
+            color: #e73370;
+        }
+
+        .btn-close {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .popup-trigger-btn {
+            font-size: 1.2rem;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            background: none;
+            transition: all 0.3s ease;
+        }
+
+        .popup-trigger-btn ::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .popup-trigger-btn:hover::after {
+            width: 100%;
+        }
+
+
+
+        .popup-trigger-btn:hover {
+            transform: translateY(-3px);
+            color: var(--btn-hover);
+
+        }
+
+        .footer {
+            background-color: #000000;
+            color: black;
+            padding: 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            /* max-width: 1200px; */
+            /* margin: auto; */
+            background-color: black;
+        }
+
+        .footer h2,
+        .footer h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer p {
+            line-height: 1.6;
+            font-size: 14px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--btn-hover);
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social .social-icons img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+
+        .footer-social .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #010101;
+            font-size: 13px;
+            color: white;
+            background-color: black;
+        }
+
+        .social-icons {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media (max-width:478px) {
+            .header-cls img {
+                width: 30%;
+            }
+        }
+
+        @media(max-width:468px) {
+            .menu-items {
+                flex-direction: column;
+                background: var(--black);
+                position: fixed;
+                top: 0;
+                right: -350px;
+                width: 250px;
+                height: 100%;
+                padding: 60px 20px;
+                transition: right 0.3s ease;
+                z-index: 999;
+
+            }
+
+            .menu-items a {
+                color: var(--white);
+
+            }
+
+            .menu-items button {
+                color: var(--white);
+            }
+
+            .btn-close {
+                display: block;
+                color: var(--red);
+            }
+
+
+            .hamburger {
+                display: block;
+                margin-right: 30px;
+                cursor: pointer;
+                color: var(--black);
+
+            }
+
+            .menu-items.show {
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: flex-start;
+            }
+
+            .hamburger:hover {
+                color: var(--btn-hover);
+            }
+        }
+
+        @media(max-width:768px) {
+            .menu-items a {
+                font-size: 16px;
+            }
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .theme-toggle i {
+            color: var(--white);
+        }
+
+        .logo {
+            padding: 16px;
+            font-size: 36px;
+            text-decoration: none;
+            color: red;
+            font-weight: bolder;
+        }
+
+        .hero-nav {
+            background-image: url('./assets/pexels-craytive-1478477.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* width: 100%; */
+            /* margin: 2%; */
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+        }
+
+        .hero-nav {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hero-nav a {
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+
+        }
+
+        .hero-nav span {
+            font-size: 24px;
+            color: #1b24d8;
+            font-weight: 600;
+        }
+
+        .hero-nav h1 {
+            font-size: 36px;
+            color: var(--head);
+        }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 12px;
+            position: fixed;
+            z-index: 1500;
+            left: 50%;
+            bottom: 30px;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.5s, bottom 0.5s;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+    </style>
+    <header class="header-cls">
+        <a href="index.html" class="logo"> Stackly</a>
+
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="collections.html">Collections</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+            <a class="btn-close">Close</a>
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
+        </nav>
+
+        <div class="hamburger">
+            &#9776
+        </div>
+    </header>
+    <div id="toast" class="toast"></div>
+    <div class="hero-nav">
+        <h1>Products</h1>
+        <div class="nav">
+            <a href="index.html">Home</a>/
+            <span>Products</span>
+        </div>
+    </div>
+    <section class="male-cloths">
+        <h1 class="head">Male Clothing Products</h1>
+        <div class="male-cloths-container">
+            <div class="male-shirt" id="male-shirt">
+                <h1 class="sub-head">Men's Shirt</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/men-shirt1.jpg" alt="Shoes">
+                        <h3 class="product-name">Grey Shirt</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/men-shirt2.jpg" alt="Shoes">
+                        <h3 class="product-name">Checked Shirt</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/men-shirt-5.webp" alt="Shoes">
+                        <h3 class="product-name">Plain Blue Shirt</h3>
+                        <p class="product-price">₹1199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-blazors" id="male-blazors">
+                <h1 class="sub-head">Men Blazors</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/men-blazor1.webp" alt="Shoes">
+                        <h3 class="product-name">Dark Blue Blazor</h3>
+                        <p class="product-price">₹1999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/men-blazor2.jpg" alt="Shoes">
+                        <h3 class="product-name">Navy Blue Blazor</h3>
+                        <p class="product-price">₹1499</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/men-blazor3.webp" alt="Shoes">
+                        <h3 class="product-name">Checked Blazor</h3>
+                        <p class="product-price">₹2999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-t-shirt" id="male-t-shirt">
+                <h1 class="sub-head">Men T-Shirt</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/men-t-shirt1.jpg" alt="Shoes">
+                        <h3 class="product-name">Printed Light grey T-Shirt</h3>
+                        <p class="product-price">₹599</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/men-t-shirt2.jpg" alt="Shoes">
+                        <h3 class="product-name">Printed Grey T-Shirt</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/men-t-shirt-3.jpg" alt="Shoes">
+                        <h3 class="product-name">Printed Gray Premium T-Shirt</h3>
+                        <p class="product-price">₹1399</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-hooodies" id="male-hoodies">
+                <h1 class="sub-head">Men's Hoodies</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/men-hoodies1.jpg" alt="Shoes">
+                        <h3 class="product-name">Light Yellow Hoodie</h3>
+                        <p class="product-price">₹1399</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/men-hoodies2.webp" alt="Shoes">
+                        <h3 class="product-name">Dark Black Hoodie</h3>
+                        <p class="product-price">₹1990</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/men-hoodies-3.webp" alt="Shoes">
+                        <h3 class="product-name">Grey Hoodie</h3>
+                        <p class="product-price">₹1310</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-jeans" id="male-jeans">
+                <h1 class="sub-head">Men's Jeans</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/men-jeans.webp" alt="Shoes">
+                        <h3 class="product-name">Dark Blue</h3>
+                        <p class="product-price">₹990</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/men-jeans1.webp" alt="Shoes">
+                        <h3 class="product-name">Navy Blue Jeans</h3>
+                        <p class="product-price">₹769</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/men-jeans-3.webp" alt="Shoes">
+                        <h3 class="product-name">Dark Gery Jeans</h3>
+                        <p class="product-price">₹1299</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="women-cloths-container">
+            <h1 class="head">Women Clothing Products</h1>
+            <div class="women-shirt" id="women-shirt">
+                <h1 class="sub-head">Women's Shirt</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/women-shirt1.webp" alt="Shoes">
+                        <h3 class="product-name">Scandle Shirt</h3>
+                        <p class="product-price">₹1809</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/women-shirt2.webp" alt="Shoes">
+                        <h3 class="product-name">Dark Blue Shirt</h3>
+                        <p class="product-price">₹1269</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/women-shirt3.webp" alt="Shoes">
+                        <h3 class="product-name">Printed Shirt</h3>
+                        <p class="product-price">₹2199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-t-shirt" id="women-t-shirt">
+                <h1 class="sub-head">Women T-Shirt</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/women-t-shirt1.webp" alt="Shoes">
+                        <h3 class="product-name">Printed White T-Shirt</h3>
+                        <p class="product-price">₹969</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/women-t-shirt2.webp" alt="Shoes">
+                        <h3 class="product-name">Light Blue T-Shirt</h3>
+                        <p class="product-price">₹1099</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/women-t-shirt3.webp" alt="Shoes">
+                        <h3 class="product-name">Blue T-Shirt</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-kurthi" id="women-kurthi">
+                <h1 class="sub-head">Women Kurthi</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/women-kurthi1.avif" alt="Shoes">
+                        <h3 class="product-name">Premium Kurthi</h3>
+                        <p class="product-price">₹3999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/women-kurthi2.webp" alt="Shoes">
+                        <h3 class="product-name">Silver Kurthi</h3>
+                        <p class="product-price">₹2499</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/women-kurthi3.webp" alt="Shoes">
+                        <h3 class="product-name">Black Kurthi</h3>
+                        <p class="product-price">₹5999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-hoodies" id="women-hoodies">
+                <h1 class="sub-head">Women Hoodies</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/women-hoodies1.webp" alt="Shoes">
+                        <h3 class="product-name">Light Brown Hoodie</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/women-hoodies2.webp" alt="Shoes">
+                        <h3 class="product-name">Light Pink Hoodie</h3>
+                        <p class="product-price">₹1189</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/women-hoodies3.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Black Hoodie</h3>
+                        <p class="product-price">₹1890</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-hijab" id="women-hijab">
+                <h1 class="sub-head">Women's Hijab</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/women-hijab1.jpg" alt="Shoes">
+                        <h3 class="product-name">Light Brown Hijab</h3>
+                        <p class="product-price">₹990</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/women-hijab2.webp" alt="Shoes">
+                        <h3 class="product-name">Premium White Hijab</h3>
+                        <p class="product-price">₹1199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/women-hijab-3.webp" alt="Shoes">
+                        <h3 class="product-name">Stylish Blue Hijab</h3>
+                        <p class="product-price">₹1679</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kids-cloths-container">
+            <h1 class="head">Kids Clothing Products</h1>
+            <div class="kid-shirt" id="kid-shirt">
+                <h1 class="sub-head">Kid's Shirt</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/kid-shirt1.jpeg" alt="Shoes">
+                        <h3 class="product-name">Light Printed Shirt</h3>
+                        <p class="product-price">₹699</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/kid-shirt2.jpeg" alt="Shoes">
+                        <h3 class="product-name">Printed Brown Shirt</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/kid-shirt3.jpeg" alt="Shoes">
+                        <h3 class="product-name">Printed Blue Shirt</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="kids-t-shirt" id="kids-t-shirt">
+                <h1 class="sub-head">Kid's T-Shirt</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/kids-tishirt1.webp" alt="Shoes">
+                        <h3 class="product-name">Printed Anime T-Shirt</h3>
+                        <p class="product-price">₹799</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/kids-tishirt2.webp" alt="Shoes">
+                        <h3 class="product-name">Printed Dot T-Shirt</h3>
+                        <p class="product-price">₹699</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="./assets/kids-tishirt3.avif" alt="Shoes">
+                        <h3 class="product-name">Light Pink</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="kid-dungarees" id="kid-dungarees">
+                <h1 class="sub-head">Kid Dungarees</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/kids-Dungarees1.webp" alt="Shoes">
+                        <h3 class="product-name">Dark Green Dungarees</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/kids-Dungarees2.jpeg" alt="Shoes">
+                        <h3 class="product-name">T-shirt with Dungarees</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in">
+                        <img src="./assets/kids-Dungarees3.jpeg" alt="Shoes">
+                        <h3 class="product-name">Yellow T-Shirt with Blue Dungarees</h3>
+                        <p class="product-price">₹1109</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="kids-kurtha" id="kids-kurtha">
+                <h1 class="sub-head">Kid's Kurtha</h1>
+                <div class="grid">
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/kids-kurtha1.webp" alt="Shoes">
+                        <h3 class="product-name">Printed Premium Kurtha</h3>
+                        <p class="product-price">₹1899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/kids-kurtha2.jpg" alt="Shoes">
+                        <h3 class="product-name">Flower Printed Kurtha</h3>
+                        <p class="product-price">₹1929</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-down">
+                        <img src="./assets/kids-kurtha3.webp" alt="Shoes">
+                        <h3 class="product-name">Stylish Kurtha</h3>
+                        <p class="product-price">₹1019</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="male-accessories">
+        <h1 class="head">Male Accessories Products</h1>
+        <div class="male-accessories-container">
+            <div class="male-watch" id="male-watch">
+                <h1 class="sub-head">Watch</h1>
+                <div class="grid" data-aos="zoom-in">
+                    <div class="product-card">
+                        <img src="./assets/men-watch1.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Watch</h3>
+                        <p class="product-price">₹2999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-watch2.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Black Watch</h3>
+                        <p class="product-price">₹2399</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-watch3.webp" alt="Shoes">
+                        <h3 class="product-name">Branded White Watch</h3>
+                        <p class="product-price">₹1199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-chain" id="male-chain">
+                <h1 class="sub-head">Men Chain</h1>
+                <div class="grid" data-aos="fade-up">
+                    <div class="product-card">
+                        <img src="./assets/men-chain1.webp" alt="Shoes">
+                        <h3 class="product-name">Gold Chain</h3>
+                        <p class="product-price">₹5999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-chain2.webp" alt="Shoes">
+                        <h3 class="product-name">Silver Chain</h3>
+                        <p class="product-price">₹2099</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-chain3.jpg" alt="Shoes">
+                        <h3 class="product-name">Silver Double Layered Chain</h3>
+                        <p class="product-price">₹1869</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-shoes" id="male-shoes">
+                <h1 class="sub-head">Men Shoes</h1>
+                <div class="grid" data-aos="fade-down">
+                    <div class="product-card">
+                        <img src="./assets/men-shoes1.jpg" alt="Shoes">
+                        <h3 class="product-name">Premium Brown Formal Shoe</h3>
+                        <p class="product-price">₹1699</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-shoes2.webp" alt="Shoes">
+                        <h3 class="product-name">casual Shoe</h3>
+                        <p class="product-price">₹1199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-shoes3.webp" alt="Shoes">
+                        <h3 class="product-name">Formal Shoe</h3>
+                        <p class="product-price">₹2999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-wallet" id="male-wallet">
+                <h1 class="sub-head">Wallet</h1>
+                <div class="grid" data-aos="zoom-in">
+                    <div class="product-card">
+                        <img src="./assets/men-wallet.webp" alt="Shoes">
+                        <h3 class="product-name">Multipurpose Wallet</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-wallet2.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Leather Wallet</h3>
+                        <p class="product-price">₹899</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-wallet3.webp" alt="Shoes">
+                        <h3 class="product-name">Black Leather Watch</h3>
+                        <p class="product-price">₹989</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="male-glass" id="male-glass">
+                <h1 class="sub-head">Men's Sunglasses</h1>
+                <div class="grid" data-aos="fade-up">
+                    <div class="product-card">
+                        <img src="./assets/men-glass1.jpg" alt="Shoes">
+                        <h3 class="product-name">Premium Black Sunglass</h3>
+                        <p class="product-price">₹499</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-glass2.jpeg" alt="Shoes">
+                        <h3 class="product-name">Gold Color Sunglass</h3>
+                        <p class="product-price">₹399</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/men-glass3.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Stylish Sunglass</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="women-accessories-container">
+            <h1 class="head">Women Accessories Products</h1>
+            <div class="women-earring" id="women-earring">
+                <h1 class="sub-head">Earrings</h1>
+                <div class="grid" data-aos="zoom-in">
+                    <div class="product-card">
+                        <img src="./assets/women-earning1.webp" alt="Shoes">
+                        <h3 class="product-name">Silver Earrings</h3>
+                        <p class="product-price">₹1299</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-earrning2.webp" alt="Shoes">
+                        <h3 class="product-name">Light Gold Earrings</h3>
+                        <p class="product-price">₹2199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-earrning3.webp" alt="Shoes">
+                        <h3 class="product-name">Design Earrings</h3>
+                        <p class="product-price">₹1109</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-shoe" id="women-shoe">
+                <h1 class="sub-head">Women Shoes</h1>
+                <div class="grid" data-aos="fade-up">
+                    <div class="product-card">
+                        <img src="./assets/women-shoes1.webp" alt="Shoes">
+                        <h3 class="product-name">Stylish Shoe</h3>
+                        <p class="product-price">₹1999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-shoes2.webp" alt="Shoes">
+                        <h3 class="product-name">Black Stylish Shoe</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-shoe3.webp" alt="Shoes">
+                        <h3 class="product-name">Blue Shoe</h3>
+                        <p class="product-price">₹2199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-handbag" id="women-handbag">
+                <h1 class="sub-head">Women Handbag</h1>
+                <div class="grid" data-aos="fade-down">
+                    <div class="product-card">
+                        <img src="./assets/women-handbag1.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Leather Handbag</h3>
+                        <p class="product-price">₹1099</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-handbag2.webp" alt="Shoes">
+                        <h3 class="product-name">Light grey Handbag</h3>
+                        <p class="product-price">₹1299</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-handbag3.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Handbag</h3>
+                        <p class="product-price">₹2999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-scraves" id="women-scraves">
+                <h1 class="sub-head">Women Scarves</h1>
+                <div class="grid" data-aos="zoom-in">
+                    <div class="product-card">
+                        <img src="./assets/women-scraves1.webp" alt="Shoes">
+                        <h3 class="product-name">Multicolor Scarves</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-scraves2.webp" alt="Shoes">
+                        <h3 class="product-name">Printed Scraves</h3>
+                        <p class="product-price">₹1109</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-scraves3.webp" alt="Shoes">
+                        <h3 class="product-name">Printed Stylish Scraves</h3>
+                        <p class="product-price">₹1269</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="women-bracelet" id="women-bracelet">
+                <h1 class="sub-head">Women's Bracelet</h1>
+                <div class="grid" data-aos="fade-up">
+                    <div class="product-card">
+                        <img src="./assets/women-bracelet1.webp" alt="Shoes">
+                        <h3 class="product-name">Stylish Design Bracelet</h3>
+                        <p class="product-price">₹969</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-bracelet2.webp" alt="Shoes">
+                        <h3 class="product-name">Gold Color Bracelet</h3>
+                        <p class="product-price">₹1069</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/women-bracelet3.webp" alt="Shoes">
+                        <h3 class="product-name">Silver Bracelet</h3>
+                        <p class="product-price">₹1169</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kids-accessories-container">
+            <h1 class="head">Kids Accessories Products</h1>
+            <div class="kids-glass" id="kids-glass">
+                <h1 class="sub-head">Kid's Sunglasses</h1>
+                <div class="grid" data-aos="fade-down">
+                    <div class="product-card">
+                        <img src="./assets/kid-glass1.webp" alt="Shoes">
+                        <h3 class="product-name">Stylish Sunglass</h3>
+                        <p class="product-price">₹399</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-glass2.jpeg" alt="Shoes">
+                        <h3 class="product-name">Kid's Sunglass</h3>
+                        <p class="product-price">₹499</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-glass3.jpeg" alt="Shoes">
+                        <h3 class="product-name">Premium Sunglass</h3>
+                        <p class="product-price">₹1999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="kid-bottle" id="kid-bottle">
+                <h1 class="sub-head">Kid's Bottles</h1>
+                <div class="grid" data-aos="zoom-in">
+                    <div class="product-card">
+                        <img src="./assets/kid-bottle1.webp" alt="Shoes">
+                        <h3 class="product-name">1L Bottle</h3>
+                        <p class="product-price">₹299</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-bottle2.jpeg" alt="Shoes">
+                        <h3 class="product-name">Premium 1/2L Bottle </h3>
+                        <p class="product-price">₹199</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-bottle3.webp" alt="Shoes">
+                        <h3 class="product-name">Premium 1L Bottle</h3>
+                        <p class="product-price">₹3999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="kid-shoe" id="kid-shoe">
+                <h1 class="sub-head">Kid's Shoe</h1>
+                <div class="grid" data-aos="fade-up">
+                    <div class="product-card">
+                        <img src="./assets/kid-shoes1.jpg" alt="Shoes">
+                        <h3 class="product-name">Stylish Light Shoe</h3>
+                        <p class="product-price">₹599</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-shoes2.webp" alt="Shoes">
+                        <h3 class="product-name">Stylish Pink Shoe for Girls</h3>
+                        <p class="product-price">₹696</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-shoes3.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Shoe</h3>
+                        <p class="product-price">₹990</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="kid-bag" id="kid-bag">
+                <h1 class="sub-head">Kid's Bag</h1>
+                <div class="grid" data-aos="fade-down">
+                    <div class="product-card">
+                        <img src="./assets/kid-bag1.webp" alt="Shoes">
+                        <h3 class="product-name">Animated Bag</h3>
+                        <p class="product-price">₹699</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-bag3.jpeg" alt="Shoes">
+                        <h3 class="product-name">Animated School Bag</h3>
+                        <p class="product-price">₹499</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-bag2.webp" alt="Shoes">
+                        <h3 class="product-name">Premium Dark Bag</h3>
+                        <p class="product-price">₹799</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="kid-watch" id="kid-watch">
+                <h1 class="sub-head">Kid's Watch</h1>
+                <div class="grid" data-aos="zoom-in">
+                    <div class="product-card">
+                        <img src="./assets/kid-watch1.jpeg" alt="Shoes">
+                        <h3 class="product-name">Premium Android Watch</h3>
+                        <p class="product-price">₹3999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-watch2.jpeg" alt="Shoes">
+                        <h3 class="product-name">Digital Watch</h3>
+                        <p class="product-price">₹999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/kid-watch3.jpeg" alt="Shoes">
+                        <h3 class="product-name">Small display Screen Watch</h3>
+                        <p class="product-price">₹2999</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="productModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-left">
+                    <img id="modalProductImage" src="" alt="Product">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modalProductName"></h2>
+                    <p class="price" id="modalProductPrice"></p>
+                    <label>Quantity</label>
+                    <input type="number" id="modalQuantity" value="1" min="1">
+                    <label>Address</label>
+                    <textarea id="modalAddress" placeholder="Enter delivery address"></textarea>
+                    <label>Coupon Code</label>
+                    <input type="text" id="modalCoupon" placeholder="Optional">
+                    <button id="confirmBtn">Confirm & Add to Cart</button>
+                </div>
+            </div> dvfejrkkr
+        </div>
+    </section>
+    <footer class="footer" id="footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Stackly</h2>
+                <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@Stackly.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Location: MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="404page.html"><img width="50" height="50"
+                            src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                            alt="Instagram"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            alt="Twitter"></a>
+                    <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios/50/pinterest.png"
+                            alt="pinterest" /></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Stackly. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        const modal = document.getElementById("productModal");
+        const closeBtn = document.querySelector(".close-btn");
+        const confirmBtn = document.getElementById("confirmBtn");
+
+        document.querySelectorAll(".add-to-cart").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const card = e.target.closest(".product-card");
+                const name = card.querySelector(".product-name").textContent;
+                const price = card.querySelector(".product-price").textContent;
+                const img = card.querySelector("img").src;
+
+                document.getElementById("modalProductName").textContent = name;
+                document.getElementById("modalProductPrice").textContent = price;
+                document.getElementById("modalProductImage").src = img;
+
+                modal.style.display = "flex";
+            });
+        });
+
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+        confirmBtn.addEventListener("click", () => {
+            const name = document.getElementById("modalProductName").textContent;
+            const img = document.getElementById("modalProductImage").src;
+            const price = document.getElementById("modalProductPrice").textContent;
+            const quantity = document.getElementById("modalQuantity").value;
+            const address = document.getElementById("modalAddress").value.trim();
+            const coupon = document.getElementById("modalCoupon").value.trim();
+
+            if (!address) {
+                showToast(" Please enter your address.", "error");
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name, image: img, price, quantity, address, coupon });
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            showToast(`${quantity} × ${name} added to cart!`, "success");
+            modal.style.display = "none";
+        });
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        function showToast(message, type) {
+            toast.textContent = message;
+            toast.style.background = (type === "error") ? "#f44336" : "#4CAF50";
+            toast.className = "toast show";
+
+            setTimeout(() => {
+                toast.className = "toast";
+            }, 5000);
+        }
+    </script>
+
+    </div>
+
+</body>
+
+</html>

@@ -38,7 +38,8 @@ dots.forEach((dot, i) => {
 //       document.body.classList.toggle("dark");
 //       themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 //     });
-
+    // const themeToggle = document.getElementById('theme-toggle');
+    //     const htmlElement = document.documentElement;
 
    function applyTheme() {
     const savedTheme = localStorage.getItem('theme');

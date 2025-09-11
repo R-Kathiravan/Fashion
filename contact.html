@@ -11,7 +11,7 @@
 
 <body>
     <style>
-                 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
 
         :root {
             --nav-head: rgb(0, 255, 4);
@@ -46,7 +46,7 @@
 
         body {
             background-color: var(--white);
-                        font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
 
         }
 
@@ -315,7 +315,7 @@
             text-decoration: none;
             padding: 10px;
             letter-spacing: 1px;
-            font-size: 20px;
+            font-size: 16px;
             position: relative;
             margin-right: 30px;
         }
@@ -454,9 +454,9 @@
             width: 50px;
             height: 50px;
         }
- 
 
-        @media(max-width:468px) {
+
+        @media(max-width:768px) {
             .menu-items {
                 flex-direction: column;
                 background: var(--black);
@@ -505,7 +505,8 @@
             .hamburger:hover {
                 color: var(--btn-hover);
             }
-            .map-loc iframe{
+
+            .map-loc iframe {
                 width: 350px;
             }
         }
@@ -515,23 +516,25 @@
                 font-size: 16px;
             }
         }
+
         .btn:hover {
             transform: scale(1.1);
         }
 
         .theme-toggle {
-     background: var(--black);
-     color: var(--white);
-     border: none;
-     padding: 6px 12px;
-     border-radius: 6px;
-     cursor: pointer;
-     transition: transform 0.3s ease, background 0.3s ease;
-     margin-right: 10px;
- }
-    .theme-toggle i{
-        color: var(--white);
-    }
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .theme-toggle i {
+            color: var(--white);
+        }
 
         .logo {
             padding: 16px;
@@ -549,10 +552,11 @@
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
             <a href="contact.html">Contact</a>
             <a class="btn-close">Close</a>
-            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-cog"></i></button>
-
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
         </nav>
 
         <div class="hamburger">
@@ -714,6 +718,8 @@
                     <li><a href="services.html"> Services</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="collections.html">Collections</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -768,7 +774,7 @@
         themeToggle.addEventListener('click', () => {
             htmlElement.classList.toggle('dark-mode');
 
-             if (htmlElement.classList.contains('dark-mode')) {
+            if (htmlElement.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
             } else {
                 localStorage.setItem('theme', 'light');

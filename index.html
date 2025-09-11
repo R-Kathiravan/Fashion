@@ -26,9 +26,11 @@
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="collections.html">Collections</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
             <a href="contact.html">Contact</a>
             <a class="popup-trigger-btn" id="show-popup-btn">Login / Signup</a>
-            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-cog"></i></button>
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
             <div id="user-icon">
                 <div id="user_logo" class="user-logo"></div>
                 <div class="user-tooltip">
@@ -225,6 +227,8 @@
                     <li><a href="services.html"> Services</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="collections.html">Collections</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -455,11 +459,11 @@
             const val_pass = sessionStorage.getItem("Password");
 
             if (login_email === val_mail && login_password === val_pass) {
-                 showToast("Login Successfull", "success")
+                showToast("Login Successfull", "success")
                 closeModal();
                 showUser(user_name, login_email);
-             } else {
-                 showToast("Username and Password are not correct", "error");
+            } else {
+                showToast("Username and Password are not correct", "error");
             }
         });
         document.addEventListener("DOMContentLoaded", () => {
@@ -552,7 +556,7 @@
                 }
             });
 
-             const submitBtn = document.getElementById("btn-form")
+            const submitBtn = document.getElementById("btn-form")
             submitBtn.disabled = !isFormValid;
 
             return isFormValid;
