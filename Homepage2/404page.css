@@ -14,11 +14,11 @@ body{
 }
 
  .logo {
-      padding: 14px;
-     font-size: 30px;
-     text-decoration: none;
-     color: red;
-     font-weight: 700;
+       padding: 16px;
+    font-size: 36px;
+    text-decoration: none;
+    color: red;
+    font-weight: bolder;
  }
 
 .menu-items {
