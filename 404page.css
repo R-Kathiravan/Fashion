@@ -1,3 +1,11 @@
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+ body {
+     margin: 0;
+     padding: 0;
+     font-family: 'Poppins', sans-serif;
+ }
+
  header {
      display: flex;
      justify-content: space-between;
@@ -8,9 +16,9 @@
      width: 100%;
      z-index: 1000;
      margin-right: 20px;
-  }
- 
- 
+ }
+
+
 
  header h1 {
      color: #000000;
@@ -30,10 +38,11 @@
      font-size: 20px;
      position: relative;
      margin-right: 30px;
-     
+
  }
-  .logo {
-      padding: 16px;
+
+ .logo {
+        padding: 16px;
      font-size: 36px;
      text-decoration: none;
      color: red;
@@ -58,51 +67,54 @@
  .menu-items a:hover {
      color: #ff4081;
  }
-.btn-close{
-    display: none;
-}
+
+ .btn-close {
+     display: none;
+ }
+
  .hamburger {
      display: none;
  }
-    .content {
-      /* flex: 1; */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: #f8f8f8;
-      padding: 40px;
-    }
 
-    .content h1 {
-      font-size: 100px;
-      color: #ff4c4c;
-      margin-bottom: 20px;
-     }
+ .content {
+     /* flex: 1; */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     background: #f8f8f8;
+     padding: 40px;
+ }
 
-    .content p {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #333;
-    }
+ .content h1 {
+     font-size: 100px;
+     color: #ff4c4c;
+     margin-bottom: 20px;
+ }
 
-    .content a {
-      text-decoration: none;
-      background: #ff4c4c;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 5px;
-      font-size: 18px;
-      transition: 0.3s;
-    }
+ .content p {
+     font-size: 20px;
+     margin-bottom: 20px;
+     color: #333;
+ }
 
-    .content a:hover {
-      background: #cc0000;
-    }
+ .content a {
+     text-decoration: none;
+     background: #ff4c4c;
+     color: white;
+     padding: 12px 25px;
+     border-radius: 5px;
+     font-size: 18px;
+     transition: 0.3s;
+ }
 
- 
-  .footer {
+ .content a:hover {
+     background: #cc0000;
+ }
+
+
+ .footer {
      background: #111;
      color: #fff;
      padding: 50px 20px 20px;
@@ -173,55 +185,57 @@
      font-size: 13px;
      color: #777;
  }
+
  .social-icons {
      width: 50px;
-    height: 50px;
-}
+     height: 50px;
+ }
 
-@media (max-width:478px) {
-    header img{
-            width: 30%;
+ @media (max-width:478px) {
+     header img {
+         width: 30%;
 
-    }
-}
- @media(max-width:468px) {
-         .menu-items {
-             flex-direction: column;
-             background: #222;
-             position: fixed;
-             top: 0;
-             right: -350px;
-             width: 250px;
-             height: auto;
-             padding: 60px 20px;
-             transition: right 0.3s ease;
-             z-index: 999;
-         }
-         .btn-close{
-            display: block;
-            color: red;
-         }
-         
-
-         .hamburger {
-             display: block;
-             margin-right: 30px;
-             cursor: pointer;
-             color: white;
-
-         }
-
-         .menu-items.show {
-             right: 0;
-             display: flex;
-             flex-direction: column;
-             flex-wrap: wrap;
-             justify-content: flex-start;
-             align-content: flex-start;
-         }
-
-         .hamburger:hover {
-             color: #b82e5e;
-         }
      }
- 
+ }
+
+ @media(max-width:468px) {
+     .menu-items {
+         flex-direction: column;
+         background: #222;
+         position: fixed;
+         top: 0;
+         right: -350px;
+         width: 250px;
+         height: auto;
+         padding: 60px 20px;
+         transition: right 0.3s ease;
+         z-index: 999;
+     }
+
+     .btn-close {
+         display: block;
+         color: red;
+     }
+
+
+     .hamburger {
+         display: block;
+         margin-right: 30px;
+         cursor: pointer;
+         color: white;
+
+     }
+
+     .menu-items.show {
+         right: 0;
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         justify-content: flex-start;
+         align-content: flex-start;
+     }
+
+     .hamburger:hover {
+         color: #b82e5e;
+     }
+ }
