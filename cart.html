@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Cart</title>
   <style>
@@ -88,6 +88,7 @@
       .cart-item {
         grid-template-columns: 1fr;
         justify-content: center;
+        justify-items: center;
       }
     }
 
@@ -466,14 +467,14 @@
     </div>
   </header>
   <div class="hero-nav">
-    <h1>Your Shopping Cart</h1>
+    <h1 style="color: white;"> Your Shopping Cart</h1>
 
   </div>
   <div class="shopping-container">
     <h1>Your Cart</h1>
     <div class="cart-container" id="cartContainer"></div>
     <div class="cart-summary" id="cartSummary">Total: ₹0</div>
-    <a href="404page.html" class="checkout-btn">Proceed to Checkout</a>
+    <a href="404page.html" class="checkout-btn" id="checkout-btn"> Proceed to Checkout</a>
   </div>
   <footer class="footer" id="footer" data-aos="fade-up">
     <div class="footer-container">
@@ -518,13 +519,14 @@
       <p>© 2025 Stackly. All Rights Reserved.</p>
     </div>
   </footer>
-   <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true });
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
     function loadCart() {
       const cartContainer = document.getElementById("cartContainer");
       const cartSummary = document.getElementById("cartSummary");
+      const cartBtn = document.getElementById("checkout-btn");
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
       cartContainer.innerHTML = "";
@@ -534,6 +536,7 @@
       🛒 Your cart is empty
     </p>`;
         cartSummary.textContent = "";
+        cartBtn.style.display = 'none';
         return;
       }
       cart.forEach((item, index) => {

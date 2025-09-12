@@ -1437,7 +1437,7 @@
             cart.push({ name, image: img, price, quantity, address, coupon });
             localStorage.setItem("cart", JSON.stringify(cart));
 
-            showToast(`${quantity} × ${name} added to cart!`, "success");
+            showToast(`${quantity} → ${name} added to cart!`, "success");
             modal.style.display = "none";
         });
         const themeToggle = document.getElementById('theme-toggle');

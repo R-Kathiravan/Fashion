@@ -27,17 +27,6 @@
 
         }
 
-        /* body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--text-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 1rem;
-        } */
-
          .popup-trigger-btn {
             padding: 15px 30px;
             font-size: 1.2rem;
@@ -56,8 +45,7 @@
             box-shadow: 0 8px 25px rgba(74, 0, 224, 0.5);
         }
 
-        /* --- Modal Overlay --- */
-        .modal-overlay {
+         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -78,8 +66,7 @@
             pointer-events: auto;
         }
 
-        /* --- Main Container --- */
-        .container {
+         .container {
             width: 100%;
             max-width: 420px;
             background-color: var(--container-bg);
@@ -95,8 +82,7 @@
             transform: translateY(0) scale(1);
         }
 
-        /* --- Close Button --- */
-        .close-btn {
+         .close-btn {
             position: absolute;
             top: 10px;
             right: 15px;
@@ -149,8 +135,7 @@
             transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
         }
 
-        /* --- Form Wrapper & Slider for Animation --- */
-        .form-wrapper {
+         .form-wrapper {
             overflow: hidden;
         }
 
@@ -164,8 +149,7 @@
             transform: translateX(-50%);
         }
 
-        /* --- Form Sections --- */
-        .form-section {
+         .form-section {
             width: 50%;
             padding: 2rem 2.5rem;
         }
@@ -178,8 +162,7 @@
             font-weight: 700;
         }
 
-        /* --- Input Fields & Validation --- */
-        .input-group {
+         .input-group {
             position: relative;
             margin-bottom: 1.5rem;
         }
@@ -231,8 +214,7 @@
             display: block;
         }
 
-        /* --- Links & Buttons --- */
-        .form-section a.forgot-password {
+         .form-section a.forgot-password {
             display: block;
             text-align: right;
             color: var(--primary-color);
@@ -269,8 +251,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        /* --- Social Login --- */
-        .social-login {
+         .social-login {
             text-align: center;
             margin-top: 2rem;
         }
@@ -310,8 +291,7 @@
             transform: scale(1.15) rotate(10deg);
         }
         
-        /* Shake animation for invalid inputs */
-        @keyframes shake {
+         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-5px); }
             50% { transform: translateX(5px); }
@@ -334,8 +314,7 @@
             
             <div class="form-wrapper">
                 <div class="form-slider">
-                    <!-- Login Form -->
-                    <section class="form-section">
+                     <section class="form-section">
                         <form id="login-form" novalidate>
                             <h3>Login</h3>
                             <div class="input-group">
@@ -361,8 +340,7 @@
                         </div>
                     </section>
 
-                    <!-- Signup Form -->
-                    <section class="form-section">
+                     <section class="form-section">
                         <form id="signup-form" novalidate>
                             <h3>Create Account</h3>
                             <div class="input-group">
@@ -398,8 +376,7 @@
         const showPopupBtn = document.getElementById('show-popup-btn');
         const closePopupBtn = document.getElementById('close-popup-btn');
 
-        // --- Popup Logic ---
-        showPopupBtn.addEventListener('click', () => {
+         showPopupBtn.addEventListener('click', () => {
             modalOverlay.classList.add('active');
         });
 
@@ -415,8 +392,7 @@
             }
         });
 
-        // --- Tab Switching Logic ---
-        signupTabBtn.addEventListener('click', () => {
+         signupTabBtn.addEventListener('click', () => {
             container.classList.add('signup-active');
             loginTabBtn.classList.remove('active');
             signupTabBtn.classList.add('active');
