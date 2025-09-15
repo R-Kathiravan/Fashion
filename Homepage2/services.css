@@ -531,6 +531,9 @@ flex-direction: row;
     .circle span:nth-child(4) { top: 50%; left: 0; transform: translate(-50%, -50%); }
 
      */
+     .testimonials{
+        overflow-x: hidden;
+     }
 .testimonial-card {
     border: 1px solid rgba(107, 107, 107, 0.405);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
