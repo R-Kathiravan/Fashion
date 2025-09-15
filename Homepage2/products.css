@@ -72,7 +72,7 @@ body {
     border-radius: 30%;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 body.dark .theme-toggle {
