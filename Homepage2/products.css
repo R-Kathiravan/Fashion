@@ -321,6 +321,7 @@ body.dark .theme-toggle {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        gap: 20px;
         justify-content: flex-start;
         align-content: flex-start;
     }

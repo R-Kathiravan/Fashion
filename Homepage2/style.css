@@ -619,7 +619,8 @@
     margin-bottom: 30px;
     color: var(--head-dim);
   }
-  .special-offers a{
+
+  .special-offers a {
     padding: 12px;
     text-decoration: none;
     background-color: #2b83e7;
@@ -628,7 +629,8 @@
     border-radius: 25px;
     transition: all 0.5s;
   }
-  .special-offers a:hover{
+
+  .special-offers a:hover {
     background-color: #1500ff;
   }
 
@@ -886,6 +888,7 @@
       right: 0;
       display: flex;
       flex-direction: column;
+      gap: 20px;
       flex-wrap: wrap;
       justify-content: flex-start;
       align-content: flex-start;
@@ -1373,19 +1376,22 @@
     .image-section img {
       display: none;
     }
-    .form-section{
+
+    .form-section {
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./asstes/login-bg.jpg');
       background-position: center center;
       background-size: cover;
       color: white !important;
     }
-      .form-section p {
-        color: white !important;
-      }
-      .form-section a{
-        color: #ff0084 !important;
-        font-weight: 600;
-      }
+
+    .form-section p {
+      color: white !important;
+    }
+
+    .form-section a {
+      color: #ff0084 !important;
+      font-weight: 600;
+    }
   }
 
   .form-wrapper {
@@ -1484,16 +1490,16 @@
     background-color: #fef2f2;
   }
 
- .input-error {
-  border: 1px solid red;
-}
+  .input-error {
+    border: 1px solid red;
+  }
 
-.error-message {
-  color: red;
-  font-size: 0.8rem;
-  margin-top: 4px;
-  display: block;
-}
+  .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: block;
+  }
 
   #user-icon {
     position: relative;
@@ -1531,38 +1537,40 @@
     min-width: 100px;
     opacity: 0;
     z-index: 1000;
-    visibility: hidden;  
-  transition: opacity 0.5s ease;  
+    visibility: hidden;
+    transition: opacity 0.5s ease;
   }
 
   @media (max-width:478px) {
-    .user-tooltip{
+    .user-tooltip {
       left: 0;
     }
   }
-   #user-icon:hover .user-tooltip {
+
+  #user-icon:hover .user-tooltip {
     /* display: block; */
     opacity: 1;
     visibility: visible;
   }
-   #logout-btn {
-     margin-top: 8px;
-     background: #ff4b2b;
-     color: #fff;
-     border: none;
-     padding: 6px 12px;
-     border-radius: 5px;
-     cursor: pointer;
-     font-size: 13px;
-     font-weight: bold;
-     transition: background 0.3s ease;
- }
 
- #logout-btn:hover {
-     background: #ff1a1a;
- }
+  #logout-btn {
+    margin-top: 8px;
+    background: #ff4b2b;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
 
- 
+  #logout-btn:hover {
+    background: #ff1a1a;
+  }
+
+
 
   .toast {
     visibility: hidden;
