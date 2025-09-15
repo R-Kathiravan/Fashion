@@ -52,6 +52,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    flex-wrap: wrap;
 
 }
 
@@ -272,7 +273,7 @@ body.dark .theme-toggle {
 }
 
 
-@media (max-width:468px) {
+@media (max-width:768px) {
     .menu-items {
         flex-direction: column;
         background: #000000;

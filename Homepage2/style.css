@@ -847,7 +847,7 @@
 
   }
 
-  @media (max-width:678px) {
+  @media (max-width:768px) {
     .menu-items {
       flex-direction: column;
       background: black;

@@ -49,10 +49,11 @@
     .menu-items {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 30px;
         background-color: var(--white);
     }
-
+    
     .btn-close {
         display: none;
     }
@@ -279,7 +280,7 @@
     }
 
 
-    @media (max-width:468px) {
+    @media (max-width:768px) {
         .menu-items {
             flex-direction: column;
             background: #000000;
