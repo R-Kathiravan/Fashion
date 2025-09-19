@@ -41,13 +41,11 @@
 
  }
 
- .logo {
-        padding: 16px;
-     font-size: 36px;
-     text-decoration: none;
-     color: red;
-     font-weight: bolder;
+ .logo img {
+     width: 150px;
+     padding: 16px;
  }
+
 
  .menu-items a::after {
      content: '';
