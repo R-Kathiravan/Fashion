@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+        :root {
+            --font-color-nav-head: rgb(200, 0, 255);
+            --font-nav-head-a: black;
+            --font-active-blog: rgb(22, 37, 240);
+            --heading-font: black;
+            --black: black;
+            --btn-color: #ff4081;
+            --btn-hover: #e73370;
+            --btn-font-color: white;
+            --white: white;
+            --red: red;
+            --basic-font: black;
+            --news-btn: #222;
+            --news-date: #777;
+            --news-para: #444;
+            --news-btn-hover: #555;
+            --categories-bg: rgba(0, 0, 0, 0.5);
+            --categories-font: white;
+
+        }
+
+        html.dark-mode {
+            --font-color-nav-head: rgb(55, 200, 255);
+            --font-nav-head-a: white;
+            --font-active-blog: rgb(180, 200, 255);
+            --heading-font: white;
+            --black: white;
+            --btn-color: #ff80ab;
+            --btn-hover: #ff99bb;
+            --btn-font-color: black;
+            --white: #111;
+            --red: #ff6b6b;
+            --basic-font: #eee;
+            --news-btn: #ddd;
+            --news-date: #aaa;
+            --news-para: #ccc;
+            --news-btn-hover: #fff;
+            --categories-bg: rgba(255, 255, 255, 0.15);
+            --categories-font: #f5f5f5;
+        }
+
+        body {
+            background-color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        .blog-nav-head {
+            background-image: url('./assets/pexels-craytive-1478477.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 50vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .blog-nav-head h1 {
+            font-size: 38px;
+            color: var(--font-color-nav-head);
+            margin: 1%;
+        }
+
+        .blog-nav-head a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .active-blog {
+            color: var(--font-active-blog) !important;
+            font-size: 20px !important;
+            font-weight: 700;
+        }
+
+        .blog-container {
+            /* width: 90%; */
+            margin: 50px auto;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+        }
+
+        .blog-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--news-btn);
+            position: relative;
+
+        }
+
+        .blog-heading::after {
+            content: "";
+            width: 60px;
+            height: 3px;
+            background: var(--btn-color);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 5px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            overflow-x: hidden;
+        }
+
+        .blog-featured {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        .blog-featured img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-featured:nth-child(1) img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-featured:hover img {
+            transform: scale(1.1);
+        }
+
+        .blog-text {
+            padding: 20px;
+            background: var(--white);
+            color: var(--black);
+
+        }
+
+        .blog-featured .blog-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+        }
+
+        .blog-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+
+        }
+
+        .blog-card img:hover {
+            transform: scale(1.1);
+
+        }
+
+        .blog-card .blog-text {
+            padding: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 18px;
+            background: var(--btn-color);
+            color: var(--white);
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .read-more:hover {
+            background: var(--btn-hover);
+        }
+
+        .news-content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .news-container {
+            background-color: var(--white);
+        }
+
+        .news-heading {
+            margin: 3%;
+            text-align: center;
+            font-size: xx-large;
+            margin-top: 5%;
+            color: var(--black);
+        }
+
+        .news-content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-content-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+        }
+
+        .news-content-container img {
+            width: 300px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .news-content-text {
+            flex: 1;
+        }
+
+        .news-content-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--news-btn);
+        }
+
+        .news-content-text .date {
+            font-size: 0.85rem;
+            color: var(--news-date);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .news-content-text p {
+            font-size: 0.95rem;
+            color: var(--news-para);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .news-content-text a {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--news-btn);
+            color: var(--white);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .news-content-text a:hover {
+            background: var(--news-btn-hover);
+        }
+
+        .categories-head {
+            margin: 3%;
+            text-align: center;
+            font-size: xx-large;
+            margin-top: 5%;
+            color: var(--black);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin: auto;
+        }
+
+        .popular-post-side1 {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            overflow-x: hidden;
+        }
+
+        .popular-post-side2 {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            overflow-x: hidden;
+        }
+
+        .categories-content {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .categories-content:hover {
+            box-shadow: 0 20px 45px rgba(124, 92, 255, 0.3);
+            transform: scale(1.02);
+
+        }
+
+        .categories-content img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .categories-content h2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 15px;
+            background: var(--categories-bg);
+            color: var(--categories-font);
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .popular-post-head {
+            margin: 3%;
+            text-align: center;
+            font-size: xx-large;
+            margin-top: 5%;
+            color: var(--black);
+        }
+
+        .popular-post-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .popular-post-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+            transition: all 0.7s ease;
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        .popular-post-text h4 {
+            font-size: 18px;
+        }
+
+        .popular-post-content:hover {
+            box-shadow: 0 20px 45px rgba(51, 0, 255, 0.3);
+        }
+
+        .popular-post-content img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        .popular-post-content a {
+            text-decoration: none;
+            padding: 12px;
+            border: 2px solid;
+            border-radius: 30px;
+            background-color: var(--btn-color);
+            color: var(--white);
+            transition: all 0.6s ease;
+        }
+
+        .popular-post-content a:hover {
+            background-color: var(--btn-hover);
+        }
+
+        .newsletter-container {
+            background-image: url('./assets/nathan-dumlao-3-tkQbEAsd8-unsplash.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 5% 7% 10%;
+            color: white;
+            position: relative;
+            margin-top: 10%;
+        }
+
+        .newsletter-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 7%;
+            padding-left: 5%;
+            color: white;
+            justify-items: center;
+            align-items: end;
+            padding-right: 2%;
+        }
+
+        .news-side1 h2 {
+            font-size: 36px;
+        }
+
+        .news-side2 input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid white;
+            width: 100%;
+            max-width: 400px;
+            height: 50px;
+            padding-left: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .news-side2 input::placeholder {
+            color: var(--white);
+        }
+
+        .news-side2 button {
+            padding: 12px;
+            border-radius: 25px;
+            border-color: #41404000;
+            color: var(--white);
+            background-color: var(--btn-color);
+            cursor: pointer;
+            margin: 9%;
+        }
+
+        .news-side2 button:hover {
+            background-color: var(--btn-hover);
+        }
+
+
+        @media (max-width:768px) {
+            .blog-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .popular-post-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width:478px) {
+            .news-content-container {
+                flex-direction: column;
+            }
+
+            .news-content-container img {
+                height: 250px;
+                width: 100%;
+            }
+
+            .newsletter-content {
+                grid-template-columns: 1fr;
+            }
+
+            .popular-post-content {
+                flex-direction: column;
+
+            }
+
+            .popular-post-content img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .header-cls {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0px;
+            background-color: var(--white);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            margin-right: 20px;
+        }
+
+        .header-cls h1 {
+            color: var(--white);
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .dark-btn {
+            background-color: #00000000;
+            border-color: #00000000;
+            color: var(--black);
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .menu-items a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 16px;
+            position: relative;
+            margin-right: 30px;
+        }
+
+        .menu-items a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: var(--btn-color);
+            transition: width 0.3s ease;
+        }
+
+        .menu-items a:hover::after {
+            width: 100%;
+            color: var(--btn-hover);
+        }
+
+        .menu-items a:hover {
+            color: var(--btn-hover);
+        }
+
+        .btn-close {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .popup-trigger-btn {
+            font-size: 1.2rem;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            background: none;
+            transition: all 0.3s ease;
+        }
+
+        .popup-trigger-btn ::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .popup-trigger-btn:hover::after {
+            width: 100%;
+        }
+
+        .popup-trigger-btn:hover {
+            transform: translateY(-3px);
+            color: var(--btn-hover);
+
+        }
+
+        .footer {
+            background-color: #000000;
+            color: var(--white);
+            padding: 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            /* max-width: 1200px; */
+            /* margin: auto; */
+            background-color: black;
+        }
+
+        .footer h2,
+        .footer h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer p {
+            line-height: 1.6;
+            font-size: 14px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--btn-hover);
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social .social-icons img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+
+        .footer-social .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #010101;
+            font-size: 13px;
+            color: white;
+            background-color: black;
+        }
+
+        .social-icons {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media (max-width:478px) {
+            .header-cls img {
+                width: 30%;
+            }
+        }
+
+        @media(max-width:768px) {
+            .menu-items {
+                flex-direction: column;
+                background: var(--black);
+                position: fixed;
+                top: 0;
+                right: -350px;
+                width: 250px;
+                height: 100%;
+                padding: 60px 20px;
+                transition: right 0.3s ease;
+                z-index: 999;
+
+            }
+
+            .menu-items a {
+                color: var(--white);
+
+            }
+
+            .menu-items button {
+                color: var(--white);
+            }
+
+            .btn-close {
+                display: block;
+                color: var(--red);
+            }
+
+
+            .hamburger {
+                display: block;
+                margin-right: 30px;
+                cursor: pointer;
+                color: var(--black);
+
+            }
+
+            .menu-items.show {
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: flex-start;
+            }
+
+            .hamburger:hover {
+                color: var(--btn-hover);
+            }
+        }
+
+        @media(max-width:768px) {
+            .menu-items a {
+                font-size: 16px;
+            }
+        }
+
+
+        /* @media (prefers-color-scheme: dark) {
+            body {
+                background: #121212;
+                color: #ffffff;
+            }
+        } */
+
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .theme-toggle i {
+            color: var(--white);
+        }
+
+        .logo img {
+            width: 150px;
+            padding: 16px;
+        }
+    </style>
+    <header class="header-cls">
+        <a href="index.html" class="logo"><img src="./assets/stackly-logo1.png"></a>
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="collections.html">Collections</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+            <a class="btn-close">Close</a>
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
+        </nav>
+
+        <div class="hamburger">
+            &#9776
+        </div>
+    </header>
+    <section class="blog">
+        <div class="blog-nav-head">
+            <h1>Blogs</h1>
+            <div>
+                <a href="index.html">Home</a>/
+                <a class="active-blog">Blog</a>
+            </div>
+        </div>
+        <div class="blog-container">
+            <h1 class="blog-heading">Our Blog</h1>
+
+            <div class="blog-grid">
+                <div class="blog-featured" data-aos="fade-up-left">
+                    <img src="./assets/crew-EMWgB-BTyh0-unsplash.jpg" alt="Fashion Blog">
+                    <div class="blog-text">
+                        <h2>Discover the New Fashion Trends</h2>
+                        <p>Explore the latest trends, style tips, and creative inspirations from our fashion
+                            journey.</p>
+                        <a href="404page.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <div class="blog-side">
+                    <div class="blog-card" data-aos="fade-up-right">
+                        <img src="./assets/blog-img2.jpg" alt="Fashion Blog">
+                        <div class="blog-text">
+                            <h3>Streetwear That Inspires</h3>
+                            <p>Discover how street style is shaping the fashion industry like never before.</p>
+                            <a href="404page.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-aos="fade-up-right">
+                        <img src="./assets/blog-img.jpeg" alt="Fashion Blog">
+                        <div class="blog-text">
+                            <h2>Style Inspiration</h2>
+                            <p>From casual streetwear to elegant looks, discover outfit ideas for every occasion.
+                            </p>
+                            <a href="404page.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="news-container">
+            <div class="news-heading">
+                <h2>What's New</h2>
+            </div>
+            <div class="news-content">
+                <div class="news-content-grid">
+                    <div class="news-content-container" data-aos="fade-up">
+                        <img src="./assets/pexels-imagestudio-1488315.jpg" alt="Latest News">
+                        <div class="news-content-text">
+                            <h3>Paris Fashion Week 2025</h3>
+                            <span class="date">Aug 20, 2025 • Vogue Staff</span>
+                            <p>Paris Fashion Week 2025 dazzled with bold futuristic designs, sustainable
+                                fabrics, and AI-inspired collections redefining haute couture. Designers are
+                                blending tradition with innovation, setting new global trends.</p>
+                            <!-- <a href="404page.html">Read More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="news-content-container" data-aos="fade-up">
+                        <img src="./assets/news-new.avif" alt="Fashion Event">
+                        <div class="news-content-text">
+                            <h3>New York Week</h3>
+                            <span class="date">Aug 18, 2025 • Fashion Daily</span>
+                            <p> New York's fashion scene embraced streetwear luxury with eco-friendly fabrics,
+                                recycled accessories, and bold digital fashion experiences. Designers introduced
+                                collections that blended sustainability with technology, creating an immersive
+                                runway that set new standards for the industry.</p>
+
+                            <!-- <a href="404page.html">Read More</a> -->
+                        </div>
+                    </div>
+
+                    <div class="news-content-container" data-aos="fade-up">
+                        <img src="./assets/news-milian.jpg" alt="Trend Show">
+                        <div class="news-content-text">
+                            <h3>Milan Fashion Week</h3>
+                            <span class="date">Aug 15, 2025 • Style Insider</span>
+                            <p>Milan Fashion Week revealed timeless elegance merged with futuristic silhouettes.
+                                From fluid gowns to structured metallic outfits, Italian designers showcased
+                                the perfect balance between tradition and innovation, reinforcing Milan’s
+                                reputation as a global hub for luxury and craftsmanship.
+                            </p>
+                            <!-- <a href="404page.html">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="categories-container">
+                <div class="categories-head">
+                    <h1>Categories of Blog</h1>
+                </div>
+                <div class="categories-grid">
+                    <div class="categories-content" data-aos="fade-up" data-aos-delay="100">
+                        <a href="404page.html">
+                            <img src="./assets/pexels-olly-3755706.jpg" alt="categories">
+                            <h2>Clothing</h2>
+                        </a>
+                    </div>
+                    <div class="categories-content" data-aos="fade-up" data-aos-delay="200">
+                        <a href="404page.html">
+                            <img src="./assets/pexels-solliefoto-298863.jpg" alt="categories">
+                            <h2>Accessories</h2>
+                        </a>
+                    </div>
+                    <div class="categories-content" data-aos="fade-up" data-aos-delay="300">
+                        <a href="404page.html">
+                            <img src="./assets/bags.avif" alt="categories">
+                            <h2>Bags</h2>
+                        </a>
+                    </div>
+                    <div class="categories-content" data-aos="fade-up" data-aos-delay="400">
+                        <a href="404page.html">
+                            <img src="./assets/pexels-sebastian-988914.jpg" alt="categories">
+                            <h2>Street Style</h2>
+                        </a>
+                    </div>
+                    <div class="categories-content" data-aos="fade-up" data-aos-delay="500">
+                        <a href="404page.html">
+                            <img src="./assets/phil-haydn-BebCZxWFZV8-unsplash.jpg" alt="categories">
+                            <h2>Hairstyles & Makeup</h2>
+                        </a>
+                    </div>
+
+                </div>
+            </div> -->
+            <div class="popular-post">
+                <div class="popular-post-container">
+                    <div class="popular-post-head">
+                        <h1>Popular Posts</h1>
+                    </div>
+                    <div class="popular-post-grid">
+                        <div class="popular-post-side1">
+                            <div class="popular-post-content" data-aos="fade-up-left" data-aos-delay="100">
+                                <img src="./assets/nicholas-ng-HDAJH6XsjyU-unsplash.jpg" alt="popular post">
+                                <div class="popular-post-text">
+                                    <h4>Top 5 Fashion Icons of 2025</h4>
+                                    <p>Meet the style leaders who are redefining fashion trends this year with their
+                                        bold and elegant choices.</p>
+                                    <!-- <a href="404page.html">Read More</a> -->
+                                </div>
+                            </div>
+                            <div class="popular-post-content" data-aos="fade-up-left" data-aos-delay="200">
+                                <img src="./assets/alex-tyson-FRIZ3-4NKzo-unsplash.jpg" alt="popular post">
+                                <div class="popular-post-text">
+                                    <h4>10 Timeless Wardrobe Essentials"</h4>
+                                    <p>Build a stylish closet with must-have basics that never go out of trend.</p>
+                                    <!-- <a href="404page.html">Read More</a> -->
+
+                                </div>
+                            </div>
+                            <div class="popular-post-content" data-aos="fade-up-left" data-aos-delay="300">
+                                <img src="./assets/vadim-sherbakov-tCICLJ5ktBE-unsplash.jpg" alt="popular post">
+                                <div class="popular-post-text">
+                                    <h4>Top 5 Accessories to Elevate Any Outfit</h4>
+                                    <p>From statement jewelry to chic handbags, learn how to instantly upgrade your
+                                        look..</p>
+                                    <!-- <a href="404page.html">Read More</a> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popular-post-side2">
+                            <div class="popular-post-content" data-aos="fade-up-right" data-aos-delay="100">
+                                <img src="./assets/parsa-foroughi-Z2PliVN-9zE-unsplash.jpg" alt="popular post">
+                                <div class="popular-post-text">
+                                    <h4>Street Style Inspiration: Fall 2025</h4>
+                                    <p>Catch the latest urban fashion trends that are ruling the streets this season.
+                                    </p>
+                                    <!-- <a href="404page.html">Read More</a> -->
+
+                                </div>
+                            </div>
+                            <div class="popular-post-content" data-aos="fade-up-right" data-aos-delay="200">
+                                <img src="./assets/pexels-shvets-production-8417243.jpg" alt="popular post">
+                                <div class="popular-post-text">
+                                    <h4>How to Mix Prints Like a Pro</h4>
+                                    <p>A beginner's guide to pairing bold patterns without clashing.</p>
+                                    <!-- <a href="404page.html">Read More</a> -->
+
+                                </div>
+                            </div>
+                            <div class="popular-post-content" data-aos="fade-up-right" data-aos-delay="300">
+                                <img src="./assets/pexels-vlada-karpovich-6634684.jpg" alt="popular post">
+                                <div class="popular-post-text">
+                                    <h4>Sustainable Fashion: Why It Matters</h4>
+                                    <p>Discover how eco-friendly choices can change the future of fashion.</p>
+                                    <!-- <a href="404page.html">Read More</a> -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="newsletter-footer">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <div class="news-side1">
+                    <h2>Sign Up Our <i>Newsletter</i> </h2>
+                    <p>Be the first to know about our latest blogs, style tips, and exclusive updates. Subscribe now to
+                        get fresh stories delivered straight to your inbox</p>
+                </div>
+                <div class="news-side2">
+                    <input type="email" placeholder="Your Email">
+                    <button onclick="window.location.href='404page.html'">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer class="footer" id="footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Stackly</h2>
+                <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@Stackly.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Location: MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="404page.html"><img width="50" height="50"
+                            src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                            alt="Instagram"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            alt="Twitter"></a>
+                    <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios/50/pinterest.png"
+                            alt="pinterest" /></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Stackly. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+    </script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+        applyTheme();
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

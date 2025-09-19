@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Collections</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+        :root {
+            --white: white;
+            --black: black;
+            --blue: blue;
+            --head: rgb(153, 0, 255);
+            --primary: #007bff;
+            --primary-dark: #0056b3;
+            --accent: #4a40ff;
+            --accent-dark: #1b24d8;
+            --bg-card: #ffffff;
+            --text-main: #333;
+            --text-secondary: #777;
+            --tab-color: #555;
+            --border-color: #ddd;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.2);
+            --border-card: rgba(0, 0, 0, 0.138);
+
+        }
+
+        html.dark-mode {
+            --white: #121212;
+            --black: #ffffff;
+            --bg-card: #1E1E1E;
+            --text-main: #E0E0E0;
+            --text-secondary: #AAAAAA;
+            --blue: #42A5F5;
+            --head: #6600ff;
+            --primary: #64B5F6;
+            --primary-dark: #90CAF9;
+            --accent: #F48FB1;
+            --accent-dark: #F8BBD0;
+            --tab-color: #777777;
+            --border-color: #333333;
+            --shadow-light: rgba(255, 255, 255, 0.05);
+            --shadow-dark: rgba(255, 255, 255, 0.1);
+            --border-card: rgba(255, 255, 255, 0.1);
+
+        }
+
+        body {
+            background-color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        .head-nav {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .head-nav a {
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+
+        }
+
+        .head-nav span {
+            font-size: 22px;
+            color: var(--blue);
+            font-weight: 600;
+        }
+
+        .head-nav h1 {
+            font-size: 36px;
+            color: var(--head);
+        }
+
+
+        .collection-container {
+            background-image: url('./assets/pexels-craytive-1478477.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* width: 100%; */
+            /* margin: 2%; */
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-bottom1);
+        }
+
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+
+        /* Product Grid */
+        .products {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .products.active {
+            display: grid;
+        }
+
+        /* Card */
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--border-card);
+
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-cart {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-cart:hover {
+            background: var(--primary);
+        }
+
+        .btn-like {
+            background: #0056b3;
+            color: var(--white);
+            font-size: larger;
+        }
+
+        .btn-like:hover {
+            background: #007bff;
+        }
+
+        .accessories-products {
+            padding: 30px;
+            background: var(--white);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .access-card {
+            background: var(--white);
+            border-radius: 15px;
+            border: 2px solid var(--border-card);
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            width: 260px;
+            text-align: center;
+        }
+
+        .access-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .access-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .action {
+            padding: 15px;
+        }
+
+        .action h3 {
+            margin: 5px 0;
+            font-size: 1.2rem;
+            color: var(--black);
+        }
+
+        .action p {
+            margin: 5px 0 15px;
+            font-weight: bold;
+            color: var(--black);
+        }
+
+        .acc-buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn-cart-male,
+        .btn-cart-female,
+        .btn-cart-kids {
+            background: var(--btn-color);
+            color: var(--btn-font-color);
+            border: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-cart-male:hover,
+        .btn-cart-female:hover,
+        .btn-cart-kids:hover {
+            background: var(--btn-hover);
+        }
+
+        .btn-like-male,
+        .btn-like-female,
+        .btn-like-kids {
+            background: transparent;
+            border: 2px solid var(--btn-color);
+            color: var(--btn-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-like-male:hover,
+        .btn-like-female:hover,
+        .btn-like-kids:hover {
+            background: var(--btn-color);
+            color: var(--white);
+        }
+
+        .offer-card {
+            text-align: center;
+        }
+
+        .offer-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .offer-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid var(--border-card);
+            /* box-shadow: 0 5px 15px var(--accent); */
+            max-width: 280px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .offer-card img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .offer-card h3 {
+            margin: 15px 0 10px;
+            color: var(--black);
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .countdown {
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: red;
+            color: var(--white);
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        /* Heartbeat effect */
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .cart-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .cart-btn:hover {
+            background: var(--accent);
+        }
+
+        .like {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: gray;
+            transition: 0.3s;
+        }
+
+        .like.liked {
+            color: red;
+        }
+
+        .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .qty-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: var(--tab-color);
+            color: var(--white);
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .qty-input {
+            width: 50px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid --border-color;
+            border-radius: 6px;
+        }
+
+        .head {
+            font-size: 36px;
+            margin: 4%;
+        }
+
+        .header-cls {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0px;
+            background-color: var(--white);
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            margin-right: 20px;
+        }
+
+        .header-cls h1 {
+            color: var(--white);
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .dark-btn {
+            background-color: #00000000;
+            border-color: #00000000;
+            color: var(--black);
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .menu-items a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 16px;
+            position: relative;
+            margin-right: 30px;
+        }
+
+        .menu-items a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: #e73370;
+            transition: width 0.3s ease;
+        }
+
+        .menu-items a:hover::after {
+            width: 100%;
+        }
+
+        .menu-items a:hover {
+            color: #e73370;
+        }
+
+        .btn-close {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .popup-trigger-btn {
+            font-size: 1.2rem;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            background: none;
+            transition: all 0.3s ease;
+        }
+
+        .popup-trigger-btn ::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0%;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .popup-trigger-btn:hover::after {
+            width: 100%;
+        }
+
+
+
+        .popup-trigger-btn:hover {
+            transform: translateY(-3px);
+            color: var(--btn-hover);
+
+        }
+
+        .footer {
+            background-color: #000000;
+            color: var(--white);
+            padding: 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            /* max-width: 1200px; */
+            /* margin: auto; */
+            background-color: black;
+        }
+
+        .footer h2,
+        .footer h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer p {
+            line-height: 1.6;
+            font-size: 14px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--btn-hover);
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social .social-icons img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+
+        .footer-social .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #010101;
+            font-size: 13px;
+            color: white;
+            background-color: black;
+        }
+
+        .social-icons {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media (max-width:478px) {
+            .header-cls img {
+                width: 30%;
+            }
+        }
+
+        @media(max-width:768px) {
+            .menu-items {
+                flex-direction: column;
+                background: var(--black);
+                position: fixed;
+                top: 0;
+                right: -350px;
+                width: 250px;
+                height: 100%;
+                padding: 60px 20px;
+                transition: right 0.3s ease;
+                z-index: 999;
+
+            }
+
+            .menu-items a {
+                color: var(--white);
+
+            }
+
+            .menu-items button {
+                color: var(--white);
+            }
+
+            .btn-close {
+                display: block;
+                color: var(--red);
+            }
+
+
+            .hamburger {
+                display: block;
+                margin-right: 30px;
+                cursor: pointer;
+                color: var(--black);
+
+            }
+
+            .menu-items.show {
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: flex-start;
+            }
+
+            .hamburger:hover {
+                color: var(--btn-hover);
+            }
+        }
+
+        @media(max-width:768px) {
+            .menu-items a {
+                font-size: 16px;
+            }
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .theme-toggle i {
+            color: var(--white);
+        }
+
+        .logo img {
+            width: 150px;
+            padding: 16px;
+        }
+    </style>
+    <header class="header-cls">
+        <a href="index.html" class="logo"><img src="./assets/stackly-logo1.png"></a>
+
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="collections.html">Collections</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+            <a class="btn-close">Close</a>
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
+        </nav>
+
+        <div class="hamburger">
+            &#9776
+        </div>
+    </header>
+    <section class="collection">
+        <div class="collection-container">
+            <div class="head-nav">
+                <h1>All Products</h1>
+                <div>
+                    <a href="index.html">Home</a>/
+                    <span class="active-nav">Collection</span>
+                </div>
+            </div>
+        </div>
+        <h1 class="head" id="products">Clothing Products</h1>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('male')">Male</div>
+            <div class="tab" onclick="showTab('female')">Female</div>
+            <div class="tab" onclick="showTab('kids')">Kids</div>
+        </div>
+
+        <div class="products-container">
+            <div class="clothing-products">
+                <div id="male" class="products active">
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/men-shirt.jpg" alt="">
+                        <h3>Men's Shirt</h3>
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-shirt" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/blazer-men.jpg" alt="">
+                        <h3> Blazer</h3>
+                        <!-- <p>$40</p>
+                        <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-blazors" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/men-t-shirt.jpg" alt="">
+                        <h3>T-Shirt</h3>
+                        <!-- <p>$25</p>
+                        <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-t-shirt" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/men-hoodies.jpg" alt="">
+                        <h3>Hoodies</h3>
+                        <!-- <p>$40</p>
+                        <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-hoodies" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/men-jeans.jpg" alt="">
+                        <h3>Jeans</h3>
+                        <!-- <p>$25</p>
+                        <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-jeans" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="female" class="products">
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/women-hijab1.jpg" alt="">
+                        <h3>Women's Dress</h3>
+                        <!-- <p>$30</p>
+                        <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-hijab" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/women-t-shirt.webp" alt="">
+                        <h3>Women's T-Shirt</h3>
+                        <!-- <p>$45</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-t-shirt" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/women-shitr.jpg" alt="">
+                        <h3>Women's Shirt</h3>
+                        <!-- <p>$45</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-shirt" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/women-kurthi.jpg" alt="">
+                        <h3>Kurthi</h3>
+                        <!-- <p>$45</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-kurthi" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/women-hoodies.jpg" alt="">
+                        <h3>Hoodies</h3>
+                        <!-- <p>$45</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-hoodies" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kids" class="products">
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/kid-t-shirt.webp" alt="">
+                        <h3>Kids T-Shirt</h3>
+                        <!-- <p>$15</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kids-t-shirt" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/kid-shirt.webp" alt="">
+                        <h3>Kids Shirts</h3>
+                        <!-- <p>$20</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kid-shirt" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/kids-Dungarees.jpg" alt="">
+                        <h3>Kids Dungarees</h3>
+                        <!-- <p>$20</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kid-dungarees" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="./assets/kids-kurtha.jpg" alt="">
+                        <h3>Kids Kurtha</h3>
+                        <!-- <p>$20</p> -->
+                        <!-- <div class="quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1">
+                            <button class="qty-btn plus">+</button>
+                        </div> -->
+                        <div class="buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                            <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kids-kurtha" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accessories-products">
+                <!-- Male -->
+                <h1 class="head">Male Accessories</h1>
+                <div class="grid">
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/watch-male.jpg" alt="watch">
+                        <div class="action">
+                            <h3>Men's Watch</h3>
+                            <!-- <p>$10</p> -->
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-watch" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/chain-male.webp" alt="watch">
+                        <div class="action">
+                            <h3> Chain</h3>
+                            <!-- <p>$30</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div> -->
+                            <div class="acc-buttons">
+                                <!-- <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                                <a href="products.html#male-chain" class="cart-btn">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/shoes-male.webp" alt="watch">
+                        <div class="action">
+                            <h3>Shoes </h3>
+                            <!-- <p>$10</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div> -->
+                            <div class="acc-buttons">
+                                <!-- <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                                <a href="products.html#male-shoes" class="cart-btn">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/wallet-male.jpg" alt="watch">
+                        <div class="action">
+                            <h3>Wallet </h3>
+                            <!-- <p>$40</p> -->
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#male-wallet" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/sunglass-male.jpg" alt="watch">
+                        <div class="action">
+                            <h3>Sunglass</h3>
+                            <!-- <p>$40</p>
+                <div class="quantity">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" class="qty-input" value="1" min="1">
+                    <button class="qty-btn plus">+</button>
+                </div> -->
+                            <div class="acc-buttons">
+                                <!-- <button class="cart-btn">Add to Cart</button>
+                    <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                                <a href="products.html#male-glass" class="cart-btn">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Female -->
+                <h1 class="head">Women Accessories</h1>
+                <div class="grid">
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/woman-ring.jpg" alt="ring">
+                        <div class="action">
+                            <h3>Diamond Earings</h3>
+                            <!-- <p>$255</p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div> -->
+                            <div class="acc-buttons">
+                                <!-- <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                                <a href="products.html#women-earring" class="cart-btn">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/women-shoes.jpg" alt="ring">
+                        <div class="action">
+                            <h3>Shoes</h3>
+                            <!-- <p>$25</p>
+                            <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-shoe" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/handbag-woman.jpg" alt="ring">
+                        <div class="action">
+                            <h3>Handbag</h3>
+                            <!-- <p>$45</p> -->
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-handbag" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/Scarves-women.jpg" alt="ring">
+                        <div class="action">
+                            <h3>Scarves</h3>
+                            <!-- <p>$35</p> -->
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-scraves" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/bracelet-women.jpg" alt="ring">
+                        <div class="action">
+                            <h3>Bracelet</h3>
+                            <!-- <p>$69</p> -->
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#women-bracelet" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="head">Kids Accessories</h1>
+                <div class="grid">
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/sunglass-kids.jpg" alt="kids sunglasses">
+                        <div class="action">
+                            <h3>Sunglasses</h3>
+                            <p>$8</p>
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kids-glass" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/kid-bottle.webp" alt="kids sunglasses">
+                        <div class="action">
+                            <h3>Bottles</h3>
+                            <p>$15</p>
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kid-bottle" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/kids-shoe.webp" alt="kids sunglasses">
+                        <div class="action">
+                            <h3>Shoes</h3>
+                            <p>$29</p>
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kid-shoe" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/bags-kids.jpg" alt="kids sunglasses">
+                        <div class="action">
+                            <h3>Bags</h3>
+                            <p>$39</p>
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html#kid-bag" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="access-card" data-aos="fade-up">
+                        <img src="./assets/watch-kids.jpg" alt="kids sunglasses">
+                        <div class="action">
+                            <h3>Watch</h3>
+                            <p>$8</p>
+                            <!-- <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button> -->
+                        </div>
+                        <div class="acc-buttons">
+                            <!-- <button class="cart-btn">Add to Cart</button>
+                                <button class="btn btn-like" onclick="likeProduct(this)">❤</button> -->
+                            <a href="products.html #kid-watch" class="cart-btn">View More</a>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <!-- <section class="offers">
+        <div class="offers-head">
+            <h1 class="head">Live Offers</h1>
+        </div>
+        <div class="offers-container">
+            <div class="grid">
+                <div class="offer-card" data-aos="fade-up">
+                    <span class="offer-badge">-50% OFF</span>
+
+                    <img src="./assets/offer-shoe.jpg" alt="Offer Product">
+                    <h3>Trendy Sneakers</h3>
+                    <p class="price">$59.99 <del style="color:gray; font-size:0.9rem;">$99.99</del></p>
+                    <div class="countdown" id="timer1">00:15:00</div>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                    <div class="actions">
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                    </div>
+                </div>
+                <div class="offer-card" data-aos="fade-up">
+                    <span class="offer-badge">-70% OFF</span>
+
+                    <img src="./assets/multiple-male-off.jpg" alt="Offer Product">
+                    <h3>Multiple Men's Product</h3>
+                    <p class="price">$69.99 <del style="color:gray; font-size:0.9rem;">$199.99</del></p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                    <div class="actions">
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                    </div>
+                </div>
+                <div class="offer-card" data-aos="fade-up">
+                    <span class="offer-badge">-80% OFF</span>
+
+                    <img src="./assets/women-off.webp" alt="Offer Product">
+                    <h3>Multiple Women's Products</h3>
+                    <p class="price">$79.99 <del style="color:gray; font-size:0.9rem;">$399.99</del></p>
+                    <div class="countdown" id="timer2">00:15:00</div>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                    <div class="actions">
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+                    </div>
+                </div>
+                <div class="offer-card" data-aos="fade-up">
+                    <span class="offer-badge">-70% OFF</span>
+                    <img src="./assets/kids-offer.jpg" alt="Offer Product">
+                    <h3>Kids Game Product</h3>
+                    <p class="price">$69.99 <del style="color:gray; font-size:0.9rem;">$199.99</del></p>
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div>
+
+                    <div class="actions">
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="btn btn-like" onclick="likeProduct(this)">❤</button>
+
+                    </div>
+                </div>
+
+            </div>
+    </section> -->
+    <footer class="footer" id="footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Stackly</h2>
+                <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@Stackly.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Location: MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="404page.html"><img width="50" height="50"
+                            src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                            alt="Instagram"></a>
+                    <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            alt="Twitter"></a>
+                    <a href="404page.html"><img width="50" height="50" src="https://img.icons8.com/ios/50/pinterest.png"
+                            alt="pinterest" /></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Stackly. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.products').forEach(p => p.classList.remove('active'));
+
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+        function likeProduct(button) {
+            if (button.classList.contains("liked")) {
+                button.classList.remove("liked");
+                button.textContent = "❤";
+            } else {
+                button.classList.add("liked");
+                button.textContent = "💖";
+            }
+        }
+        function startCountdown(id, minutes) {
+            let time = minutes * 60;
+            const countdown = document.getElementById(id);
+
+            const interval = setInterval(() => {
+                let m = Math.floor(time / 60);
+                let s = time % 60;
+                countdown.textContent =
+                    `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+
+                if (time <= 0) {
+                    clearInterval(interval);
+                    countdown.textContent = "Offer Expired";
+                }
+                time--;
+            }, 1000);
+        }
+
+        startCountdown("timer1", 10);
+        startCountdown("timer2", 15);
+
+
+        const quantityContainers = document.querySelectorAll('.quantity');
+
+        quantityContainers.forEach(container => {
+            const minusBtn = container.querySelector('.minus');
+            const plusBtn = container.querySelector('.plus');
+            const qtyInput = container.querySelector('.qty-input');
+
+            plusBtn.addEventListener('click', () => {
+                let currentValue = parseInt(qtyInput.value);
+                qtyInput.value = currentValue + 1;
+            });
+
+            minusBtn.addEventListener('click', () => {
+                let currentValue = parseInt(qtyInput.value);
+                if (currentValue > 1) {
+                    qtyInput.value = currentValue - 1;
+                }
+            });
+        });
+        const addToCartButtons = document.querySelectorAll('.cart-btn');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productCard = button.closest('.offer-card,.card,.access-card');
+                const productName = productCard.querySelector('h3').textContent;
+                const quantity = productCard.querySelector('.qty-input').value;
+                alert(`You added ${quantity} of "${productName}" to your cart!`);
+                localStorage.setItem(quantity, productName);
+            });
+        });
+        function toggleLike(el) {
+            el.classList.toggle("liked");
+        }
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+
+</html>

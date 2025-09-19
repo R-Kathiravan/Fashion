@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #374151;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .card-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 1.5rem;
+            background-color: #ffffff;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 1rem;
+            max-width: 64rem;
+            overflow: hidden;
+        }
+
+        .image-section {
+            position: relative;
+            width: 100%;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        /* Form Side */
+        .form-section {
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-content {
+            width: 100%;
+            max-width: 28rem;
+            /* 448px */
+        }
+
+        .form-wrapper {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .form-hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            position: absolute;
+            pointer-events: none;
+            width: inherit;
+        }
+
+        .form-visible {
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+            pointer-events: auto;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #4B5563;
+            margin-bottom: 2rem;
+        }
+
+        .form-switch-text {
+            margin-top: 2rem;
+            text-align: center;
+            color: #4B5563;
+        }
+
+        a {
+            color: #2563EB;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+
+        .forgot-password-link {
+            text-align: right;
+            font-size: 0.875rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #1F2937;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .submit-btn:hover {
+            background-color: #111827;
+            transform: translateY(-2px);
+        }
+
+        @media (min-width: 768px) {
+            .card-container {
+                flex-direction: row;
+            }
+
+            .image-section {
+                width: 50%;
+            }
+
+            .image-section img {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .form-section {
+                width: 50%;
+                padding: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+
+            <div class="card-container">
+                <div class="image-section">
+                    <img src="./asstes/login-bg.jpg" alt="Fashion">
+                </div>
+                <div class="form-section">
+                    <div id="login-form" class="form-wrapper form-visible">
+                        <h1>Welcome Back</h1>
+                        <p>Login to continue.</p>
+                        <form id="login-form">
+                            <label>Email</label>
+                            <input type="email" class="form-input" id="login-mail" placeholder="you@example.com"
+                                required>
+                            <span class="error-message"></span>
+                            <label>Password</label>
+                            <input type="password" class="form-input" id="login-password"
+                                placeholder="Enter your password" required>
+                            <span class="error-message"></span>
+
+                            <button class="submit-btn">Login</button>
+                        </form>
+                        <p class="form-switch-text">No account? <a href="#" id="showSignup">Sign Up</a></p>
+                    </div>
+                    <div id="signup-form" class="form-wrapper form-hidden">
+                        <h1>Create Account</h1>
+                        <p>Join us today.</p>
+                        <form id="signup-form">
+                            <div class="input-group">
+                                <label>Name</label>
+                                <input type="text" class="form-input" id="signup-name" placeholder="Enter Your Name"
+                                    required>
+                            </div>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" id="signup-email" placeholder="you@example.com"
+                                    required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" class="form-input" id="signup-password"
+                                    placeholder="Create a password" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-input" id="signup-confirm-password"
+                                    placeholder="Confirm your password" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <button class="submit-btn">Sign Up</button>
+                        </form>
+                        <p class="form-switch-text">Have an account? <a href="#" id="showLogin">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .input-error {
+                border: 1px solid red;
+            }
+
+            .error-message {
+                color: red;
+                font-size: 0.8rem;
+                margin-top: 4px;
+                display: block;
+            }
+        </style>
+        <script>
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const showSignup = document.getElementById('show-signup');
+            const showLogin = document.getElementById('show-login');
+
+            function switchForm(hide, show) {
+                hide.classList.remove('form-visible');
+                hide.classList.add('form-hidden');
+
+                setTimeout(() => {
+                    show.classList.remove('form-hidden');
+                    show.classList.add('form-visible');
+                }, 500);
+            }
+
+            showSignup.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForm(loginForm, signupForm);
+            });
+
+            showLogin.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForm(signupForm, loginForm);
+            });
+
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    if (form.parentElement.id === 'signup-form') {
+                        const password = document.getElementById('signup-password').value;
+                        const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+                        if (password !== confirmPassword) {
+                            alert("Passwords do not match!");
+                            return;
+                        }
+                    }
+
+                    alert('Form submitted successfully!');
+                    form.reset();
+                });
+            });
+     
+            const showError = (input, message) => {
+                const inputGroup = input.parentElement;
+                const errorSpan = inputGroup.querySelector(".error-message");
+                errorSpan.textContent = message;
+                input.classList.add("input-error");
+            };
+
+            const clearError = (input) => {
+                const inputGroup = input.parentElement;
+                const errorSpan = inputGroup.querySelector(".error-message");
+                errorSpan.textContent = "";
+                input.classList.remove("input-error");
+            };
+
+            const validateInput = (input) => {
+                if (input.value === "" && input.hasAttribute("required")) {
+                    showError(input, "This field is required.");
+                    return false;
+                }
+                if (input.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                    showError(input, "Enter a valid email.");
+                    return false;
+                }
+                if (
+                    input.hasAttribute("minlength") &&
+                    input.value.length < input.minLength
+                ) {
+                    showError(input, `At least ${input.minLength} characters required.`);
+                    return false;
+                }
+                clearError(input);
+                return true;
+            };
+
+            // Signup form validation
+            signupForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById("signup-name");
+                const email = document.getElementById("signup-email");
+                const password = document.getElementById("signup-password");
+                const confirmPassword = document.getElementById("signup-confirm-password");
+
+                let isValid = true;
+
+                [name, email, password, confirmPassword].forEach((input) => {
+                    if (!validateInput(input)) {
+                        isValid = false;
+                    }
+                });
+
+                if (password.value !== confirmPassword.value) {
+                    showError(confirmPassword, "Passwords do not match.");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert("Signup successful!");
+                    // save to sessionStorage if needed
+                }
+            });
+
+            // Login form validation
+            loginForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const email = document.getElementById("login-mail");
+                const password = document.getElementById("login-password");
+
+                let isValid = true;
+
+                [email, password].forEach((input) => {
+                    if (!validateInput(input)) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    alert("Login successful!");
+                    // do login process
+                }
+            });
+               const validateForm = (form) => {
+            const inputs = form.querySelectorAll('input');
+            let isFormValid = true;
+
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isFormValid = false;
+                }
+            });
+
+             const submitBtn = document.getElementById("btn-form")
+            submitBtn.disabled = !isFormValid;
+
+            return isFormValid;
+        };
+        const allInputs = document.querySelectorAll(".input-group input")
+        allInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateForm(input.form);
+            });
+        });
+
+        const handleFormSubmit = (event) => {
+            event.preventDefault();
+            const form = event.target;
+
+            if (validateForm(form)) {
+                if (form.id === 'signup-form') {
+                    // alert("");
+                    showToast("Signup successful! Please login.", "success")
+                    loginTabBtn.click();
+                    form.reset();
+                }
+                // else if (form.id === 'login-form') {
+                //     alert("Login successful!");
+                //     showToast("User Name and Password Are not correct", "error")
+                //     closeModal();
+                // }
+            }
+        };
+
+        loginForm.addEventListener('submit', handleFormSubmit);
+         signupForm.addEventListener('submit', handleFormSubmit);
+
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="header-cls">
+            <a href="index.html" class="logo"> Stackly</a>
+            <nav class="menu-items">
+                <div class="menu-item">
+                    <a>Home</a>
+                    <div class="home-select">
+                        <a href="../index.html">Home Page1</a><br>
+                        <!-- <a href="index.html">Home Page2</a> -->
+                    </div>
+                </div>
+                <a href="about.html">About US</a>
+                <a href="services.html">Services</a>
+                <a href="products.html">Products</a>
+                <a href="offers.html">Offers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a class="btn-close">Close</a>
+            </nav>
+            <button class="btn theme-toggle" id="theme-toggle"><i class="fas fa-circle-half-stroke"></i></button>
+            <button class="open-btn" id="openModal">Login / Signup</button>
+
+            <div id="user-icon">
+                <div id="user_logo" class="user-logo"></div>
+                <div class="user-tooltip">
+                    <p id="welcome-text"></p>
+                    <p id="disp_mail"></p>
+                    <button id="logout-btn">Logout</button>
+                </div>
+            </div>
+            <!-- <nav class="menu-icons">
+                <a href="404page.html"><i class="fa-solid fa-magnifying-glass"></i></a></i>
+                <a href="404page.html"><i class="fa-regular fa-heart"></i></a>
+                <a href="404page.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="404page.html" class="user-icon-head"><i class="fa-solid fa-circle-user"></i></a>
+            </nav> -->
+            <div class="hamburger"> &#9776 </div>
+
+        </header>
+        <div id="toast" class="toast"></div>
+
+        <section class="hero" id="hero">
+            <div class="hero-slide active" style="background-image: url('./asstes/pexels-photo-10679232.jpeg');">
+                <div class="overlay">
+                    <h1>Men's Collection</h1>
+                    <p>Style that defines you.</p>
+                    <a href="products.html#male-products">Shop Now</a>
+                </div>
+            </div>
+
+            <div class="hero-slide" style="background-image: url('./asstes/pawel-szvmanski-DsplkQv2WEM-unsplash.jpg');">
+                <div class="overlay">
+                    <h1>Women's Collection</h1>
+                    <p>Elegance for every occasion.</p>
+                    <a href="products.html#women-products">Shop Now</a>
+                </div>
+            </div>
+
+            <div class="hero-slide" style="background-image: url('./asstes/nathan-dumlao-3-tkQbEAsd8-unsplash.jpg');">
+                <div class="overlay">
+                    <h1>Kids' Collection</h1>
+                    <p>Fashion for the little ones.</p>
+                    <a href="products.html#kids-products">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="categories" id="categories">
+            <h1>Shop by Categories</h1>
+            <div class="cat-grid" data-aos="fade-up">
+                <div class="cat-card">
+                    <img src="./asstes/old-youth-GUlEGi2vyvM-unsplash.jpg">
+                    <a href="products.html#male-products"> Men's Wear</a>
+                </div>
+                <div class="cat-card">
+                    <img src="./asstes/edward-howell-3gE_5SXL75Y-unsplash.jpg">
+                    <a href="products.html#women-products">Woman's Wear</a>
+                </div>
+                <div class="cat-card">
+                    <img src="./asstes/premium_ kid.avif">
+                    <a href="products.html#kids-products">Kid's Wear</a>
+                </div>
+                <div class="cat-card">
+                    <img src="./asstes/cls-handbag2.jpg">
+                    <a href="products.html#female-accesssories">Hand Bag's</a>
+                </div>
+            </div>
+        </section>
+        <section class="accessories" id="accessories">
+            <div class="items-grid">
+                <div class="items-card" data-aos="fade-right">
+                    <img src="./asstes/acc-men2.jpg">
+                    <a href="products.html#male-accesssories">Men's accessories</a>
+                </div>
+                <div class="items-card" data-aos="fade-left">
+                    <img src="./asstes/jewellery.jpg.webp">
+                    <a href="products.html#female-accesssories">Woman's accessories</a>
+                </div>
+            </div>
+        </section>
+        <section class="about-us" data-aos="fade-up-right" id="about-us">
+            <div class="about">
+                <div class="about-content">
+                    <h1>About US</h1>
+                    <div class="about-right-content" data-aos="fade-up-left">
+                        <p>We are a modern luxury fashion brand redefining elegance for the contemporary world. Our
+                            collections blend timeless craftsmanship with bold, trend-setting designs, created for those
+                            who
+                            value style as a statement. Every piece is thoughtfully curated to inspire confidence and
+                            sophistication. From runway-inspired looks to everyday essentials, we deliver fashion that
+                            feels
+                            as exceptional as it looks. Welcome to a world where premium is the new standard.</p>
+                        <a href="about.html">See More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sponsor">
+            <div class="sponsor-content">
+                <div class="sponsor-grid">
+                    <img src="./asstes/Fashion-Logo-PNG-Image-HD.png" alt="">
+                    <img src="./asstes/logo-fashion-show-model-fashion.png" alt="">
+                    <img src="./asstes/sponser.webp" alt="">
+                    <img src="./asstes/sponser-fas.webp" alt="">
+                    <img src="./asstes/sponser-ottawa.webp" alt="">
+                    <img src="./asstes/sponser-generic-black-sleeve-hd-png-download.png" alt="">
+                    <img src="./asstes/Fashion-Logo-PNG-Image-HD.png" alt="">
+                    <img src="./asstes/logo-fashion-show-model-fashion.png" alt="">
+                    <img src="./asstes/sponser.webp" alt="">
+                    <img src="./asstes/sponser-fas.webp" alt="">
+                    <img src="./asstes/sponser-ottawa.webp" alt="">
+                    <img src="./asstes/sponser-generic-black-sleeve-hd-png-download.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" data-aos="zoom-in" id="testimonials">
+            <div class="testimonial-content">
+                <h1>What our Client Say About US</h1>
+                <p>
+                    <br>Here are some of the testimonials from our customers.
+                </p>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <img src="./asstes/pexels-alex-green-5699868.jpg" alt="">
+                        <p>"Absolutely love the quality and fit! Will definitely shop again."</p>
+                        <h4>- Sarah M.</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="./asstes/pexels-kampus-8636600.jpg" alt="">
+                        <p>"The designs are so trendy, and delivery was super fast!"</p>
+                        <h4>- Johnes R.</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="./asstes/pexels-keira-burton-6084178.jpg" alt="">
+                        <p>"Feels like wearing luxury without the luxury price tag."</p>
+                        <h4>- Priya S.</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="./asstes/pexels-samad-ismayilov-231721-735552.jpg" alt="">
+                        <p>"Fantastic customer service and top-notch quality!"</p>
+                        <h4>- Ramya K.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="special-offers" id="Offers">
+            <h1>🔥 Special Offers 🔥</h1>
+            <div class="offers-grid">
+                <div data-aos="fade-down-right">
+                    <div class="offer-card">
+                        <img src="./asstes/pexels-olly-3755706.jpg" alt="Summer Sale">
+                        <div class="offer-content">
+                            <h2>Summer Sale</h2>
+                            <p>Get up to <strong>50% OFF</strong> on all summer collections. Limited time only!</p>
+                            <!-- <a href="404page.html">Shop Now</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-down-left">
+                    <div class="offer-card">
+                        <img src="./asstes/pexels-olly-3775120.jpg" alt="Buy 1 Get 1">
+                        <div class="offer-content">
+                            <h2>Buy 1 Get 1 Free</h2>
+                            <p>On selected T-shirts and accessories. Don't miss this deal!</p>
+                            <!-- <a href="404page.html">Grab Offer</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up-right">
+                    <div class="offer-card">
+                        <img src="./asstes/pexels-sidneimaia-3489131.jpg" alt="Festive Discount">
+                        <div class="offer-content">
+                            <h2>Festive Discount</h2>
+                            <p>Flat <strong>30% OFF</strong> on festive wear. Shop your favorites today.</p>
+                            <!-- <a href="404page.html">Shop Now</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up-left">
+                    <div class="offer-card">
+                        <img src="./asstes/pexels-solliefoto-298863.jpg" alt="Clearance Sale">
+                        <div class="offer-content">
+                            <h2>Clearance Sale</h2>
+                            <p>Last chance to buy items before they're gone! Discounts up to 70%.</p>
+                            <!-- <a href="404page.html">Explore</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="offers.html" class="offers-a">See all Offers</a>
+        </section>
+
+        <section class="contact-us">
+            <div class="contact-head">
+                <div class="contact-message" data-aos="fade-up-left">
+                    <h1>Contact US
+                        <hr class="contact-hr">
+                    </h1>
+
+                    <p>Reach out to us for any enquiry</p>
+                    <div class="contact-inputs">
+                        <input type="text" placeholder="Full Name">
+                        <input type="email" placeholder="Email">
+                        <input type="tel" placeholder="Mobile Number" maxlength="10">
+                        <textarea placeholder="Message"></textarea>
+                        <button onclick="window.location.href ='404page.html'">Submit</button>
+                    </div>
+                </div>
+                <div class="contact-maps" data-aos="fade-up-right">
+                    <h1> Location</h1>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125042.34611182495!2d78.05589492605883!3d11.653723377408882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1755772254718!5m2!1sen!2sin"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="reachToUS" data-aos="fade-down-right">
+            <div class="reach-container">
+                <div class="reach-top-container">
+                    <h4>Reach Out To US</h4>
+                    <h3>We'd Love to Hear From You</h3>
+                    <p>Or Just reach out manually to <span class="mailID"> info@stackly.com</span></p>
+                </div>
+                <div class="reach-bottom-container">
+                    <div class="reach-email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h4>Email Support</h4><br>
+                        <span>our team can respond in real time</span><br>
+                        <a href="404page.html">info@stackly.com</a>
+                    </div>
+                    <div class="reach-office">
+                        <i class="fa-solid fa-building"></i>
+                        <h4>Vist our office in real time</h4><br>
+                        <span>Vist our office in real time</span><br>
+                        <a href="404page.html">Salem,TN</a>
+                    </div>
+                    <div class="reach-contact-num">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4>Call Us Directly</h4><br>
+                        <span>Available During Working Hours</span><br>
+                        <a href="404page.html">!91 1234567890</a>
+                    </div>
+                    <div class="social-icons">
+                        <h4>Follow Us On</h4><br>
+                        <div class="social-icons-img">
+                            <a href="404page.html"><img width="50" height="50"
+                                    src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook"></a>
+                            <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                                    alt="Instagram"></a>
+                            <a href="404page.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                                    alt="Twitter"></a>
+                            <a href="404page.html"><img width="50" height="50"
+                                    src="https://img.icons8.com/ios/50/pinterest.png" alt="pinterest" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-head">
+                <div class="footer-grid">
+                    <div class="footer-content-company">
+                        <a href="index.html" class="logo"> Stackly</a>
+                        <p>Where Trends Begin.</p>
+
+                    </div>
+                    <div class="footer-content-nav">
+                        <h3>Quick Links</h3>
+                        <nav class="footer-nav-grid">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About Us</a>
+                            <a href="services.html">Services</a>
+                            <a href="products.html">Products</a>
+                            <a href="offers.html">Offers</a>
+                            <a href="blog.html">Blog</a>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="footer-content-contact">
+                        <h3>Contact US</h3>
+                        <a href="404page.html">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>TN Salem</p>
+                        </a>
+                        <a href="404page.html">
+                            <i class="fa-solid fa-phone"></i>
+                            <p>+91 1234567890</p>
+                        </a>
+                        <a href="404page.html">
+                            <i class="fa-solid fa-at"></i>
+                            <p>info@gmail.com</p>
+                        </a>
+                    </div>
+                    <div class="footer-content-legal-link">
+                        <h3>Legal Link</h3>
+                        <nav>
+                            <li><a href="404page.html">Policy</a> </li>
+                            <li><a href="404page.html">Terms & Conditons</a></li>
+                            <li><a href="404page.html">Disclimer</a></li>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer-copy">
+                    © 2025 Stackly. All Rights Reserved.
+                    <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+                </div>
+
+            </div>
+        </footer>
+    </div>
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+
+            <div class="card-container">
+                <div class="image-section">
+                    <img src="./asstes/login-bg.jpg" alt="Fashion">
+                </div>
+                <div class="form-section">
+                    <div id="login-form" class="form-wrapper form-visible">
+                        <h1>Welcome Back</h1>
+                        <p>Login to continue.</p>
+                        <form id="login-form">
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" id="login-mail" placeholder="you@example.com"
+                                    required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" class="form-input" id="login-password"
+                                    placeholder="Enter your password" minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                                <button class="submit-btn">Login</button>
+                        </form>
+                        <p class="form-switch-text">No account? <a href="#" id="showSignup">Sign Up</a></p>
+                    </div>
+                    <div id="signup-form" class="form-wrapper form-hidden">
+                        <h1>Create Account</h1>
+                        <p>Join us today.</p>
+                        <form id="signup-form">
+                            <div class="input-group">
+                                <label>Name</label>
+                                <input type="text" class="form-input" id="signup-name" placeholder="Enter Your Name"
+                                    required>
+                            </div>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" id="signup-email" placeholder="you@example.com"
+                                    required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" class="form-input" id="signup-password"
+                                    placeholder="Create a password" minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-input" id="signup-confirm-password"
+                                    placeholder="Confirm your password" minlength="8">
+                                <span class="error-message"></span>
+                            </div>
+                            <button class="submit-btn">Sign Up</button>
+                        </form>
+                        <p class="form-switch-text">Have an account? <a href="#" id="showLogin">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+
+            if (htmlElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        const modal = document.getElementById("loginModal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn1 = document.getElementById("closeModal");
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        const showSignup = document.getElementById("showSignup");
+        const showLogin = document.getElementById("showLogin");
+
+        openBtn.onclick = () => modal.style.display = "flex";
+        closeBtn1.onclick = () => modal.style.display = "none";
+        window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; }
+
+        showSignup.onclick = (e) => {
+            e.preventDefault();
+            loginForm.classList.remove("form-visible");
+            loginForm.classList.add("form-hidden");
+            signupForm.classList.remove("form-hidden");
+            signupForm.classList.add("form-visible");
+        };
+        showLogin.onclick = (e) => {
+            e.preventDefault();
+            signupForm.classList.remove("form-visible");
+            signupForm.classList.add("form-hidden");
+            loginForm.classList.remove("form-hidden");
+            loginForm.classList.add("form-visible");
+        };
+
+
+
+        const login_form = document.getElementById("login-form");
+        const signup_form = document.getElementById("signup-form");
+        const user_icon_head = document.getElementById("user-icon-head");
+
+        login_form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const Login_Email = document.getElementById("login-mail").value.trim();
+            const Login_Pass = document.getElementById("login-password").value.trim();
+            let isValid = true;
+
+            [Login_Email, Login_Pass].forEach((input) => {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
+            const val_email = sessionStorage.getItem("Email");
+            const val_pass = sessionStorage.getItem("Password");
+            if (Login_Email == val_email && Login_Pass == val_pass) {
+                showToast("Login Successfull!", "success");
+                modal.style.display = "none";
+                document.getElementById("user-icon").style.display = "block";
+                openBtn.style.display = "none";
+            }
+            else {
+                showToast("Mail and Password Not Correct", "error")
+            }
+        });
+
+        signup_form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const signup_Name = document.getElementById("signup-name").value.trim();
+            const signup_email = document.getElementById("signup-email").value.trim();
+            const signup_password = document.getElementById("signup-password").value;
+            const signup_confirm_pass = document.getElementById("signup-confirm-password").value;
+            let password_status = false
+             let isValid = true;
+
+            [signup_Name, signup_email, signup_password, signup_confirm_pass].forEach((input) => {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
+            if (signup_password !== signup_confirm_pass) {
+                showToast("Passwords are not same", "error");
+                password_status = true;
+            }
+            if (signup_Name && signup_email.includes("@") && signup_password === signup_confirm_pass) {
+                sessionStorage.setItem("Name", signup_Name);
+                sessionStorage.setItem("Email", signup_email);
+                sessionStorage.setItem("Password", signup_password);
+                showToast("sign up successfull", "success");
+                signupForm.classList.remove("form-visible");
+                signupForm.classList.add("form-hidden");
+                loginForm.classList.remove("form-hidden");
+                loginForm.classList.add("form-visible");
+                // showUser(signup_Name, signup_email)
+            }
+            else {
+                showToast("sign up not successfull", "error")
+            }
+        });
+
+        function showUser(username, login_email) {
+            document.getElementById("user-icon").style.display = "block";
+            document.getElementById("welcome-text").textContent = username;
+            document.getElementById("disp_mail").textContent = login_email;
+            document.getElementById("user_logo").textContent = username[0];
+            openBtn.style.display = "none";
+
+        }
+
+        window.onload = function () {
+            const savedUser = sessionStorage.getItem("Name");
+            const savedMail = sessionStorage.getItem("Email");
+            if (savedUser && savedMail) {
+                showUser(savedUser, savedMail);
+                openBtn.style.display = "none";
+
+            }
+            else {
+                document.getElementById("user-icon").style.display = "none";
+                openBtn.style.display = "block";
+            }
+        };
+        document.addEventListener("DOMContentLoaded", () => {
+            const logoutBtn = document.getElementById("logout-btn");
+            if (logoutBtn) {
+                logoutBtn.addEventListener("click", () => {
+                    sessionStorage.clear();
+                    document.getElementById("user-icon").style.display = "none";
+                    openBtn.style.display = "block";
+
+                });
+            }
+        });
+        const showError = (input, message) => {
+            const errorSpan = input.nextElementSibling;
+            if (errorSpan) errorSpan.textContent = message;
+            input.classList.add("input-error");
+        };
+
+        const clearError = (input) => {
+            const errorSpan = input.nextElementSibling;
+            if (errorSpan) errorSpan.textContent = "";
+            input.classList.remove("input-error");
+        };
+
+
+        const validateInput = (input) => {
+            if (!(input instanceof HTMLInputElement)) return true;
+            if (input.value.trim() === '' && input.hasAttribute('required')) {
+                showError(input, 'This field is required.');
+                return false;
+            }
+            if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                showError(input, 'Please enter a valid email address.');
+                return false;
+            }
+            if (input.hasAttribute('minlength') && input.value.length < input.minLength) {
+                showError(input, `Must be at least ${input.minLength} characters.`);
+                return false;
+            }
+            clearError(input);
+            return true;
+        };
+
+        const validateForm = (form) => {
+            const inputs = form.querySelectorAll('input');
+            let isFormValid = true;
+
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isFormValid = false;
+                }
+            });
+
+            // const submitBtn = document.getElementById("btn-form")
+            // submitBtn.disabled = !isFormValid;
+
+            return isFormValid;
+        };
+        const allInputs = document.querySelectorAll(".input-group input")
+        allInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateForm(input.form);
+            });
+        });
+
+        const handleFormSubmit = (event) => {
+            event.preventDefault();
+            const form = event.target;
+
+            if (validateForm(form)) {
+                if (form.id === 'signup-form') {
+                    form.reset();
+                }
+            }
+        };
+        loginForm.addEventListener('submit', handleFormSubmit);
+        signupForm.addEventListener('submit', handleFormSubmit);
+        function showToast(message, type) {
+            toast.textContent = message;
+            toast.style.background = (type === "error") ? "#f44336" : "#4CAF50";
+            toast.className = "toast show";
+
+            setTimeout(() => {
+                toast.className = "toast";
+            }, 5000);
+        }
+        const slides = document.querySelectorAll(".hero-slide");
+let currentIndex = 0;
+
+// Hero slides
+setInterval(() => {
+  slides[currentIndex].classList.remove("active");
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].classList.add("active");
+}, 5000);
+
+ const track = document.querySelector(".testimonial-track");
+const cards = document.querySelectorAll(".testimonial-card");
+const totalCards = cards.length;
+let index1 = 0;
+let testimonialInterval; 
+
+function slideTestimonials() {
+  index1++;
+  if (index1 > totalCards - 3) {
+    index1 = 0;
+  }
+  track.style.transform = `translateX(-${index1 * (100 / 3)}%)`;
+}
+
+ function handleTestimonials() {
+  if (window.innerWidth > 478) {
+    if (!testimonialInterval) {
+      testimonialInterval = setInterval(slideTestimonials, 3000);
+    }
+  } else {
+    clearInterval(testimonialInterval);
+    testimonialInterval = null;
+    track.style.transform = "translateX(0)";  
+  }
+}
+
+ handleTestimonials();
+
+ window.addEventListener("resize", handleTestimonials);
+
+    </script>
+
+</body>
+
+</html>
