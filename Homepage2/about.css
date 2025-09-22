@@ -70,12 +70,9 @@
              z-index: 1;
          }
 
-         .logo {
+         .logo img {
+             width: 150px;
              padding: 16px;
-             font-size: 36px;
-             text-decoration: none;
-             color: red;
-             font-weight: bolder;
          }
 
          .menu-items {
@@ -172,7 +169,11 @@
 
          .footer-content-company {
              margin: 7%;
+         }
 
+         .footer-content-company p {
+             text-indent: 35px;
+             margin: 0;
          }
 
          .footer-nav-grid {
@@ -337,7 +338,7 @@
                  display: flex;
                  flex-direction: column;
                  flex-wrap: wrap;
-                  gap: 20px;
+                 gap: 20px;
                  justify-content: flex-start;
                  align-content: flex-start;
              }
@@ -381,7 +382,7 @@
 
          @media (max-width:478px) {
              .about-hero {
-                padding-top: 40px !important;
+                 padding-top: 40px !important;
              }
          }
 
@@ -389,7 +390,7 @@
              color: var(--hero-head);
              font-size: 36px;
              font-weight: bolder;
-          }
+         }
 
          .about-hero p {
              color: var(--hero-p);
@@ -489,7 +490,7 @@
              text-align: center;
              gap: 40px;
              margin: 40px auto;
-            overflow-x: hidden;
+             overflow-x: hidden;
          }
 
          .journey-item {

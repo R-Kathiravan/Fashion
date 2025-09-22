@@ -38,12 +38,9 @@
         z-index: 100;
     }
 
-    .logo {
+    .logo img {
+        width: 150px;
         padding: 16px;
-        font-size: 36px;
-        text-decoration: none;
-        color: red;
-        font-weight: bolder;
     }
 
     .menu-items {
@@ -135,6 +132,11 @@
     .footer-content-company {
         margin: 7%;
 
+    }
+
+    .footer-content-company p {
+        text-indent: 35px;
+        margin: 0;
     }
 
     .footer-nav-grid {

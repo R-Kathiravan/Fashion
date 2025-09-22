@@ -249,8 +249,22 @@
          transform: scale(1.2);
      }
  }
+@media (max-width:768px) {
+    .image1{
+        background-image: url('./assets/hero-bg1-700px.png');
+    }
+}
+@media (max-width:478px) {
+     .image1 {
+     background-image: url('./assets/hero-bg1-mob.jpg');
+ 
+ }
 
-
+ .image3 {
+     background-image: url('./assets/hero-bg2-mob.jpg');
+ 
+ }
+}
 
  .hero::before {
      content: '';

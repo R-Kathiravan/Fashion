@@ -11,7 +11,7 @@
     --reach-border: #022674;
     --reach-mail: hsl(298, 100%, 50%);
     --con-bg: rgba(0, 0, 0, 0.6);
-    --loc-content-box:0 6px 15px rgba(0, 0, 0, 0.08);
+    --loc-content-box: 0 6px 15px rgba(0, 0, 0, 0.08);
 
 }
 
@@ -26,7 +26,7 @@ html.dark-mode {
     --reach-border: rgba(255, 255, 255, 0.2);
     --reach-mail: #f06292;
     --con-bg: rgba(255, 255, 255, 0.15);
-    --loc-content-box:0 6px 15px rgba(210, 207, 207, 0.37);
+    --loc-content-box: 0 6px 15px rgba(210, 207, 207, 0.37);
 }
 
 body {
@@ -50,12 +50,9 @@ body {
     z-index: 100;
 }
 
-.logo {
+.logo img {
+    width: 150px;
     padding: 16px;
-    font-size: 36px;
-    text-decoration: none;
-    color: red;
-    font-weight: bolder;
 }
 
 .menu-items {
@@ -151,7 +148,11 @@ body.dark .theme-toggle {
 
 .footer-content-company {
     margin: 7%;
+}
 
+.footer-content-company p {
+    text-indent: 35px;
+    margin: 0;
 }
 
 .footer-nav-grid {
@@ -344,7 +345,7 @@ body.dark .theme-toggle {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-         gap: 20px;
+        gap: 20px;
         justify-content: flex-start;
         align-content: flex-start;
     }
@@ -657,7 +658,7 @@ h3 {
     color: white;
 }
 
-.mailID a{
+.mailID a {
     color: var(--reach-mail);
     cursor: pointer;
     text-decoration: none;

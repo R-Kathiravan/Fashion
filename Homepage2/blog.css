@@ -39,12 +39,9 @@ body {
     z-index: 100;
 }
 
-.logo {
+.logo img {
+    width: 150px;
     padding: 16px;
-    font-size: 36px;
-    text-decoration: none;
-    color: red;
-    font-weight: bolder;
 }
 
 .menu-items {
@@ -140,7 +137,11 @@ body.dark .theme-toggle {
 
 .footer-content-company {
     margin: 7%;
+}
 
+.footer-content-company p {
+    text-indent: 35px;
+    margin: 0;
 }
 
 .footer-nav-grid {
@@ -245,7 +246,8 @@ body.dark .theme-toggle {
     .header-cls img {
         width: 40%;
     }
-    .menu-items{
+
+    .menu-items {
         gap: 20px;
         font-size: 16px;
     }
@@ -332,7 +334,7 @@ body.dark .theme-toggle {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-         gap: 20px;
+        gap: 20px;
         justify-content: flex-start;
         align-content: flex-start;
     }
@@ -387,9 +389,11 @@ body.dark .theme-toggle {
 .blog-hero a:hover {
     background-color: #004cff;
 }
-.featured-blog{
+
+.featured-blog {
     overflow-x: hidden;
 }
+
 .featured-grid {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -458,9 +462,9 @@ body.dark .theme-toggle {
         padding-top: 21% !important;
     }
 
-    .newsletter-container{
+    .newsletter-container {
         margin: 2% !important;
-        
+
     }
 
 }
