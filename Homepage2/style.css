@@ -18,6 +18,8 @@
     --reach-icon: #e8e8e8;
     --reach-border: #022674;
     --reach-mail: hsl(298, 100%, 50%);
+    --btn-hov: #ff0303;
+    --btn: #ff4d4d;
   }
 
   html.dark-mode {
@@ -128,8 +130,6 @@
     transition: transform 0.3s ease, background 0.3s ease;
     margin-right: 10px;
   }
-
-
 
   .hero {
     position: relative;
@@ -271,7 +271,7 @@
   }
 
   .cat-card a:hover {
-    background: #ff6f61;
+    background: var(--btn-hov);
     color: white;
   }
 
@@ -332,8 +332,17 @@
 
   }
 
-  .items-card:nth-child(1) a {
-    background: #0385ff;
+  .items-card a {
+    background-color: var(--btn);
+    color: white;
+  }
+
+  .items-card a:hover {
+    background-color: var(--btn-hov);
+  }
+
+  /* .items-card:nth-child(1) a {
+    background: ;
     color: white;
   }
 
@@ -344,12 +353,8 @@
   .items-card:nth-child(2) a {
     background: #ff00ff;
     color: white;
-  }
+  } */
 
-  .items-card:nth-child(2):hover a {
-    background: rgb(255, 0, 170);
-
-  }
 
   .items-card:first-child:hover img {
     transform: translatex(10px);
@@ -440,7 +445,7 @@
   }
 
   .about-right-content a {
-    background: #e91e63;
+    background: var(--btn);
     border: none;
     text-decoration: none;
     color: #fff;
@@ -453,7 +458,7 @@
   }
 
   .about-right-content a:hover {
-    background: #c2185b;
+    background: var(--btn-hov);
     transform: translateY(-3px);
   }
 
@@ -620,7 +625,7 @@
   .special-offers a {
     padding: 12px;
     text-decoration: none;
-    background-color: #2b83e7;
+    background-color: var(--btn);
     margin: 3%;
     color: white;
     border-radius: 25px;
@@ -628,7 +633,7 @@
   }
 
   .special-offers a:hover {
-    background-color: #1500ff;
+    background-color: var(--btn-hov);
   }
 
   .offers-grid {
@@ -725,7 +730,8 @@
     margin: 7%;
 
   }
-  .footer-content-company p{
+
+  .footer-content-company p {
     text-indent: 35px;
     margin: 0;
   }
@@ -1064,7 +1070,7 @@
     padding: 12px;
     width: 30%;
     border: 1px solid rgba(0, 0, 0, 0.005);
-    background-color: var(--contact-btn);
+    background-color: var(--btn);
     color: white;
     transition: all 0.5s ease;
     cursor: pointer;
@@ -1074,7 +1080,7 @@
 
   .contact-inputs button:hover {
     transform: translateX(10px);
-    background-color: var(--contact-btn-hov);
+    background-color: var(--btn-hov);
     color: white;
   }
 
@@ -1108,8 +1114,6 @@
     transform: scale(1.01);
     transition: 0.3s ease;
   }
-
-
 
   .reach-container {
     margin-top: 10%;
@@ -1267,7 +1271,7 @@
 
   .open-btn {
     padding: 8px 12px;
-    background: #eb2574;
+    background: var(--btn);
     color: white;
     border: none;
     border-radius: 8px;
@@ -1276,7 +1280,7 @@
   }
 
   .open-btn:hover {
-    background: #1E40AF;
+    background: var(--btn-hov);
   }
 
   .modal {

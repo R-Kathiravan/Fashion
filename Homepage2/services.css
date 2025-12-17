@@ -9,6 +9,8 @@
              --linear-gradient-con: linear-gradient(135deg, #4f46e5, #9333ea);
              --a-btn: #3981cf;
              --a-btn-hov: #037cfe;
+             --btn-hov: #ff0303;
+             --btn: #ff4d4d;
          }
 
          html.dark-mode {
@@ -604,13 +606,14 @@ flex-direction: row;
          .contact a {
              padding: 16px 10px;
              text-decoration: none;
-             background-color: var(--a-btn);
+             background-color: var(--btn);
              color: var(--white);
              border-radius: 10px;
+             font-size: 20px;
          }
 
          .contact a:hover {
-             background-color: var(--a-btn-hov);
+             background-color: var(--btn-hov);
          }
 
 

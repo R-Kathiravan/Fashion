@@ -6,6 +6,8 @@
     --price: #ff4081;
     --bg-linear-gardient: linear-gradient(135deg, #ff2129, #fd8e6f);
     --dim-text: #555;
+    --btn-hov: #ff0303;
+    --btn: #ff4d4d;
 }
 
 html.dark-mode {
@@ -374,12 +376,12 @@ body.dark .theme-toggle {
     padding: 16px;
     color: white;
     text-decoration: none;
-    background-color: #82c0fb;
+    background-color: var(--btn);
     border-radius: 10px;
 }
 
 .products-hero a:hover {
-    background-color: #0385ff;
+    background-color: var(--btn-hov);
 }
 
 .head {
@@ -440,12 +442,16 @@ body.dark .theme-toggle {
 
 .cat-content a {
     text-decoration: none;
-    color: #001eff;
+    color: blue;
     font-size: 18px;
+    transition: 0.4s all ease;
 }
 
 .cat-content a:hover {
-    color: rgb(59, 5, 255);
+    color: blue;
+    background-color: white;
+    /* border: 1px solid; */
+    padding: 8px 10px;
 }
 
 .product-card {
@@ -506,17 +512,18 @@ body.dark .theme-toggle {
 
 .overlay button,
 .overlay span {
-    background: #fff;
+    background: var(--btn);
     border: none;
     padding: 10px 15px;
     border-radius: 50px;
     cursor: pointer;
     font-size: 14px;
     transition: 0.3s;
+    color: white;
 }
 
 .overlay button:hover {
-    background: #ff4081;
+    background: var(--btn-hov);
     color: #fff;
 }
 
@@ -608,7 +615,7 @@ body.dark .theme-toggle {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 18px;
-    background: #ff4081;
+    background: var(--btn);
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -617,7 +624,7 @@ body.dark .theme-toggle {
 }
 
 .shop-btn:hover {
-    background: #e73370;
+    background: var(--btn-hov);
 }
 
 .featured-product-card:hover img,
@@ -635,12 +642,14 @@ body.dark .theme-toggle {
     margin: 5%;
     border-radius: 10px;
     color: white;
+    padding: 20px 10px;
 }
 
 .offers-content a {
     padding: 16px;
-    background-color: rgb(255, 142, 4);
+    background-color: var(--btn-hov);
     border-radius: 20px;
+    border: 1px solid var(--btn-hov);
     color: white;
     text-decoration: none;
 }
@@ -658,6 +667,8 @@ body.dark .theme-toggle {
 .assurance-item {
     padding: 15px;
     transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.292);
+
 }
 
 .assurance-item h4 {
@@ -756,7 +767,7 @@ body.dark .theme-toggle {
 }
 
 .overlay1 button:hover {
-    background: #ff4081;
+    background: var(--btn);
     color: #fff;
 }
 

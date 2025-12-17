@@ -27,7 +27,8 @@
       --shadow-light: rgba(0, 0, 0, 0.1);
       --shadow-dark: rgba(0, 0, 0, 0.2);
       --border-card: rgba(0, 0, 0, 0.138);
-
+      --btn: #ff4081;
+      --btn-hov: #f72585;
     }
 
     html.dark-mode {
@@ -135,7 +136,7 @@
     .checkout-btn {
       display: block;
       margin: 20px auto 0;
-      background: linear-gradient(135deg, #111, #333);
+      background: var(--btn);
       color: white;
       padding: 12px 20px;
       border-radius: 10px;
@@ -147,7 +148,7 @@
     }
 
     .checkout-btn:hover {
-      background: linear-gradient(135deg, #444, #000);
+      background: var(--btn-hov);
     }
 
     .header-cls {

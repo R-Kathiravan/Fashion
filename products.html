@@ -30,7 +30,8 @@
             --shadow-light: rgba(0, 0, 0, 0.1);
             --shadow-dark: rgba(0, 0, 0, 0.2);
             --border-card: rgba(0, 0, 0, 0.138);
-
+            --btn: #ff4081;
+            --btn-hov: #f72585;
         }
 
         html.dark-mode {
@@ -106,7 +107,7 @@
         .add-to-cart {
             margin-top: 10px;
             padding: 8px 16px;
-            background: linear-gradient(135deg, #111, #333);
+            background: var(--btn);
             color: white;
             border: none;
             border-radius: 8px;
@@ -115,7 +116,7 @@
         }
 
         .add-to-cart:hover {
-            background: linear-gradient(135deg, #444, #000);
+            background: var(--btn-hov);
         }
 
         .modal {
@@ -1350,7 +1351,7 @@
     <footer class="footer" id="footer" data-aos="fade-up">
         <div class="footer-container">
             <div class="footer-brand">
-        <a href="index.html" class="logo"><img src="./assets/stackly-logo1.png"></a>
+                <a href="index.html" class="logo"><img src="./assets/stackly-logo1.png"></a>
                 <p>Your destination for timeless fashion trends and premium collections that define elegance.</p>
             </div>
 

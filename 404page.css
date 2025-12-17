@@ -6,6 +6,11 @@
      font-family: 'Poppins', sans-serif;
  }
 
+ :root {
+     --btn: #ff4081;
+     --btn-hov: #f72585;
+ }
+
  header {
      display: flex;
      justify-content: space-between;
@@ -99,7 +104,7 @@
 
  .content a {
      text-decoration: none;
-     background: #ff4c4c;
+     background: var(--btn);
      color: white;
      padding: 12px 25px;
      border-radius: 5px;
@@ -108,7 +113,7 @@
  }
 
  .content a:hover {
-     background: #cc0000;
+     background: var(--btn-hov);
  }
 
 

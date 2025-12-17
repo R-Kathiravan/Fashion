@@ -12,6 +12,8 @@
     --reach-mail: hsl(298, 100%, 50%);
     --con-bg: rgba(0, 0, 0, 0.6);
     --loc-content-box: 0 6px 15px rgba(0, 0, 0, 0.08);
+    --btn-hov: #ff0303;
+    --btn: #ff4d4d;
 
 }
 
@@ -499,7 +501,7 @@ body.dark .theme-toggle {
     padding: 1rem;
     border: none;
     border-radius: 14px;
-    background: linear-gradient(90deg, #ff0080, #7928ca);
+    background: var(--btn);
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
@@ -509,7 +511,7 @@ body.dark .theme-toggle {
 
 .btn-submit:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(255, 0, 128, 0.4);
+    box-shadow: 0 8px 22px rgba(255, 0, 8, 0.4);
 }
 
 .newsletter-container {
@@ -552,14 +554,14 @@ body.dark .theme-toggle {
 .newsletter-input button {
     padding: 16px;
     border-radius: 15px;
-    background-color: #0385ff;
+    background-color: var(--btn);
     color: white;
     border-color: #0385ff00;
     cursor: pointer;
 }
 
 .newsletter-input button:hover {
-    background-color: #004cff;
+    background-color: var(--btn-hov);
 }
 
 .newsletter-content h1 {

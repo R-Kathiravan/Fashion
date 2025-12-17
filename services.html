@@ -40,6 +40,8 @@
             --dim-txt: #444;
             --test-front-bg: cadetblue;
             --test-bg-back: darkslategray;
+            --btn: #ff4081;
+            --btn-hov: #f72585;
 
         }
 
@@ -478,7 +480,7 @@
             padding: 12px;
             width: 30%;
             border: 1px solid rgba(0, 0, 0, 0.005);
-            background-color: #19ba7c;
+            background-color:var(--btn) ;
             color: white;
             transition: all 0.5s ease;
             cursor: pointer;
@@ -488,7 +490,7 @@
 
         .contact-inputs button:hover {
             transform: translateX(10px);
-            background-color: #00ff9d;
+            background-color: var(--btn-hov);
             color: white;
         }
 

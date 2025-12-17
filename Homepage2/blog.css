@@ -6,7 +6,8 @@
     --dim-text: #777;
     --btn-dim-text: #333;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.355);
-
+    --btn-hov: #ff0303;
+    --btn: #ff4d4d;
 }
 
 html.dark-mode {
@@ -674,14 +675,14 @@ body.dark .theme-toggle {
 .newsletter-input button {
     padding: 16px;
     border-radius: 15px;
-    background-color: #0385ff;
+    background-color: var(--btn);
     color: white;
     border-color: #0385ff00;
     cursor: pointer;
 }
 
 .newsletter-input button:hover {
-    background-color: #004cff;
+    background-color: var(--btn-hov);
 }
 
 .newsletter-content h1 {

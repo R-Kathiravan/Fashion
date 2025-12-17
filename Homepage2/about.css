@@ -24,6 +24,8 @@
              --border: rgba(0, 0, 0, 0.219);
              --contact-btn: rgb(138, 138, 255);
              --contact-btn-hov: #3c00ff;
+             --btn-hov: #ff0303;
+             --btn: #ff4d4d;
          }
 
          html.dark-mode {
@@ -402,13 +404,14 @@
              border: 2px solid;
              border-radius: 10px;
              padding: 16px;
-             background-color: var(--hero-btn);
+             background-color: var(--btn);
              color: white;
              border-color: rgba(0, 0, 0, 0.096);
+             transition: all 0.3s ease;
          }
 
          .about-hero a:hover {
-             background-color: var(--hero-btn-hov);
+             background-color: var(--btn-hov);
          }
 
          .hero-content {
@@ -646,7 +649,7 @@
 
          .contact-form a {
              text-decoration: none;
-             background: var(--contact-btn);
+             background: var(--btn);
              color: white;
              border: none;
              padding: 12px;
@@ -659,7 +662,7 @@
          }
 
          .contact-form a:hover {
-             background: var(--contact-btn-hov);
+             background: var(--btn-hov);
          }
 
          @media (max-width:678px) {
