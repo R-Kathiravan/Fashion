@@ -538,7 +538,7 @@
         return;
       }
       cart.forEach((item, index) => {
-        const price = parseInt(item.price.replace(/[^\d]/g, ""));
+        const price = Number(item.price);
         const subtotal = price * item.quantity;
         total += subtotal;
 
